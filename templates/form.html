@@ -1,0 +1,133 @@
+<!-- Form Header -->
+<div class="text-center mb-4"> 
+    <h4 class="mb-2">Ready to elevate your brand?</h4> 
+    <p class="mb-0">Get a free consultation and discover how we can transform your business presence.</p> 
+</div>                                 
+<!-- Contact form -->                                 
+<form class="needs-validation" id="leadQualificationForm" name="service-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" novalidate>
+    <input type="hidden" name="form-name" value="service-inquiry" />
+    <p hidden>
+        <label>Don't fill this out: <input name="bot-field" /></label>
+    </p>
+    <div class="row g-3">
+        <!-- Name field -->                                         
+        <div class="col-md-6"> 
+            <label class="form-label heading-color">Your name *</label>                                             
+            <input type="text" name="full_name" class="form-control form-control-lg" placeholder="Full name" required> 
+            <div class="invalid-feedback"> Please enter your full name. </div>                                             
+            <div class="valid-feedback"> Looks good! </div>                                             
+        </div>                                         
+        <!-- Email field -->                                         
+        <div class="col-md-6"> 
+            <label class="form-label heading-color">Email address *</label>                                             
+            <input type="email" name="email" class="form-control form-control-lg" placeholder="name@example.com" required> 
+            <div class="invalid-feedback"> Please enter a valid email address. </div>                                             
+            <div class="valid-feedback"> Looks good! </div>                                             
+        </div>                                         
+        <!-- Phone field -->                                         
+        <div class="col-md-6"> 
+            <label class="form-label heading-color">Phone number *</label>                                             
+            <input type="tel" name="phone" class="form-control form-control-lg" placeholder="(xxx) xx xxxx" required> 
+            <div class="invalid-feedback"> Please enter your phone number. </div>                                             
+            <div class="valid-feedback"> Looks good! </div>                                             
+        </div>                                         
+        <!-- Company name field -->                                         
+        <div class="col-md-6"> 
+            <label class="form-label heading-color">Company name *</label>                                             
+            <input type="text" name="company" class="form-control form-control-lg" placeholder="Your company name" required> 
+            <div class="invalid-feedback"> Please enter your company name. </div>                                             
+            <div class="valid-feedback"> Looks good! </div>                                             
+        </div>                                         
+        <!-- Website field -->                                         
+        <div class="col-md-6"> 
+            <label class="form-label heading-color">Website URL</label>                                             
+            <input type="text" name="website" class="form-control form-control-lg" placeholder="yourwebsite.com or https://yourwebsite.com"> 
+            <div class="invalid-feedback"> Please enter your website domain. </div>                                             
+            <div class="valid-feedback"> Looks good! </div>                                             
+        </div>                                         
+        <!-- Service field -->                                         
+        <div class="col-md-6"> 
+            <label class="form-label heading-color">Service interested in *</label>                                             
+            <select name="service" class="form-select form-select-lg" required> 
+                <option value="">Select a service</option>                                                 
+                <option value="brand-design">Brand & Design</option>                                                 
+                <option value="web-development">Web Development</option>                                                 
+                <option value="seo-optimization">SEO Optimization</option>                                                 
+                <option value="social-media">Social Media Management</option>                                                 
+                <option value="ecommerce">E-commerce Solutions</option>                                                 
+                <option value="digital-audit">Deep Dive Digital Audit</option>                                                 
+                <option value="consultation">Free Consultation</option>                                                 
+            </select>                                             
+            <div class="invalid-feedback"> Please select a service. </div>                                             
+            <div class="valid-feedback"> Looks good! </div>                                             
+        </div>                                         
+        <!-- Budget field -->                                         
+        <div class="col-md-6"> 
+            <label class="form-label heading-color">Budget range *</label>                                             
+            <select name="budget" class="form-select form-select-lg" required> 
+                <option value="">Select budget range</option>                                                 
+                <option value="under-1000">Under £1,000</option>                                                 
+                <option value="1000-2500">£1,000 - £2,500</option>                                                 
+                <option value="2500-5000">£2,500 - £5,000</option>                                                 
+                <option value="5000-10000">£5,000 - £10,000</option>                                                 
+                <option value="10000-plus">£10,000+</option>                                                 
+                <option value="discuss">Let's discuss</option>                                                 
+            </select>                                             
+            <div class="invalid-feedback"> Please select your budget range. </div>                                             
+            <div class="valid-feedback"> Looks good! </div>                                             
+        </div>                                         
+        <!-- Timeframe field -->                                         
+        <div class="col-md-6"> 
+            <label class="form-label heading-color">Project timeframe *</label>                                             
+            <select name="timeframe" class="form-select form-select-lg" required> 
+                <option value="">Select timeframe</option>                                                 
+                <option value="asap">ASAP (Rush job)</option>                                                 
+                <option value="1-2-weeks">1-2 weeks</option>                                                 
+                <option value="1-month">1 month</option>                                                 
+                <option value="2-3-months">2-3 months</option>                                                 
+                <option value="3-6-months">3-6 months</option>                                                 
+                <option value="flexible">Flexible</option>                                                 
+            </select>                                             
+            <div class="invalid-feedback"> Please select your project timeframe. </div>                                             
+            <div class="valid-feedback"> Looks good! </div>                                             
+        </div>                                         
+        <!-- Main social link field -->                                         
+        <div class="col-12"> 
+            <label class="form-label heading-color">Main social media link</label>                                             
+            <input type="url" name="social_link" class="form-control form-control-lg" placeholder="https://instagram.com/yourhandle"> <small class="form-text text-muted">Include your primary social platform. Add any others in the message field below.</small>
+            <div class="invalid-feedback"> Please enter a valid social media URL. </div>                                             
+            <div class="valid-feedback"> Looks good! </div>                                             
+        </div>                                         
+        <!-- Message field -->                                         
+        <div class="col-12"> 
+            <label class="form-label heading-color">Message *</label>                                             
+            <textarea name="message" class="form-control" placeholder="Tell us about your biggest digital challenge..." style="height: 120px" required></textarea> 
+            <div class="invalid-feedback"> Please tell us about your project. </div>                                             
+            <div class="valid-feedback"> Looks good! </div>                                             
+        </div>                                         
+        <!-- Action buttons -->                                         
+        <div class="col-12 text-center"> 
+            <!-- Success message -->
+            <div id="successMessage" class="d-none">
+                <div class="alert alert-success text-start">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-3 fs-4"></i>
+                        <div>
+                            <h6 class="alert-heading mb-1">Thank you for your interest!</h6>
+                            <p class="mb-0">Our team will be in contact within 48 hours with the information you requested.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Action buttons -->
+            <div id="actionButtons">
+                <h5 class="mb-3">What would you like to do next?</h5>
+                <p class="mb-4">Choose how you'd like to move forward with your project.</p>
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                    <button type="submit" class="btn btn-primary btn-lg px-5" data-action="book-call">Book a Call</button>
+                    <button type="submit" class="btn btn-outline-primary btn-lg px-5" data-action="send-info">Send me information</button>
+                </div>
+            </div>
+        </div>                                         
+    </div>                                     
+</form>

@@ -1,0 +1,699 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <title>Verosia Studio</title>         
+        <!-- Meta Tags -->         
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-K5QRF4CR');</script>
+        <!-- End Google Tag Manager --> 
+        <meta name="author" content="Verosia Studio"> 
+        <meta name="description" content="Technology and Corporate Bootstrap Theme"> 
+        <!-- Dark mode -->         
+        <script>
+		const storedTheme = localStorage.getItem('theme')
+ 
+		const getPreferredTheme = () => {
+			if (storedTheme) {
+				return storedTheme
+			}
+			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
+		}
+
+		const setTheme = function (theme) {
+			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-bs-theme', 'dark')
+			} else {
+				document.documentElement.setAttribute('data-bs-theme', theme)
+			}
+		}
+
+		setTheme(getPreferredTheme())
+
+
+		// Fix mobile navbar collapse issues
+		document.addEventListener('DOMContentLoaded', function() {
+			const navbarToggler = document.querySelector('.navbar-toggler')
+			const navbarCollapse = document.querySelector('.navbar-collapse')
+			
+			if (navbarToggler && navbarCollapse) {
+				// Close navbar when clicking outside
+				document.addEventListener('click', function(e) {
+					if (!navbarToggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
+						if (navbarCollapse.classList.contains('show')) {
+							navbarToggler.click()
+						}
+					}
+				})
+				
+				// Close navbar when clicking on nav links
+				const navLinks = document.querySelectorAll('.navbar-nav .nav-link')
+				navLinks.forEach(link => {
+					link.addEventListener('click', function() {
+						if (navbarCollapse.classList.contains('show')) {
+							navbarToggler.click()
+						}
+					})
+				})
+			}
+		})
+		
+	</script>         
+        <!-- Favicon -->         
+        <link rel="shortcut icon" href="assets/images/favicon.ico?v=2"> 
+        <!-- Google Font -->         
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="../css/theme.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"> 
+        <!-- Plugins CSS -->         
+        <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css"> 
+        <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css"> 
+        <link rel="stylesheet" type="text/css" href="assets/vendor/swiper/swiper-bundle.min.css"> 
+        <!-- Theme CSS -->         
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+    </head>     
+    <body> 
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5QRF4CR"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        
+        <!-- Header Container -->
+        <div id="header-container"></div>         
+        <!-- **************** MAIN CONTENT START **************** -->         
+        <main> 
+            <!-- =======================
+Main hero START -->             
+            <section class="pt-lg-8 pt-xl-9" style="background-color: #E8E2F3; background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.7)), url('assets/images/verosia%20home/bg-pattern-2.png'); background-position: center left; background-size: cover;" data-bs-theme="light"> 
+                <div class="container position-relative pt-4 pt-lg-0"> 
+                    <div class="row align-items-center"> 
+                        <!-- Title -->                         
+                        <div class="col-md-7 col-xl-6"> 
+                            <h1 class="mb-4 text-dark">Digital Content &amp; SEO</h1> 
+                            <p class="mb-4 text-dark">Blog posts, email campaigns, and SEO optimization that gets you found. We handle your entire content ecosystem so you can focus on running your business.</p> 
+                        </div>                         
+                        <div class="col-md-4 ms-auto text-md-end"> <a href="#contactFormSection" class="btn btn-lg btn-primary mb-6 mb-md-0 hero-cta-btn" data-package="hero" data-service="seo-optimization" data-budget="discuss">Book a quick chat</a>
+                        </div>                         
+                    </div>                     
+                </div>                 
+            </section>             
+            <!-- =======================
+Main hero END -->             
+            <!-- =======================
+Approach and Benefits START -->             
+            <section class="pt-6"> 
+                <div class="container"> 
+                    <div class="row g-4 g-lg-7"> 
+                        <!-- Our Approach -->                         
+                        <div class="col-md-6"> 
+                            <h4 class="mb-4">Our Approach</h4> 
+                            <p>We don&apos;t just write content, we create a content strategy that drives real business results. Starting with keyword research and competitor analysis, we develop content that ranks and converts.
+No generic blog posts or keyword stuffing. We create valuable, engaging content that your audience actually wants to read, while building your authority and driving qualified traffic to your business.&nbsp;</p> 
+                        </div>                         
+                        <!-- Service benefits -->                         
+                        <div class="col-md-6"> 
+                            <div class="card card-body bg-light border p-md-5"> 
+                                <h4 class="mb-3">Service benefits</h4> 
+                                <!-- List -->                                 
+                                <ul class="list-group list-group-borderless border-0"> 
+                                    <li class="list-group-item heading-color d-flex mb-0"><i class="bi bi-patch-check text-primary me-2"></i>Strategic content that ranks and converts
+                                    </li>                                     
+                                    <li class="list-group-item heading-color d-flex mb-0"><i class="bi bi-patch-check text-primary me-2"></i>Complete SEO optimization and monitoring
+                                    </li>                                     
+                                    <li class="list-group-item heading-color d-flex mb-0"><i class="bi bi-patch-check text-primary me-2"></i>Email campaigns that nurture leads
+                                    </li>                                     
+                                    <li class="list-group-item heading-color d-flex mb-0"><i class="bi bi-patch-check text-primary me-2"></i>Monthly reporting and strategy adjustments
+                                    </li>                                     
+                                    <li class="list-group-item heading-color d-flex mb-0"><i class="bi bi-patch-check text-primary me-2"></i>Content calendar and publishing schedule
+                                    </li>                                     
+                                </ul>                                 
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                </div>                 
+            </section>             
+            <!-- =======================
+Approach and Benefits END -->             
+            <!-- =======================
+How it works START -->             
+            <section class="pt-0"> 
+                <div class="container"> 
+                    <div class="inner-container-small text-center mb-4 mb-md-6"> 
+                        <h2 class="mb-0">How it works?</h2> 
+                    </div>                     
+                    <div class="row g-4 g-lg-7"> 
+                        <div class="col-sm-6 col-md-3"> 
+                            <div class="d-flex justify-content-center align-items-center text-center flex-column bg-transparent"> 
+                                <div class="icon-lg bg-primary bg-opacity-10 text-primary rounded-3 fw-bold flex-shrink-0 mb-3">01</div>                                 
+                                <h6>Strategy & Research</h6> 
+                                <p class="small mb-0">We analyse your business, competitors, and target keywords to create a content strategy that drives results.</p> 
+                            </div>                             
+                        </div>                         
+                        <div class="col-sm-6 col-md-3"> 
+                            <div class="d-flex justify-content-center align-items-center text-center flex-column bg-transparent"> 
+                                <div class="icon-lg bg-primary bg-opacity-10 text-primary rounded-3 fw-bold flex-shrink-0 mb-3">02</div>                                 
+                                <h6>Content Creation</h6> 
+                                <p class="small mb-0">We write blog posts, create email campaigns, and optimise all content for search engines and user engagement.</p> 
+                            </div>                             
+                        </div>                         
+                        <div class="col-sm-6 col-md-3"> 
+                            <div class="d-flex justify-content-center align-items-center text-center flex-column bg-transparent"> 
+                                <div class="icon-lg bg-primary bg-opacity-10 text-primary rounded-3 fw-bold flex-shrink-0 mb-3">03</div>                                 
+                                <h6>Publishing & Promotion</h6> 
+                                <p class="small mb-0">We publish content across your channels, promote through email and social, and monitor performance.</p> 
+                            </div>                             
+                        </div>                         
+                        <div class="col-sm-6 col-md-3"> 
+                            <div class="d-flex justify-content-center align-items-center text-center flex-column bg-transparent"> 
+                                <div class="icon-lg bg-primary bg-opacity-10 text-primary rounded-3 fw-bold flex-shrink-0 mb-3">04</div>                                 
+                                <h6>Monitor &amp; Optimise</h6> 
+                                <p class="small mb-0">We track rankings, analyse performance, and continuously optimize your content strategy for better results.</p> 
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                </div>                 
+            </section>             
+            <!-- =======================
+How it works END -->             
+            <!-- =======================
+Pricing START -->             
+            <!-- Pricing items START -->             
+            <div class="container mt-4 mb-4"> 
+                <!-- Slider START -->                 
+                <div class="swiper" data-swiper-options='{
+			"slidesPerView": 1, 
+			"spaceBetween": 30,
+			"pagination":{
+				"el":".swiper-pagination"
+			},
+			"breakpoints": {
+				"576": {"slidesPerView": 1}, 
+				"768": {"slidesPerView": 2}, 
+				"992": {"slidesPerView": 3}
+			}}'> 
+                    <!-- Slider items -->                     
+                    <div class="swiper-wrapper align-items-center pt-5"> 
+                        <!-- Item -->                         
+                        <div class="swiper-slide"> 
+                            <div class="card shadow border overflow-hidden p-0"> 
+                                <!-- Card header -->                                 
+                                <div class="card-header border-bottom p-4"> 
+                                    <!-- Icon -->                                     
+                                    <div class="icon-lg bg-light rounded-circle mb-3"> <i class="bi bi-lightning-charge-fill fa-lg lh-1 heading-color"></i> 
+                                    </div>                                     
+                                    <!-- Title and price -->                                     
+                                    <h6 class="mb-3">Content Starter</h6> 
+                                    <p class="mb-0"> <span class="h2 mb-0 plan-price">£497</span><span class="text-muted">/month</span></p> <small>Perfect for small businesses starting their content journey</small> 
+                                </div>                                 
+                                <!-- Card body -->                                 
+                                <div class="card-body p-4"> 
+                                    <div class="text-center text-lg-start"> 
+                                        <!-- Small title -->                                         
+                                        <h6>Quick look at all the features</h6> 
+                                        <!-- List -->                                         
+                                        <ul class="list-group list-group-borderless mb-2 mb-sm-4"> 
+                                            <li class="list-group-item d-flex heading-color mb-0">
+                                                <i class="bi bi-check-lg text-primary me-1"></i>4 blog posts per month
+                                            </li>                                             
+                                            <li class="list-group-item d-flex heading-color mb-0">
+                                                <i class="bi bi-check-lg text-primary me-1"></i>Basic SEO optimization
+                                            </li>                                             
+                                            <li class="list-group-item d-flex heading-color mb-0">
+                                                <i class="bi bi-check-lg text-primary me-1"></i>Keyword research & strategy
+                                            </li>                                             
+                                            <li class="list-group-item d-flex heading-color mb-0">
+                                                <i class="bi bi-check-lg text-primary me-1"></i>Monthly performance report
+                                            </li>                                             
+                                            <li class="list-group-item d-flex heading-color mb-0">
+                                                <i class="bi bi-check-lg text-primary me-1"></i>Content calendar planning
+                                            </li>                                             
+                                            <li class="list-group-item d-flex heading-color mb-0">
+                                                <i class="bi bi-check-lg text-primary me-1"></i>Email support
+                                            </li>                                             
+                                        </ul>                                         
+                                        <!-- Button -->                                         <a href="#leadQualificationForm" class="btn btn-dark w-100 pricing-card-btn" data-package="content-starter" data-service="seo-optimization" data-budget="under-1000">Get started →</a> 
+                                    </div>                                     
+                                </div>                                 
+                            </div>                             
+                        </div>                         
+                        <!-- Item -->                         
+                        <div class="swiper-slide"> 
+                            <div class="card border border-primary p-0"> 
+                                <!-- Badge -->                                 
+                                <div class="bg-primary text-white rounded position-absolute top-0 start-50 translate-middle px-2 py-1 ">Most popular</div>                                 
+                                <!-- Card header -->                                 
+                                <div class="card-header bg-primary bg-opacity-10 border-bottom border-primary border-opacity-25 p-4"> 
+                                    <!-- Icon -->                                     
+                                    <div class="icon-lg bg-primary bg-opacity-10 rounded-circle mb-3"> <i class="bi bi-rocket-takeoff-fill fa-lg lh-1 text-primary"></i> 
+                                    </div>                                     
+                                    <!-- Title and price -->                                     
+                                    <h6 class="mb-3">Content Growth</h6> 
+                                    <p class="mb-0"> <span class="h2 mb-0 plan-price">£997</span><span class="text-muted">/month</span></p> <small>Everything in Content Starter PLUS:</small> 
+                                </div>                                 
+                                <!-- Card body -->                                 
+                                <div class="card-body bg-primary bg-opacity-10 p-4"> 
+                                    <div class="text-center text-lg-start"> 
+                                        <h6 class="heading-color">Quick look at all the features</h6> 
+                                        <!-- List -->                                         
+                                        <ul class="list-group list-group-borderless mb-2 mb-sm-4"> 
+                                            <li class="list-group-item d-flex heading-color mb-0">
+                                                <i class="bi bi-check-lg heading-color me-1"></i>8 blog posts per month
+                                            </li>                                             
+                                            <li class="list-group-item d-flex heading-color mb-0">
+                                                <i class="bi bi-check-lg heading-color me-1"></i>Email marketing campaigns
+                                            </li>                                             
+                                            <li class="list-group-item d-flex heading-color mb-0">
+                                                <i class="bi bi-check-lg heading-color me-1"></i>Advanced SEO optimization
+                                            </li>                                             
+                                            <li class="list-group-item d-flex heading-color mb-0">
+                                                <i class="bi bi-check-lg heading-color me-1"></i>Social media content creation
+                                            </li>                                             
+                                            <li class="list-group-item d-flex heading-color mb-0">
+                                                <i class="bi bi-check-lg heading-color me-1"></i>Competitor analysis & monitoring
+                                            </li>                                             
+                                            <li class="list-group-item d-flex heading-color mb-0">
+                                                <i class="bi bi-check-lg heading-color me-1"></i>Priority support & strategy calls
+                                            </li>                                             
+                                        </ul>                                         
+                                        <!-- Button -->                                         <a href="#leadQualificationForm" class="btn btn-primary mb-0 w-100 pricing-card-btn" data-package="content-growth" data-service="seo-optimization" data-budget="1000-2500">Most popular →</a> 
+                                    </div>                                     
+                                </div>                                 
+                            </div>                             
+                        </div>                         
+                        <!-- Item -->                         
+                        <div class="swiper-slide"> 
+                            <div class="card shadow border p-0"> 
+                                <!-- Card header -->                                 
+                                <div class="card-header border-bottom p-4"> 
+                                    <!-- Icon -->                                     
+                                    <div class="icon-lg bg-light rounded-circle mb-3"> <i class="bi bi-send-fill fa-lg lh-1 heading-color"></i> 
+                                    </div>                                     
+                                    <!-- Title and price -->                                     
+                                    <h6 class="mb-3">Content Enterprise</h6> 
+                                    <p class="mb-0"> <span class="h2 mb-0 plan-price">£1,997+</span><span class="text-muted">/month</span></p> <small>Full content marketing including:</small> 
+                                </div>                                 
+                                <!-- Card body -->                                 
+                                <div class="card-body p-4"> 
+                                    <div class="text-center text-lg-start"> 
+                                        <!-- Small title -->                                         
+                                        <h6>Quick look at all the features</h6> 
+                                        <!-- List -->                                         
+                                        <ul class="list-group list-group-borderless mb-2 mb-sm-4"> 
+                                            <li class="list-group-item d-flex heading-color mb-0">
+                                                <i class="bi bi-check-lg text-primary me-1"></i>Unlimited blog posts & content
+                                            </li>                                             
+                                            <li class="list-group-item d-flex heading-color mb-0">
+                                                <i class="bi bi-check-lg text-primary me-1"></i>Complete SEO audit & strategy
+                                            </li>                                             
+                                            <li class="list-group-item d-flex heading-color mb-0">
+                                                <i class="bi bi-check-lg text-primary me-1"></i>Multi-channel content distribution
+                                            </li>                                             
+                                            <li class="list-group-item d-flex heading-color mb-0">
+                                                <i class="bi bi-check-lg text-primary me-1"></i>Advanced analytics & reporting
+                                            </li>                                             
+                                            <li class="list-group-item d-flex heading-color mb-0">
+                                                <i class="bi bi-check-lg text-primary me-1"></i>Dedicated content manager
+                                            </li>                                             
+                                            <li class="list-group-item d-flex heading-color mb-0">
+                                                <i class="bi bi-check-lg text-primary me-1"></i>Custom content strategy development
+                                            </li>                                             
+                                        </ul>                                         
+                                        <!-- Button -->                                         <a href="#leadQualificationForm" class="btn btn-dark w-100 pricing-card-btn" data-package="content-enterprise" data-service="seo-optimization" data-budget="discuss">Let's discuss →</a> 
+                                    </div>                                     
+                                </div>                                 
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                    <!-- Slider Pagination -->                     
+                    <div class="swiper-pagination swiper-pagination-primary position-relative mt-4"></div>                     
+                </div>                 
+                <!-- Slider END -->                 
+            </div>             
+            <!-- Pricing items END -->             
+            <!-- =======================
+Pricing END -->             
+            <!-- =======================
+CTA START -->             
+            <section id="contactFormSection" class="position-relative z-index-2 pt-0 pt-lg-6"> 
+                <div class="container position-relative"> 
+                    <div class="inner-container bg-light border rounded position-relative overflow-hidden p-4 p-lg-5"> 
+                        <!-- SVG decoration -->                         
+                        <figure class="position-absolute top-0 start-0 ms-n8"> 
+                            <svg width="371" height="354" viewBox="0 0 371 354" fill="none" xmlns="http://www.w3.org/2000/svg"> 
+                                <ellipse cx="172.5" cy="176.5" rx="131.5" ry="125.5" fill="url(#paint0_linear_195_2)"></ellipse>                                 
+                                <ellipse cx="185.5" cy="177" rx="185.5" ry="177" fill="url(#paint1_linear_195_2)"></ellipse>                                 
+                                <defs> 
+                                    <linearGradient id="paint0_linear_195_2" x1="172.5" y1="51" x2="172.5" y2="302" gradientUnits="userSpaceOnUse"> 
+                                        <stop offset="0.0569271" stop-color="#D9D9D9" stop-opacity="0.5"></stop>                                         
+                                        <stop offset="0.998202" stop-color="#D9D9D9" stop-opacity="0"></stop>                                         
+                                    </linearGradient>                                     
+                                    <linearGradient id="paint1_linear_195_2" x1="185.5" y1="0" x2="185.5" y2="354" gradientUnits="userSpaceOnUse"> 
+                                        <stop offset="0.0569271" stop-color="#D9D9D9" stop-opacity="0.2"></stop>                                         
+                                        <stop offset="0.998202" stop-color="#D9D9D9" stop-opacity="0"></stop>                                         
+                                    </linearGradient>                                     
+                                </defs>                                 
+                            </svg>                             
+                        </figure>                         
+                        <div class="row position-relative"> 
+                            <div class="col-lg-8 mx-auto"> 
+                                <!-- Form Container -->
+                                <div id="form-container"></div>                                 
+                            </div>                             
+                        </div>                         
+                        <!-- Row END -->                         
+                    </div>                     
+                </div>                 
+            </section>             
+            <!-- =======================
+CTA END -->             
+        </main>         
+        <!-- **************** MAIN CONTENT END **************** -->         
+        <!-- =======================
+<!-- Footer START -->         
+        <!-- Footer Container -->
+        <div id="footer-container"></div>         
+        <!-- =======================
+        Footer END -->         
+        <!-- Back to top -->         
+        <div class="back-top"></div>         
+        <!-- Bootstrap JS -->         
+        <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>         
+        <!-- Vendors -->         
+        <script src="assets/vendor/ityped/index.js"></script>         
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>         
+        <!-- Theme Functions -->         
+        <script src="assets/js/functions.js"></script>
+        <!-- Template Loader Script -->
+        <script>
+            // Simple template loader
+            async function loadTemplate(containerId, templatePath) {
+                try {
+                    const response = await fetch(templatePath);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const html = await response.text();
+                    document.getElementById(containerId).innerHTML = html;
+
+                    console.log(`✅ ${templatePath} loaded successfully`);
+                } catch (error) {
+                    console.error(`❌ Error loading ${templatePath}:`, error);
+                }
+            }
+
+            // Dropdown hover functionality (desktop only)
+            function initDropdownHover() {
+                const dropdownHoverElements = document.querySelectorAll('.dropdown-hover');
+
+                dropdownHoverElements.forEach(element => {
+                    const dropdown = element.querySelector('.dropdown-menu');
+                    const dropdownToggle = element.querySelector('[data-bs-toggle="dropdown"]');
+
+                    if (dropdown && dropdownToggle) {
+                        let timeout;
+                        let isHoverEnabled = true;
+
+                        // Check if we're in mobile view (hamburger menu visible)
+                        function isMobileView() {
+                            return window.getComputedStyle(document.querySelector('.navbar-toggler')).display !== 'none';
+                        }
+
+                        // Only trigger on the specific dropdown item, not parent containers
+                        dropdownToggle.addEventListener('mouseenter', function() {
+                            // Only enable hover when NOT in mobile view (hamburger menu hidden)
+                            if (isHoverEnabled && !isMobileView()) {
+                                clearTimeout(timeout);
+                                const bsDropdown = new bootstrap.Dropdown(dropdownToggle);
+                                bsDropdown.show();
+                            }
+                        });
+
+                        // Hide when leaving the entire dropdown container
+                        element.addEventListener('mouseleave', function() {
+                            // Only hide on hover when NOT in mobile view
+                            if (!isMobileView()) {
+                                timeout = setTimeout(() => {
+                                    const bsDropdown = bootstrap.Dropdown.getInstance(dropdownToggle);
+                                    if (bsDropdown) {
+                                        bsDropdown.hide();
+                                    }
+                                }, 100);
+                            }
+                        });
+
+                        // Disable hover temporarily when clicking (to prevent conflicts)
+                        dropdownToggle.addEventListener('click', function() {
+                            isHoverEnabled = false;
+                            setTimeout(() => {
+                                isHoverEnabled = true;
+                            }, 1000);
+                        });
+                    }
+                });
+            }
+
+            // Initialize sticky header functionality
+            function initStickyHeader() {
+                var stickyNav = document.querySelector('.header-sticky');
+                if (stickyNav) {
+                    let ticking = false;
+                    
+                    // Add mobile-specific CSS for better sticky header support
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        @media (max-width: 768px) {
+                            header.header-sticky-on {
+                                position: fixed !important;
+                                -webkit-transform: translateZ(0);
+                                transform: translateZ(0);
+                                -webkit-backface-visibility: hidden;
+                                backface-visibility: hidden;
+                                background-color: var(--bs-body-bg) !important;
+                                border-bottom: 1px solid var(--bs-gray-200) !important;
+                                width: 100% !important;
+                                z-index: 1040 !important;
+                            }
+                            [data-bs-theme=dark] header.header-sticky-on {
+                                border-bottom: 1px solid var(--bs-border-color) !important;
+                            }
+                        }
+                    `;
+                    document.head.appendChild(style);
+                    
+                    function updateStickyHeader() {
+                        var scTop = window.pageYOffset || document.documentElement.scrollTop;
+                        if (scTop >= 400) {
+                            stickyNav.classList.add('header-sticky-on');
+                        } else {
+                            stickyNav.classList.remove('header-sticky-on');
+                        }
+                        ticking = false;
+                    }
+                    
+                    function requestTick() {
+                        if (!ticking) {
+                            requestAnimationFrame(updateStickyHeader);
+                            ticking = true;
+                        }
+                    }
+                    
+                    // Use both scroll and touchmove events for better mobile support
+                    document.addEventListener('scroll', requestTick, { passive: true });
+                    document.addEventListener('touchmove', requestTick, { passive: true });
+                    
+                    // Also listen on window for better mobile support
+                    window.addEventListener('scroll', requestTick, { passive: true });
+                    window.addEventListener('touchmove', requestTick, { passive: true });
+                }
+            }
+
+            // Initialize dark mode functionality
+            function initDarkMode() {
+                const el = document.querySelector('.theme-icon-active');
+                if(el !== undefined && el !== null) {
+                    const showActiveTheme = theme => {
+                        const activeThemeIcon = document.querySelector('.theme-icon-active use')
+                        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+                        const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+
+                        document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                            element.classList.remove('active')
+                        })
+
+                        btnToActive.classList.add('active')
+                        activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+                    }
+
+                    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                        const storedTheme = localStorage.getItem('theme')
+                        if (storedTheme !== 'light' || storedTheme !== 'dark') {
+                            setTheme(getPreferredTheme())
+                        }
+                    })
+
+                    showActiveTheme(getPreferredTheme())
+
+                    // Use event delegation to handle theme toggle clicks
+                    document.addEventListener('click', (e) => {
+                        if (e.target.closest('[data-bs-theme-value]')) {
+                            const toggle = e.target.closest('[data-bs-theme-value]')
+                            const theme = toggle.getAttribute('data-bs-theme-value')
+                            localStorage.setItem('theme', theme)
+                            setTheme(theme)
+                            showActiveTheme(theme)
+                        }
+                    })
+                }
+            }
+
+            // Load templates when page loads
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log('�� Loading templates...');
+                loadTemplate('header-container', 'templates/header.html');
+                loadTemplate('footer-container', 'templates/footer.html');
+                loadTemplate('form-container', 'templates/form.html');
+
+                // Initialize dropdown hover, dark mode, and sticky header after templates load
+                setTimeout(() => {
+                    initDropdownHover();
+                    initDarkMode();
+                    initStickyHeader();
+                    initializeFormFunctionality();
+                }, 500);
+            });
+        </script>         
+        <!-- Form Functionality Script -->
+        <script>
+        // Initialize form functionality after form component loads
+        function initializeFormFunctionality() {
+            console.log('Form component loaded, initializing functionality...');
+            
+            // Initialize form event listeners
+            initializeFormEventListeners();
+            
+            // Initialize pricing card functionality
+            initializePricingCards();
+        }
+        
+        // Initialize form event listeners
+        function initializeFormEventListeners() {
+            // Form submission handling
+            const form = document.getElementById('leadQualificationForm');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+            
+            // Check if form is valid
+            if (!form.checkValidity()) {
+                form.classList.add('was-validated');
+                return;
+            }
+            
+                    // Get form data
+                    const formData = new FormData(this);
+                    const data = Object.fromEntries(formData);
+                    
+                    // Check which button was clicked
+                    const submitButton = e.submitter;
+                    const action = submitButton.getAttribute('data-action');
+                    
+                    if (action === 'send-info') {
+                        // Process email nurture
+                        processEmailNurture(data);
+                    } else if (action === 'book-call') {
+                        // Redirect to calendar
+                        window.location.href = 'verosia-book-a-call-contact-v2.html';
+                    }
+                });
+            }
+        }
+        
+        // Simplified form processing - no complex qualification logic needed
+        
+        // Form submission is now handled in initializeFormEventListeners()
+        
+        function processEmailNurture(data) {
+            // Here you would typically:
+            // 1. Send data to your backend/email service
+            // 2. Add to email sequence
+            // 3. Show success message
+            
+            // Hide action buttons and show success message
+            document.getElementById('actionButtons').classList.add('d-none');
+            document.getElementById('successMessage').classList.remove('d-none');
+            
+            // You can replace this with actual form submission to your backend
+            console.log('Email nurture data:', data);
+        }
+
+        // Initialize pricing card functionality
+        function initializePricingCards() {
+            const pricingButtons = document.querySelectorAll('.pricing-card-btn');
+            const heroCtaButton = document.querySelector('.hero-cta-btn');
+            const serviceSelect = document.querySelector('select[name="service"]');
+            const budgetSelect = document.querySelector('select[name="budget"]');
+            
+            pricingButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default anchor behavior
+                    
+                    // Get data attributes
+                    const packageType = this.getAttribute('data-package');
+                    const service = this.getAttribute('data-service');
+                    const budget = this.getAttribute('data-budget');
+                    
+                    // Add visual feedback
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                    
+                    // Store package selection for potential use in qualification
+                    sessionStorage.setItem('selectedPackage', packageType);
+                    
+                    // Pre-populate form fields with a small delay to ensure DOM is ready
+                    setTimeout(() => {
+                        // Pre-populate service field
+                        if (serviceSelect && service) {
+                            serviceSelect.value = service;
+                            // Trigger change event to update validation
+                            serviceSelect.dispatchEvent(new Event('change', { bubbles: true }));
+                        }
+                        
+                        // Pre-populate budget field
+                        if (budgetSelect && budget) {
+                            budgetSelect.value = budget;
+                            // Trigger change event to update validation
+                            budgetSelect.dispatchEvent(new Event('change', { bubbles: true }));
+                        }
+                    }, 100);
+                    
+                    // Smooth scroll to form section with proper offset for mobile
+                    setTimeout(() => {
+                        const formSection = document.getElementById('contactFormSection');
+                        if (formSection) {
+                            const headerHeight = 80; // Adjust based on your header height
+                            const elementPosition = formSection.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+                            
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }, 200); // Small delay to ensure form is populated first
+                });
+            });
+        }
+        
+        // Old qualification functions removed - using simplified form component logic
+        </script>
+    </body>     
+</html>

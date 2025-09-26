@@ -1,0 +1,457 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <title>Verosia Studio</title>         
+        <!-- Meta Tags -->         
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+        <meta name="author" content="Verosia Studio"> 
+        <meta name="description" content="Technology and Corporate Bootstrap Theme"> 
+        <!-- Dark mode -->         
+        <script>
+		const storedTheme = localStorage.getItem('theme')
+ 
+		const getPreferredTheme = () => {
+			if (storedTheme) {
+				return storedTheme
+			}
+			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
+		}
+
+		const setTheme = function (theme) {
+			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-bs-theme', 'dark')
+			} else {
+				document.documentElement.setAttribute('data-bs-theme', theme)
+			}
+		}
+
+		setTheme(getPreferredTheme())
+
+		// Fix mobile navbar collapse issues
+		document.addEventListener('DOMContentLoaded', function() {
+			const navbarToggler = document.querySelector('.navbar-toggler')
+			const navbarCollapse = document.querySelector('.navbar-collapse')
+			
+			if (navbarToggler && navbarCollapse) {
+				// Close navbar when clicking outside
+				document.addEventListener('click', function(e) {
+					if (!navbarToggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
+						if (navbarCollapse.classList.contains('show')) {
+							navbarToggler.click()
+						}
+					}
+				})
+				
+				// Close navbar when clicking on nav links
+				const navLinks = document.querySelectorAll('.navbar-nav .nav-link')
+				navLinks.forEach(link => {
+					link.addEventListener('click', function() {
+						if (navbarCollapse.classList.contains('show')) {
+							navbarToggler.click()
+						}
+					})
+				})
+			}
+		})
+		
+	</script>         
+        <!-- Favicon -->         
+        <link rel="shortcut icon" href="assets/images/favicon.ico?v=2"> 
+        <!-- Google Font -->         
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="../css/theme.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"> 
+        <!-- Plugins CSS -->         
+        <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css"> 
+        <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css"> 
+        <link rel="stylesheet" type="text/css" href="assets/vendor/swiper/swiper-bundle.min.css"> 
+        <!-- Theme CSS -->         
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+    </head>     
+    <body> 
+        <!-- Header Container -->
+        <div id="header-container"></div>         
+        <!-- **************** MAIN CONTENT START **************** -->         
+        <main> 
+            <!-- =======================
+Blog detail START -->             
+            <section class="pt-lg-8"> 
+                <div class="container pt-4 pt-lg-0"> 
+                    <div class="row g-4 g-sm-7"> 
+                        <!-- Main content START -->                         
+                        <div class="col-lg-8"> 
+                            <!-- Breadcrumb -->                             
+                            <div class="d-flex position-relative z-index-9"> 
+                                <nav aria-label="breadcrumb"> 
+                                    <ol class="breadcrumb breadcrumb-dots mb-1"> 
+                                        <li class="breadcrumb-item">
+                                            <a href="index.html">Home</a> 
+                                        </li>                                         
+                                        <li class="breadcrumb-item">
+                                            <a href="blog.html">Blog</a> 
+                                        </li>                                         
+                                        <li class="breadcrumb-item active" aria-current="page">Founder's Journey</li>                                         
+                                    </ol>                                     
+                                </nav>                                 
+                            </div>                             
+                            <!-- Title -->                             
+                            <h1 class="h2 mb-0">From Peachy Plants to Digital Solutions: A Founder's Journey</h1> 
+                            <!-- Action -->                             
+                            <div class="d-flex align-items-center flex-wrap mt-4"> <a href="#" class="badge text-bg-dark mb-0">Business Growth</a> <span class="text-secondary opacity-3 mx-3">|</span> 
+                                <div class="dropdown"> <a href="#" class="text-secondary text-primary-hover" id="cardFeedAction" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-share me-2"></i>Share</a> 
+                                    <!-- Card feed action dropdown menu -->                                     
+                                    <ul class="dropdown-menu min-w-auto" aria-labelledby="cardFeedAction"> 
+                                        <li>
+                                            <a class="dropdown-item" href="#"> <i class="bi bi-facebook fa-fw me-2"></i>Facebook</a> 
+                                        </li>                                         
+                                        <li>
+                                            <a class="dropdown-item" href="#"> <i class="bi bi-instagram fa-fw me-2"></i>Instagram</a> 
+                                        </li>                                         
+                                        <li>
+                                            <a class="dropdown-item" href="#"> <i class="bi bi-whatsapp fa-fw me-2"></i>Whatsapp</a> 
+                                        </li>                                         
+                                        <li>
+                                            <a class="dropdown-item" href="#"> <i class="fa-regular fa-paste fa-fw me-2"></i>Copy link</a> 
+                                        </li>                                         
+                                    </ul>                                     
+                                </div>                                 <span class="text-secondary opacity-3 mx-3">|</span> <a href="#" class="text-secondary text-primary-hover mb-0"><i class="bi bi-chat me-2"></i>Comments</a> <span class="text-secondary opacity-3 mx-3">|</span> <span class="text-secondary">8 min read</span> 
+                            </div>                             
+                            <!-- Image -->                             
+                            <img src="file:///C:/Users/Nathan/Web%20Dev/Projects/Verosia%20Studio%20v2/template/assets/images/verosia%20home/nathan-cranston-working-on-peachy-plants-website.jpg" class="img-fluid rounded mt-5" alt="Business growth journey" style="width: 100%; height: 400px; object-fit: cover; object-position: center;"> 
+                            <!-- Content -->                             
+                            <p class="mt-5">Every successful business starts with a founder who sees a problem and decides to solve it. For Nathan Cranston, that problem was helping other business owners navigate the confusing world of digital marketing.</p> 
+                            <p>But his journey to becoming Founder of Verosia Studio didn't start in digital marketing. It began with plants, education, and a deep desire to help people succeed in their own ventures.</p> 
+                            <p>Written by Nathan, the design and web guy here at Verosia Studio. I'm a digital media professional with an Associate Bachelor's Degree in Graphic Design and Illustration, and I love helping brands go from idea to online with killer visuals and seamless websites.</p> 
+                            <p>This isn't just a success story—it's a roadmap for any founder looking to pivot, grow, or start their own business journey. <strong>By the end, you'll understand how seemingly unrelated experiences can prepare you for unexpected success</strong> in completely different industries.</p> 
+                            <p class="mb-0">Let's dive into the journey from Peachy Plants to digital solutions.</p> 
+                            <!-- Quote -->                             
+                            <blockquote class="card card-body bg-light overflow-hidden mt-5 p-sm-5"> 
+                                <!-- Vertical line -->                                 
+                                <div class="vr bg-primary h-100 position-absolute top-0 start-0" style="width: 3px; opacity:100%"></div>                                 
+                                <!-- Quote icon -->                                 <span class="display-4 position-absolute top-0 start-0 opacity-1 mt-n3"><i class="bi bi-quote"></i></span> 
+                                <q class="fs-6 heading-color">Every business challenge I faced with Peachy Plants became a lesson I now use to help other founders. The struggles were worth it because they taught me what actually works.</q> 
+                                <div class="blockquote-footer mb-0 lead mt-3"> 
+                                    Nathan Cranston, Founder of Verosia Studio
+</div>                                 
+                            </blockquote>                             
+                            <!-- Image and list content -->                             
+                            <div class="row mt-5"> 
+                                <!-- Content -->                                 
+                                <div class="col-md-6"> 
+                                    <h6 class="mb-4">Key Lessons from the Journey</h6> 
+                                    <!-- List -->                                     
+                                    <ul class="ps-4 mb-4"> 
+                                        <li class="mb-2">Customer relationships matter more than perfect products</li>                                         
+                                        <li class="mb-2">Clear communication solves most business problems</li>                                         
+                                        <li class="mb-2">Building systems early prevents scaling headaches</li>                                         
+                                        <li class="mb-2">Pivoting isn't failure—it's strategic adaptation</li>                                         
+                                        <li class="mb-2">Teaching others reinforces your own expertise</li>                                         
+                                    </ul>                                     
+                                    <!-- Content -->                                     
+                                    <p class="small mb-0">Each challenge became a stepping stone to greater success and deeper understanding.</p> 
+                                </div>                                 
+                                <!-- Image -->                                 
+                                <div class="col-md-6 mt-5 mt-md-0"> <a href="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=center" data-glightbox data-gallery="image-popup"> <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=center" class="rounded" alt="Entrepreneur journey" style="width: 100%; height: 300px; object-fit: cover; object-position: center;"> </a> 
+                                </div>                                 
+                            </div>                             
+                            <h5 class="mt-5 mb-3">The Beginning: From Education to Plants</h5> 
+                            <p>With an Associate Bachelor's Degree in Graphic Design and Illustration from the University of Ulster, Nathan initially pursued a career in design. But his entrepreneurial spirit led him to start Peachy Plants, a plant business that taught him invaluable lessons about customer relationships and business operations.</p> 
+                            <p><strong>The plant business experience:</strong> Managing inventory, customer service, and marketing for Peachy Plants gave Nathan hands-on experience with the challenges every small business owner faces. These challenges would later become the foundation of his expertise at Verosia Studio.</p> 
+                            <h5 class="mt-4 mb-3">The Pivot: Recognizing Bigger Opportunities</h5> 
+                            <p>While running Peachy Plants, Nathan noticed that many business owners struggled with the same digital marketing challenges he had faced. They needed help with social media strategy, customer communication, and building systems that actually worked.</p> 
+                            <p><strong>The insight:</strong> Instead of just solving his own problems, Nathan realized he could help other business owners avoid the same mistakes he had made. This insight led to the founding of Verosia Studio.</p> 
+                            <h5 class="mt-4 mb-3">The Growth: Building Verosia Studio</h5> 
+                            <p>Combining Nathan's design expertise with his technical skills, Verosia Studio was born. Nathan's background in design and illustration proved invaluable—he naturally excelled at creating visual solutions and breaking down complex digital concepts into simple, actionable strategies.</p> 
+                            <p><strong>The advantage:</strong> Having built a business from scratch, Nathan understood the real challenges founders face. This authentic experience allows him to provide practical solutions that actually work in the real world.</p> 
+                            <h5 class="mt-4 mb-3">The Lessons: What Every Founder Should Know</h5> 
+                            <p>Nathan's journey from plants to digital solutions taught him that success isn't about having the perfect plan—it's about being adaptable, learning from challenges, and always putting customers first.</p> 
+                            <p><strong>Key takeaways:</strong> Build relationships before you need them. Invest in systems early. Don't be afraid to pivot when you see better opportunities. And most importantly, focus on solving real problems for real people.</p> 
+                            <h5 class="mt-4 mb-3">The Future: Empowering Other Founders</h5> 
+                            <p>Today, Nathan uses his unique combination of educational background, entrepreneurial experience, and customer-focused approach to help Northern Ireland business owners build digital systems that actually drive growth.</p> 
+                            <p><strong>The mission:</strong> To empower founders with the knowledge and systems they need to succeed online, without the overwhelm and confusion that often comes with digital marketing.</p> 
+                            <h5 class="mt-4 mb-3">Your Turn: Learning from the Journey</h5> 
+                            <p>Every founder's journey is unique, but the principles remain the same. Focus on solving real problems, build genuine relationships, and don't be afraid to adapt when opportunities arise.</p> 
+                            <p>Whether you're just starting out or looking to pivot your existing business, remember that every challenge is a learning opportunity. The skills you develop in one industry often transfer beautifully to another.</p> 
+                            <p class="mb-0">Your journey might not be from plants to digital marketing, but the lessons about persistence, customer focus, and strategic adaptation apply to every business venture.</p> 
+                            <!-- Helpful box -->                             
+                            <div class="bg-light border rounded d-md-flex justify-content-between align-items-center text-center p-3 mt-5"> 
+                                <!-- Title -->                                 
+                                <h6 class="mb-0">Was this article helpful?</h6> <small class="py-3 p-md-0 d-block">Help other business owners by sharing your feedback</small> 
+                                <!-- Check buttons -->                                 
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group"> 
+                                    <!-- Yes button -->                                     
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1"> 
+                                    <label class="btn btn-outline-secondary btn-sm mb-0" for="btnradio1">
+                                        <i class="fa-regular fa-thumbs-up me-1"></i> Yes
+                                    </label>                                     
+                                    <!-- No button -->                                     
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2"> 
+                                    <label class="btn btn-outline-secondary btn-sm mb-0" for="btnradio2"> No <i class="fa-regular fa-thumbs-down ms-1"></i> 
+                                    </label>                                     
+                                </div>                                 
+                            </div>                             
+                        </div>                         
+                        <!-- Main content END -->                         
+                        <!-- Sidebar START -->                         
+                        <div class="col-lg-4 ps-xl-6"> 
+                            <!-- Author detail box -->                             
+                            <div class="card card-body d-inline-block bg-light border p-4"> 
+                                <!-- Avatar and info -->                                 
+                                <div class="d-flex align-items-center mb-3"> 
+                                    <!-- Avatar -->                                     
+                                    <div class="avatar avatar-lg flex-shrink-0 me-2"> 
+                                        <img class="avatar-img rounded-circle" src="assets/images/verosia home/Nathan-cranston-Founder-Verosia-Studio.jpg" alt="Nathan Cranston"> 
+                                    </div>                                     
+                                    <div class="ms-2"> 
+                                        <h6 class="mb-0"><a href="#">Nathan Cranston</a></h6> <small>Founder & Lead Designer</small> 
+                                    </div>                                     
+                                </div>                                 
+                                <p>Written by Nathan, the design and web guy here at Verosia Studio. I'm a digital media professional with an Associate Bachelor's Degree in Graphic Design and Illustration, and I love helping brands go from idea to online with killer visuals and seamless websites.</p> 
+                                <!-- Button -->                                 <a href="about.html" class="btn btn-sm btn-outline-primary mb-0">Learn more about Nathan</a> 
+                            </div>                             
+                            <!-- Related post -->                             
+                            <div class="align-items-center mt-5"> 
+                                <h6 class="mb-3 d-inline-block">Related post:</h6> 
+                                <ul class="list-group list-group-flush"> 
+                                    <li class="list-group-item ps-0">
+                                        <a href="verosia-blog-wordpress-speed.html" class="heading-color text-primary-hover fw-semibold">Why Your WordPress Site is Slower Than Your Competitors</a> 
+                                    </li>                                     
+                                    <li class="list-group-item ps-0">
+                                        <a href="verosia-blog-digital-marketing-mistakes.html" class="heading-color text-primary-hover fw-semibold">5 Digital Marketing Mistakes Killing Your Business Growth</a> 
+                                    </li>                                     
+                                    <li class="list-group-item ps-0">
+                                        <a href="verosia-blog-local-seo-northern-ireland.html" class="heading-color text-primary-hover fw-semibold">Local SEO: The Secret Weapon for Northern Ireland Small Businesses</a> 
+                                    </li>                                     
+                                    <li class="list-group-item ps-0">
+                                        <a href="verosia-blog-consistent-branding.html" class="heading-color text-primary-hover fw-semibold">How Consistent Branding Transforms Customer Trust</a> 
+                                    </li>                                     
+                                </ul>                                 
+                            </div>                             
+                            <!-- Popular tags -->                             
+                            <div class="align-items-center mt-5"> 
+                                <h6 class="mb-3 d-inline-block">Popular Tags:</h6> 
+                                <ul class="list-inline mb-0"> 
+                                    <li class="list-inline-item"> <a class="btn btn-light btn-sm" href="#">business growth</a> 
+                                    </li>                                     
+                                    <li class="list-inline-item"> <a class="btn btn-light btn-sm" href="#">founder journey</a> 
+                                    </li>                                     
+                                    <li class="list-inline-item"> <a class="btn btn-light btn-sm" href="#">entrepreneurship</a> 
+                                    </li>                                     
+                                    <li class="list-inline-item"> <a class="btn btn-light btn-sm" href="#">small business</a> 
+                                    </li>                                     
+                                    <li class="list-inline-item"> <a class="btn btn-light btn-sm" href="#">pivot</a> 
+                                    </li>                                     
+                                    <li class="list-inline-item"> <a class="btn btn-light btn-sm" href="#">customer relationships</a> 
+                                    </li>                                     
+                                    <li class="list-inline-item"> <a class="btn btn-light btn-sm" href="#">digital strategy</a> 
+                                    </li>                                     
+                                    <li class="list-inline-item"> <a class="btn btn-light btn-sm" href="#">social media</a> 
+                                    </li>                                     
+                                    <li class="list-inline-item"> <a class="btn btn-light btn-sm" href="#">northern ireland</a> 
+                                    </li>                                     
+                                    <li class="list-inline-item"> <a class="btn btn-light btn-sm" href="#">lessons learned</a> 
+                                    </li>                                     
+                                </ul>                                 
+                            </div>                             
+                        </div>                         
+                        <!-- Sidebar END -->                         
+                    </div>                     
+                </div>                 
+            </section>             
+            <!-- =======================
+Blog detail END -->             
+        </main>         
+        <!-- **************** MAIN CONTENT END **************** -->         
+        <!-- =======================
+                <!-- Footer Container -->
+        <div id="footer-container"></div>         
+        <!-- Back to top -->         
+        <div class="back-top"></div>         
+        <!-- Bootstrap JS -->         
+        <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>         
+        <!-- Vendors -->         
+        <script src="assets/vendor/ityped/index.js"></script>         
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>         
+        <!-- Theme Functions -->         
+        <script src="assets/js/functions.js"></script>         
+        <!-- Template Loader Script -->
+        <script>
+            // Simple template loader
+            async function loadTemplate(containerId, templatePath) {
+                try {
+                    const response = await fetch(templatePath);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const html = await response.text();
+                    document.getElementById(containerId).innerHTML = html;
+
+                    console.log(`✅ ${templatePath} loaded successfully`);
+                } catch (error) {
+                    console.error(`❌ Error loading ${templatePath}:`, error);
+                }
+            }
+
+            // Dropdown hover functionality (desktop only)
+            function initDropdownHover() {
+                const dropdownHoverElements = document.querySelectorAll('.dropdown-hover');
+
+                dropdownHoverElements.forEach(element => {
+                    const dropdown = element.querySelector('.dropdown-menu');
+                    const dropdownToggle = element.querySelector('[data-bs-toggle="dropdown"]');
+
+                    if (dropdown && dropdownToggle) {
+                        let timeout;
+                        let isHoverEnabled = true;
+
+                        // Check if we're in mobile view (hamburger menu visible)
+                        function isMobileView() {
+                            return window.getComputedStyle(document.querySelector('.navbar-toggler')).display !== 'none';
+                        }
+
+                        // Only trigger on the specific dropdown item, not parent containers
+                        dropdownToggle.addEventListener('mouseenter', function() {
+                            // Only enable hover when NOT in mobile view (hamburger menu hidden)
+                            if (isHoverEnabled && !isMobileView()) {
+                                clearTimeout(timeout);
+                                const bsDropdown = new bootstrap.Dropdown(dropdownToggle);
+                                bsDropdown.show();
+                            }
+                        });
+
+                        // Hide when leaving the entire dropdown container
+                        element.addEventListener('mouseleave', function() {
+                            // Only hide on hover when NOT in mobile view
+                            if (!isMobileView()) {
+                                timeout = setTimeout(() => {
+                                    const bsDropdown = bootstrap.Dropdown.getInstance(dropdownToggle);
+                                    if (bsDropdown) {
+                                        bsDropdown.hide();
+                                    }
+                                }, 100);
+                            }
+                        });
+
+                        // Disable hover temporarily when clicking (to prevent conflicts)
+                        dropdownToggle.addEventListener('click', function() {
+                            isHoverEnabled = false;
+                            setTimeout(() => {
+                                isHoverEnabled = true;
+                            }, 1000);
+                        });
+                    }
+                });
+            }
+
+            // Initialize sticky header functionality
+            function initStickyHeader() {
+                var stickyNav = document.querySelector('.header-sticky');
+                if (stickyNav) {
+                    let ticking = false;
+                    
+                    // Add mobile-specific CSS for better sticky header support
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        @media (max-width: 768px) {
+                            header.header-sticky-on {
+                                position: fixed !important;
+                                -webkit-transform: translateZ(0);
+                                transform: translateZ(0);
+                                -webkit-backface-visibility: hidden;
+                                backface-visibility: hidden;
+                                background-color: var(--bs-body-bg) !important;
+                                border-bottom: 1px solid var(--bs-gray-200) !important;
+                                width: 100% !important;
+                                z-index: 1040 !important;
+                            }
+                            [data-bs-theme=dark] header.header-sticky-on {
+                                border-bottom: 1px solid var(--bs-border-color) !important;
+                            }
+                        }
+                    `;
+                    document.head.appendChild(style);
+                    
+                    function updateStickyHeader() {
+                        var scTop = window.pageYOffset || document.documentElement.scrollTop;
+                        if (scTop >= 400) {
+                            stickyNav.classList.add('header-sticky-on');
+                        } else {
+                            stickyNav.classList.remove('header-sticky-on');
+                        }
+                        ticking = false;
+                    }
+                    
+                    function requestTick() {
+                        if (!ticking) {
+                            requestAnimationFrame(updateStickyHeader);
+                            ticking = true;
+                        }
+                    }
+                    
+                    // Use both scroll and touchmove events for better mobile support
+                    document.addEventListener('scroll', requestTick, { passive: true });
+                    document.addEventListener('touchmove', requestTick, { passive: true });
+                    
+                    // Also listen on window for better mobile support
+                    window.addEventListener('scroll', requestTick, { passive: true });
+                    window.addEventListener('touchmove', requestTick, { passive: true });
+                }
+            }
+
+            // Initialize dark mode functionality
+            function initDarkMode() {
+                const el = document.querySelector('.theme-icon-active');
+                if(el !== undefined && el !== null) {
+                    const showActiveTheme = theme => {
+                        const activeThemeIcon = document.querySelector('.theme-icon-active use')
+                        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+                        const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+
+                        document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                            element.classList.remove('active')
+                        })
+
+                        btnToActive.classList.add('active')
+                        activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+                    }
+
+                    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                        const storedTheme = localStorage.getItem('theme')
+                        if (storedTheme !== 'light' || storedTheme !== 'dark') {
+                            setTheme(getPreferredTheme())
+                        }
+                    })
+
+                    showActiveTheme(getPreferredTheme())
+
+                    // Use event delegation to handle theme toggle clicks
+                    document.addEventListener('click', (e) => {
+                        if (e.target.closest('[data-bs-theme-value]')) {
+                            const toggle = e.target.closest('[data-bs-theme-value]')
+                            const theme = toggle.getAttribute('data-bs-theme-value')
+                            localStorage.setItem('theme', theme)
+                            setTheme(theme)
+                            showActiveTheme(theme)
+                        }
+                    })
+                }
+            }
+
+            // Load templates when page loads
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log('   Loading templates...');
+                loadTemplate('header-container', 'templates/header.html');
+                loadTemplate('footer-container', 'templates/footer.html');
+
+                // Initialize dropdown hover, dark mode, and sticky header after templates load
+                setTimeout(() => {
+                    initDropdownHover();
+                    initDarkMode();
+                    initStickyHeader();
+                }, 500);
+            });
+        </script>         
+    </body>     
+</html>

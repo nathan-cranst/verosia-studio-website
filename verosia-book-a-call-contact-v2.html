@@ -1,0 +1,178 @@
+<!DOCTYPE html> 
+<html lang="en" data-bs-theme="auto"> 
+    <head> 
+        <!-- Meta Tags -->         
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-K5QRF4CR');</script>
+        <!-- End Google Tag Manager --> 
+        <title>--- Verosia Studio</title> 
+        <meta name="description" content="Book a free strategy call with Verosia Studio. Get clarity on your digital problems and actionable solutions."> 
+        <meta name="keywords" content="digital strategy, website development, SEO, social media management, brand design, free consultation"> 
+        <!-- Dark mode -->         
+        <script>
+		const storedTheme = localStorage.getItem('theme')
+ 
+		const getPreferredTheme = () => {
+			if (storedTheme) {
+				return storedTheme
+			}
+			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
+		}
+
+		const setTheme = function (theme) {
+			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-bs-theme', 'dark')
+			} else {
+				document.documentElement.setAttribute('data-bs-theme', theme)
+			}
+		}
+
+		setTheme(getPreferredTheme())
+
+		// Fix mobile navbar collapse issues
+		document.addEventListener('DOMContentLoaded', function() {
+			const navbarToggler = document.querySelector('.navbar-toggler')
+			const navbarCollapse = document.querySelector('.navbar-collapse')
+			
+			if (navbarToggler && navbarCollapse) {
+				// Close navbar when clicking outside
+				document.addEventListener('click', function(e) {
+					if (!navbarToggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
+						if (navbarCollapse.classList.contains('show')) {
+							navbarToggler.click()
+						}
+					}
+				})
+				
+				// Close navbar when clicking on nav links
+				const navLinks = document.querySelectorAll('.navbar-nav .nav-link')
+				navLinks.forEach(link => {
+					link.addEventListener('click', function() {
+						if (navbarCollapse.classList.contains('show')) {
+							navbarToggler.click()
+						}
+					})
+				})
+			}
+		})
+		
+	</script>         
+        <!-- Favicon -->         
+        <link rel="shortcut icon" href="assets/images/favicon.ico?v=2"> 
+        <!-- Google Font -->         
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="../css/theme.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"> 
+        <!-- Plugins CSS -->         
+        <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css"> 
+        <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css"> 
+        <link rel="stylesheet" type="text/css" href="assets/vendor/swiper/swiper-bundle.min.css"> 
+        <!-- Theme CSS -->         
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <!-- Mobile Calendar Scroll Fix -->
+        <style>
+            @media (max-width: 768px) {
+                .card-body {
+                    overflow: auto;
+                    -webkit-overflow-scrolling: touch;
+                }
+                iframe {
+                    height: 1580px !important;
+                }
+            }
+        </style> 
+    </head> 
+    <body> 
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5QRF4CR"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        
+        <!-- Header Container -->
+        <div id="header-container"></div>         
+        <!-- **************** MAIN CONTENT START **************** -->         
+        <main> 
+            <!-- =======================
+Google Calendar Booking START -->
+            <section class="pt-9 pt-md-10">
+                <div class="container">
+                    <!-- Title -->
+                    <div class="inner-container-small text-center mb-4 mb-sm-6">
+                        <h2 class="mb-2">Book Your Free Strategy Call</h2>
+                        <p class="mb-0">In 15 minutes, you'll get clarity on your three biggest digital problems and at least one actionable fix you can implement today. We'll talk about your specific situation, whether that's WordPress chaos, social media overwhelm, or websites that don't convert. If we can help further, we'll discuss how. If not, you still walk away with valuable insights.</p>
+                    </div>
+                    <!-- Google Calendar iframe -->
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <div class="card border-0 shadow-sm" style="border: 2px solid #8E8CF2 !important; border-radius: 15px; overflow: hidden;">
+                                <div class="card-header bg-light" style="background: linear-gradient(135deg, #8E8CF2 0%, #6B6AD8 100%) !important; color: white; padding: 1rem; text-align: center;">
+                                    <h5 class="mb-0" style="font-family: 'Instrument Sans', sans-serif; font-weight: 600;"> <i class="bi bi-calendar-check me-2"></i>Schedule Your Free Strategy Call </h5>
+                                    <p class="mb-0 mt-2" style="font-size: 0.9rem; opacity: 0.9;">Choose a time that works best for you</p>
+                                </div>
+                                <div class="card-body p-0">
+                                    <!-- Google Calendar Appointment Scheduling begin -->
+                                    <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2aOMbVjlXnNyiz52gmXF1CoS1jx6jK9TQt_UKapHFDJHQCs3w4FDiw89oEclkylImV4TvgRlhC?gv=true" style="border: 0; overflow: auto; -webkit-overflow-scrolling: touch;" width="100%" height="1020" frameborder="0" scrolling="yes"></iframe>
+                                    <!-- end Google Calendar Appointment Scheduling -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- =======================
+Google Calendar Booking END -->
+        </main>
+        <!-- **************** MAIN CONTENT END **************** -->
+
+        <!-- Footer Container -->
+        <div id="footer-container"></div>
+
+        <!-- Bootstrap JS -->         
+        <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script> 
+        <!-- Swiper JS -->         
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script> 
+        <!-- Theme Functions -->
+        <script src="assets/js/functions.js"></script>
+        <script src="assets/js/theme.min.js"></script> 
+        <!-- Template Loading Script -->
+        <script>
+            async function loadTemplate(containerId, templatePath) {
+                try {
+                    const response = await fetch(templatePath);
+                    const html = await response.text();
+                    document.getElementById(containerId).innerHTML = html;
+                } catch (error) {
+                    console.error(`Error loading template ${templatePath}:`, error);
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log('Loading templates...');
+                loadTemplate('header-container', 'templates/header.html');
+                loadTemplate('footer-container', 'templates/footer.html');
+                
+                // Initialize header functionality after templates load
+                setTimeout(() => {
+                    // Initialize theme functions
+                    if (typeof e !== 'undefined' && e.dropdownHover) {
+                        e.dropdownHover();
+                    }
+                    if (typeof e !== 'undefined' && e.darkMode) {
+                        e.darkMode();
+                    }
+                    if (typeof e !== 'undefined' && e.stickyHeader) {
+                        e.stickyHeader();
+                    }
+                }, 500);
+            });
+        </script>
+    </body>
+</html>

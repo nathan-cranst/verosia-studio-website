@@ -1,0 +1,180 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <title>Thank You - Verosia Studio</title>         
+        <!-- Meta Tags -->         
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="robots" content="noindex">
+        
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-K5QRF4CR');</script>
+        <!-- End Google Tag Manager -->
+        
+        <meta name="author" content="Verosia Studio"> 
+        <meta name="description" content="Thank you for contacting Verosia Studio. We'll be in touch within 24 hours."> 
+        <!-- Dark mode -->         
+        <script>
+		const storedTheme = localStorage.getItem('theme')
+
+		const getPreferredTheme = () => {
+			if (storedTheme) {
+				return storedTheme
+			}
+			return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+		}
+
+		const setTheme = function (theme) {
+			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-bs-theme', 'dark')
+			} else {
+				document.documentElement.setAttribute('data-bs-theme', theme)
+			}
+		}
+
+		setTheme(getPreferredTheme())
+
+		window.addEventListener('DOMContentLoaded', () => {
+			var el = document.querySelector('.theme-icon-active');
+			if(el != 'undefined' && el != null) {
+				const showActiveTheme = (theme, focus = false) => {
+					const themeSwitcher = document.querySelector('#bd-theme')
+
+					if (!themeSwitcher) {
+						return
+					}
+
+					const themeSwitcherText = document.querySelector('#bd-theme-text')
+					const activeThemeIcon = document.querySelector('.theme-icon-active use')
+					const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+					const iconOfActiveBtn = btnToActive.querySelector('svg use').getAttribute('href')
+
+					document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+						element.classList.remove('active')
+						element.setAttribute('aria-pressed', 'false')
+					})
+
+					btnToActive.classList.add('active')
+					btnToActive.setAttribute('aria-pressed', 'true')
+					activeThemeIcon.setAttribute('href', iconOfActiveBtn)
+
+					const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+					themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+
+					if (focus) {
+						themeSwitcher.focus()
+					}
+				}
+
+				window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+					if (storedTheme !== 'light' || storedTheme !== 'dark') {
+						setTheme(getPreferredTheme())
+					}
+				})
+
+				showActiveTheme(getPreferredTheme())
+
+				document.querySelectorAll('[data-bs-theme-value]')
+					.forEach(toggle => {
+						toggle.addEventListener('click', () => {
+							const theme = toggle.getAttribute('data-bs-theme-value')
+							localStorage.setItem('theme', theme)
+							setTheme(theme)
+							showActiveTheme(theme, true)
+						})
+					})
+
+			}
+		})
+
+	</script>
+        <!-- Favicon -->         
+        <link rel="shortcut icon" href="assets/images/favicon.ico"> 
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico"> 
+        <!-- Bootstrap CSS -->         
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> 
+        <link href="assets/vendor/aos/aos.css" rel="stylesheet"> 
+        <link href="assets/vendor/glightbox/css/glightbox.css" rel="stylesheet"> 
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> 
+        <!-- Theme CSS -->         
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+    </head>     
+    <body> 
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5QRF4CR"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        
+        <!-- Header Container -->
+        <div id="header-container"></div>         
+        <!-- **************** MAIN CONTENT START **************** -->         
+        <main> 
+            <!-- =======================
+Thank You Page START -->             
+            <section class="py-5"> 
+                <div class="container"> 
+                    <div class="row justify-content-center"> 
+                        <div class="col-lg-8 col-xl-6"> 
+                            <div class="text-center"> 
+                                <!-- Success Icon -->                                 
+                                <div class="mb-4"> 
+                                    <div class="avatar avatar-4xl bg-primary bg-opacity-10 mx-auto"> 
+                                        <i class="bi bi-check-circle-fill text-primary fs-1"></i> 
+                                    </div>                                     
+                                </div>                                 
+                                <!-- Title -->                                 
+                                <h1 class="mb-3">Thank You!</h1> 
+                                <p class="mb-4 fs-5">Your message has been sent successfully. We'll get back to you within 24 hours.</p> 
+                                <!-- Action Buttons -->                                 
+                                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center"> 
+                                    <a href="index.html" class="btn btn-primary">Back to Home</a> 
+                                    <a href="verosia-book-a-call-contact-v2.html" class="btn btn-outline-primary">Book a Call</a> 
+                                </div>                                 
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                </div>                 
+            </section>             
+            <!-- =======================
+Thank You Page END -->             
+        </main>         
+        <!-- **************** MAIN CONTENT END **************** -->         
+        <!-- Footer Container -->
+        <div id="footer-container"></div>
+        <!-- Back to top -->         
+        <div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+        <!-- Bootstrap JS -->         
+        <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script> 
+        <!-- Vendors -->         
+        <script src="assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script> 
+        <script src="assets/vendor/aos/aos.js"></script> 
+        <script src="assets/vendor/glightbox/js/glightbox.js"></script> 
+        <script src="assets/vendor/typedjs/typed.min.js"></script> 
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script> 
+        <!-- Template Functions -->         
+        <script src="assets/js/functions.js"></script> 
+        <!-- Load Header and Footer -->
+        <script>
+            // Load header
+            fetch('templates/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+
+            // Load footer
+            fetch('templates/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        </script>
+    </body>     
+</html>
