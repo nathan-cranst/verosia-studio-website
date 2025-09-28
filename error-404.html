@@ -17,7 +17,49 @@
         <meta name="author" content="Verosia Studio"> 
         <meta name="description" content="Page not found - 404 error. The page you're looking for doesn't exist. Return to Verosia Studio's homepage or browse our digital marketing services.">
         <meta name="robots" content="noindex, follow">
-        <link rel="canonical" href="https://verosiastudio.com/error-404.html"> 
+        <meta name="keywords" content="404 error, page not found, Verosia Studio, digital marketing, web design, SEO services">
+        <link rel="canonical" href="https://verosiastudio.com/error-404.html">
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://verosiastudio.com/error-404.html">
+        <meta property="og:title" content="Page Not Found - Verosia Studio">
+        <meta property="og:description" content="Page not found - 404 error. The page you're looking for doesn't exist. Return to Verosia Studio's homepage or browse our digital marketing services.">
+        <meta property="og:image" content="https://verosiastudio.com/assets/images/verosia home/verosia logo.png">
+        
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://verosiastudio.com/error-404.html">
+        <meta property="twitter:title" content="Page Not Found - Verosia Studio">
+        <meta property="twitter:description" content="Page not found - 404 error. The page you're looking for doesn't exist. Return to Verosia Studio's homepage or browse our digital marketing services.">
+        <meta property="twitter:image" content="https://verosiastudio.com/assets/images/verosia home/verosia logo.png">
+        
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Page Not Found - Verosia Studio",
+          "description": "Page not found - 404 error. The page you're looking for doesn't exist. Return to Verosia Studio's homepage or browse our digital marketing services.",
+          "url": "https://verosiastudio.com/error-404.html",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "Verosia Studio",
+            "url": "https://verosiastudio.com",
+            "logo": "https://verosiastudio.com/assets/images/verosia home/verosia logo.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Belfast",
+              "addressCountry": "UK"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/company/verosia-studio",
+              "https://www.instagram.com/verosiastudio"
+            ]
+          }
+        }
+        </script>
+        
         <!-- Dark mode -->         
         <script>
 		const storedTheme = localStorage.getItem('theme')
@@ -26,7 +68,7 @@
 			if (storedTheme) {
 				return storedTheme
 			}
-			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
+			return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 		}
 
 		const setTheme = function (theme) {
@@ -174,9 +216,44 @@ Footer START -->
         const footerResponse = await fetch('templates/footer.html');
         const footerHTML = await footerResponse.text();
         document.getElementById('footer-container').innerHTML = footerHTML;
+        
+        // Initialize cookie banner after templates are loaded
+        initializeCookieBanner();
       } catch (error) {
         console.error('Error loading templates:', error);
       }
+    }
+    
+    // Cookie Banner Initialization
+    function initializeCookieBanner() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+
+        // Show banner unless a previous choice exists
+        var choice = localStorage.getItem('vs_consent');
+        if (!choice) {
+            var banner = document.getElementById('vs-consent');
+            if (banner) banner.style.display = 'block';
+        }
+
+        function setConsent(state){
+            gtag('consent','update',{
+                'ad_storage': state,
+                'analytics_storage': state,
+                'ad_user_data': state,
+                'ad_personalization': state
+            });
+            localStorage.setItem('vs_consent', state);
+            var banner = document.getElementById('vs-consent');
+            if (banner) banner.style.display = 'none';
+        }
+
+        // Add event listeners
+        var acceptBtn = document.getElementById('vs-accept');
+        var rejectBtn = document.getElementById('vs-reject');
+        
+        if (acceptBtn) acceptBtn.onclick = function(){ setConsent('granted'); };
+        if (rejectBtn) rejectBtn.onclick = function(){ setConsent('denied'); };
     }
     
     // Load templates when page loads

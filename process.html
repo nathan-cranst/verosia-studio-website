@@ -98,7 +98,7 @@
 			if (storedTheme) {
 				return storedTheme
 			}
-			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
+			return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 		}
 
 		const setTheme = function (theme) {
@@ -237,7 +237,7 @@ How it works START -->
                                                 <i class="bi bi-patch-check text-primary me-2"></i>Honest recommendations
                                             </li>                                             
                                         </ul>                                         
-                                        <!-- Button -->                                         <a class="btn btn-primary icon-link icon-link-hover" href="verosia-free-audit-v2.html">Get Free Digital Audit<i class="bi bi-arrow-right"></i> </a> 
+                                        <!-- Button -->                                         <a class="btn btn-primary icon-link icon-link-hover" href="free-digital-marketing-audit.html">Get Free Digital Audit<i class="bi bi-arrow-right"></i> </a> 
                                     </div>                                     
                                 </div>                                 
                                 <!-- Image -->                                 
@@ -450,7 +450,7 @@ CTA START -->
                             <figure class="position-absolute top-100 start-100 translate-middle d-none d-lg-block"> 
                             </figure>                             
                             <!-- Buttons -->                             
-                            <div class="d-grid d-sm-flex justify-content-center gap-2 gap-sm-4 mt-5"> <a href="verosia-free-audit-v2.html" class="btn btn-lg btn-primary mb-0">Get Free Digital Audit</a> <a href="verosia-faq.html#contact-form" class="btn btn-lg btn-outline-primary mb-0">Ask us anything</a> 
+                            <div class="d-grid d-sm-flex justify-content-center gap-2 gap-sm-4 mt-5"> <a href="free-digital-marketing-audit.html" class="btn btn-lg btn-primary mb-0">Get Free Digital Audit</a> <a href="digital-marketing-faq-belfast.html#contact-form" class="btn btn-lg btn-outline-primary mb-0">Ask us anything</a> 
                             </div>                             
                         </div>                         
                     </div>                     
@@ -635,6 +635,38 @@ CTA END -->
                 }
             }
 
+            // Cookie Banner Initialization
+            function initializeCookieBanner() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+
+                // Show banner unless a previous choice exists
+                var choice = localStorage.getItem('vs_consent');
+                if (!choice) {
+                    var banner = document.getElementById('vs-consent');
+                    if (banner) banner.style.display = 'block';
+                }
+
+                function setConsent(state){
+                    gtag('consent','update',{
+                        'ad_storage': state,
+                        'analytics_storage': state,
+                        'ad_user_data': state,
+                        'ad_personalization': state
+                    });
+                    localStorage.setItem('vs_consent', state);
+                    var banner = document.getElementById('vs-consent');
+                    if (banner) banner.style.display = 'none';
+                }
+
+                // Add event listeners
+                var acceptBtn = document.getElementById('vs-accept');
+                var rejectBtn = document.getElementById('vs-reject');
+                
+                if (acceptBtn) acceptBtn.onclick = function(){ setConsent('granted'); };
+                if (rejectBtn) rejectBtn.onclick = function(){ setConsent('denied'); };
+            }
+
             // Load templates when page loads
             document.addEventListener('DOMContentLoaded', function() {
                 console.log('   Loading templates...');
@@ -646,7 +678,13 @@ CTA END -->
                     initDropdownHover();
                     initDarkMode();
                     initStickyHeader();
+                    initializeCookieBanner();
                 }, 500);
+                
+                // Also initialize cookie banner immediately (backup in case template loading is slow)
+                setTimeout(() => {
+                    initializeCookieBanner();
+                }, 100);
             });
         </script>         
     </body>     

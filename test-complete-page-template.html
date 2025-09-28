@@ -1,0 +1,241 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <title>Your Page Title - Verosia Studio</title>         
+        <!-- Meta Tags -->         
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-K5QRF4CR');</script>
+        <!-- End Google Tag Manager -->
+        
+        <!-- Dark mode script -->
+        <script>
+        const storedTheme = localStorage.getItem('theme')
+        const getPreferredTheme = () => {
+            if (storedTheme) {
+                return storedTheme
+            }
+            return 'auto'
+        }
+        const setTheme = function (theme) {
+            if (theme === 'auto') {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark')
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', 'light')
+                }
+            } else {
+                document.documentElement.setAttribute('data-bs-theme', theme)
+            }
+        }
+        setTheme(getPreferredTheme())
+        </script>
+        
+        <meta name="author" content="Verosia Studio"> 
+        <meta name="description" content="Your page description here"> 
+        
+        <!-- Favicon -->         
+        <link rel="shortcut icon" href="assets/images/favicon.ico"> 
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico"> 
+        <!-- Bootstrap CSS -->         
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> 
+        <link href="assets/vendor/aos/aos.css" rel="stylesheet"> 
+        <link href="assets/vendor/glightbox/css/glightbox.css" rel="stylesheet"> 
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> 
+        <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css"> 
+        <!-- Theme CSS -->         
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+    </head>     
+    <body> 
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5QRF4CR"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        
+        <!-- Header Container -->
+        <div id="header-container"></div>         
+        
+        <!-- **************** MAIN CONTENT START **************** -->         
+        <main> 
+            <!-- Your page content here -->
+            <section class="pt-8 pb-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Your Page Title</h1>
+                            <p>Your content goes here...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>         
+        <!-- **************** MAIN CONTENT END **************** -->         
+        
+        <!-- Footer Container -->
+        <div id="footer-container"></div>
+        
+        <!-- Back to top -->         
+        <div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+        <!-- Bootstrap JS -->         
+        <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script> 
+        <!-- Vendors -->         
+        <script src="assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script> 
+        <script src="assets/vendor/aos/aos.js"></script> 
+        <script src="assets/vendor/glightbox/js/glightbox.js"></script> 
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script> 
+        <!-- Template Functions -->         
+        <script src="assets/js/functions.js"></script> 
+        
+        <!-- Load Header and Footer Templates -->
+        <script>
+            // Load header
+            fetch('templates/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                    // Initialize cookie banner after header loads
+                    initializeCookieBanner();
+                    // Initialize dark mode after header loads
+                    initializeDarkMode();
+                    // Initialize dropdown hover after header loads
+                    initializeDropdownHover();
+                })
+                .catch(error => console.error('Error loading header:', error));
+
+            // Load footer
+            fetch('templates/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+
+            // Cookie Banner Initialization
+            function initializeCookieBanner() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+
+                // Show banner unless a previous choice exists
+                var choice = localStorage.getItem('vs_consent');
+                if (!choice) {
+                    var banner = document.getElementById('vs-consent');
+                    if (banner) banner.style.display = 'block';
+                }
+
+                function setConsent(state){
+                    gtag('consent','update',{
+                        'ad_storage': state,
+                        'analytics_storage': state,
+                        'ad_user_data': state,
+                        'ad_personalization': state
+                    });
+                    localStorage.setItem('vs_consent', state);
+                    var banner = document.getElementById('vs-consent');
+                    if (banner) banner.style.display = 'none';
+                }
+
+                // Add event listeners
+                var acceptBtn = document.getElementById('vs-accept');
+                var rejectBtn = document.getElementById('vs-reject');
+                
+                if (acceptBtn) acceptBtn.onclick = function(){ setConsent('granted'); };
+                if (rejectBtn) rejectBtn.onclick = function(){ setConsent('denied'); };
+
+                // Optional: provide a way to re-open banner
+                window.openConsent = function(){
+                    localStorage.removeItem('vs_consent');
+                    var banner = document.getElementById('vs-consent');
+                    if (banner) banner.style.display = 'block';
+                };
+            }
+
+            // Dark Mode Initialization
+            function initializeDarkMode() {
+                const el = document.querySelector('.theme-icon-active');
+                if(el !== undefined && el !== null) {
+                    const showActiveTheme = theme => {
+                        const activeThemeIcon = document.querySelector('.theme-icon-active use')
+                        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+                        const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+
+                        document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                            element.classList.remove('active')
+                        })
+
+                        btnToActive.classList.add('active')
+                        activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+                    }
+
+                    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                        const storedTheme = localStorage.getItem('theme')
+                        if (storedTheme === 'auto' || !storedTheme) {
+                            setTheme(getPreferredTheme())
+                            showActiveTheme(getPreferredTheme())
+                        }
+                    })
+
+                    showActiveTheme(getPreferredTheme())
+
+                    // Use event delegation to handle theme toggle clicks
+                    document.addEventListener('click', (e) => {
+                        if (e.target.closest('[data-bs-theme-value]')) {
+                            const toggle = e.target.closest('[data-bs-theme-value]')
+                            const theme = toggle.getAttribute('data-bs-theme-value')
+                            localStorage.setItem('theme', theme)
+                            setTheme(theme)
+                            showActiveTheme(theme)
+                        }
+                    })
+                }
+            }
+
+            // Dropdown Hover Initialization
+            function initializeDropdownHover() {
+                const dropdownHoverElements = document.querySelectorAll('.dropdown-hover');
+                
+                dropdownHoverElements.forEach(element => {
+                    const dropdownToggle = element.querySelector('[data-bs-toggle="dropdown"]');
+                    const dropdownMenu = element.querySelector('.dropdown-menu');
+                    
+                    if (dropdownToggle && dropdownMenu) {
+                        let hoverTimeout;
+                        
+                        // Show dropdown on hover
+                        element.addEventListener('mouseenter', () => {
+                            clearTimeout(hoverTimeout);
+                            dropdownMenu.classList.add('show');
+                            dropdownToggle.setAttribute('aria-expanded', 'true');
+                        });
+                        
+                        // Hide dropdown after delay when mouse leaves
+                        element.addEventListener('mouseleave', () => {
+                            hoverTimeout = setTimeout(() => {
+                                dropdownMenu.classList.remove('show');
+                                dropdownToggle.setAttribute('aria-expanded', 'false');
+                            }, 150);
+                        });
+                        
+                        // Keep dropdown open when hovering over menu
+                        dropdownMenu.addEventListener('mouseenter', () => {
+                            clearTimeout(hoverTimeout);
+                        });
+                        
+                        dropdownMenu.addEventListener('mouseleave', () => {
+                            hoverTimeout = setTimeout(() => {
+                                dropdownMenu.classList.remove('show');
+                                dropdownToggle.setAttribute('aria-expanded', 'false');
+                            }, 150);
+                        });
+                    }
+                });
+            }
+        </script>
+    </body>     
+</html>

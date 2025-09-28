@@ -15,6 +15,55 @@
         <!-- End Google Tag Manager --> 
         <meta name="author" content="Verosia Studio"> 
         <meta name="description" content="Discover the common WordPress performance issues killing your site speed and learn how to fix them to outperform your competitors."> 
+        <meta name="keywords" content="wordpress speed optimization, wordpress performance, wordpress belfast, website speed, wordpress development belfast, wordpress optimization">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https://verosiastudio.com/wordpress-speed-optimization-belfast.html">
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https://verosiastudio.com/wordpress-speed-optimization-belfast.html">
+        <meta property="og:title" content="Why Your WordPress Site is Slower Than Your Competitors - Verosia Studio">
+        <meta property="og:description" content="Discover the common WordPress performance issues killing your site speed and learn how to fix them to outperform your competitors.">
+        <meta property="og:image" content="https://verosiastudio.com/assets/images/verosia home/verosia logo.png">
+        
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://verosiastudio.com/wordpress-speed-optimization-belfast.html">
+        <meta property="twitter:title" content="Why Your WordPress Site is Slower Than Your Competitors - Verosia Studio">
+        <meta property="twitter:description" content="Discover the common WordPress performance issues killing your site speed and learn how to fix them to outperform your competitors.">
+        <meta property="twitter:image" content="https://verosiastudio.com/assets/images/verosia home/verosia logo.png">
+        
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Why Your WordPress Site is Slower Than Your Competitors",
+          "description": "Discover the common WordPress performance issues killing your site speed and learn how to fix them to outperform your competitors.",
+          "url": "https://verosiastudio.com/wordpress-speed-optimization-belfast.html",
+          "datePublished": "2025-01-20",
+          "dateModified": "2025-01-20",
+          "author": {
+            "@type": "Organization",
+            "name": "Verosia Studio",
+            "url": "https://verosiastudio.com"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Verosia Studio",
+            "url": "https://verosiastudio.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://verosiastudio.com/assets/images/verosia home/verosia logo.png"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://verosiastudio.com/wordpress-speed-optimization-belfast.html"
+          }
+        }
+        </script>
+        
         <!-- Dark mode -->         
         <script>
 		const storedTheme = localStorage.getItem('theme')
@@ -23,7 +72,7 @@
 			if (storedTheme) {
 				return storedTheme
 			}
-			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
+			return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 		}
 
 		const setTheme = function (theme) {
@@ -450,25 +499,25 @@ Blog detail END -->
                     tags: ['web-development', 'wordpress', 'performance', 'speed', 'optimization', 'small-business'],
                     author: 'Nathan Cranston'
                 },
-                'verosia-blog-digital-marketing-mistakes.html': {
+                'digital-marketing-mistakes-small-business-belfast.html': {
                     title: '5 Digital Marketing Mistakes Killing Your Business Growth',
                     category: 'digital-strategy',
                     tags: ['digital-strategy', 'business-growth', 'marketing', 'strategy', 'small-business'],
                     author: 'Nathan Cranston'
                 },
-                'verosia-blog-local-seo-northern-ireland.html': {
+                'local-seo-northern-ireland-small-business.html': {
                     title: 'Local SEO: The Secret Weapon for Northern Ireland Small Businesses',
                     category: 'seo',
                     tags: ['seo', 'digital-strategy', 'small-business', 'local-seo', 'northern-ireland'],
                     author: 'Nathan Cranston'
                 },
-                'verosia-blog-consistent-branding.html': {
+                'consistent-branding-customer-trust-belfast.html': {
                     title: 'How Consistent Branding Transforms Customer Trust',
                     category: 'brand-design',
                     tags: ['brand-design', 'small-business', 'design', 'branding', 'customer-trust'],
                     author: 'Nathan Cranston'
                 },
-                'verosia-blog-social-media-strategy.html': {
+                'social-media-strategy-small-business-belfast.html': {
                     title: 'From Peachy Plants to Digital Solutions: A Founder\'s Journey',
                     category: 'business-growth',
                     tags: ['business-growth', 'founder-journey', 'entrepreneurship', 'social-media', 'small-business'],
@@ -568,6 +617,38 @@ Blog detail END -->
                 });
             }
 
+            // Cookie Banner Initialization
+            function initializeCookieBanner() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+
+                // Show banner unless a previous choice exists
+                var choice = localStorage.getItem('vs_consent');
+                if (!choice) {
+                    var banner = document.getElementById('vs-consent');
+                    if (banner) banner.style.display = 'block';
+                }
+
+                function setConsent(state){
+                    gtag('consent','update',{
+                        'ad_storage': state,
+                        'analytics_storage': state,
+                        'ad_user_data': state,
+                        'ad_personalization': state
+                    });
+                    localStorage.setItem('vs_consent', state);
+                    var banner = document.getElementById('vs-consent');
+                    if (banner) banner.style.display = 'none';
+                }
+
+                // Add event listeners
+                var acceptBtn = document.getElementById('vs-accept');
+                var rejectBtn = document.getElementById('vs-reject');
+                
+                if (acceptBtn) acceptBtn.onclick = function(){ setConsent('granted'); };
+                if (rejectBtn) rejectBtn.onclick = function(){ setConsent('denied'); };
+            }
+
             // Load templates when page loads
             document.addEventListener('DOMContentLoaded', function() {
                 console.log('   Loading templates...');
@@ -582,7 +663,13 @@ Blog detail END -->
                     initDropdownHover();
                     initDarkMode();
                     initStickyHeader();
+                    initializeCookieBanner();
                 }, 500);
+                
+                // Also initialize cookie banner immediately (backup in case template loading is slow)
+                setTimeout(() => {
+                    initializeCookieBanner();
+                }, 100);
             });
         </script>         
     </body>     

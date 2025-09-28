@@ -12,9 +12,58 @@
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-K5QRF4CR');</script>
         <!-- End Google Tag Manager --> 
-        <title>--- Verosia Studio</title> 
-        <meta name="description" content="Book a free strategy call with Verosia Studio. Get clarity on your digital problems and actionable solutions."> 
-        <meta name="keywords" content="digital strategy, website development, SEO, social media management, brand design, free consultation"> 
+        <title>Book a Free Strategy Call - Get Expert Digital Marketing Advice | Verosia Studio</title>
+        <meta name="description" content="Book a free strategy call with Verosia Studio. Get expert digital marketing advice and actionable solutions for your business growth.">
+        <meta name="author" content="Verosia Studio"> 
+        <meta name="keywords" content="digital strategy belfast, website development belfast, SEO belfast, social media management belfast, brand design belfast, free consultation belfast, digital marketing agency belfast"> 
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https://verosiastudio.com/book-free-strategy-call-belfast.html">
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://verosiastudio.com/book-free-strategy-call-belfast.html">
+        <meta property="og:title" content="Book a Free Strategy Call - Get Expert Digital Marketing Advice | Verosia Studio">
+        <meta property="og:description" content="Book a free strategy call with Verosia Studio. Get expert digital marketing advice and actionable solutions for your business growth.">
+        <meta property="og:image" content="https://verosiastudio.com/assets/images/verosia home/verosia logo.png">
+        
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://verosiastudio.com/book-free-strategy-call-belfast.html">
+        <meta property="twitter:title" content="Book a Free Strategy Call - Get Expert Digital Marketing Advice | Verosia Studio">
+        <meta property="twitter:description" content="Book a free strategy call with Verosia Studio. Get expert digital marketing advice and actionable solutions for your business growth.">
+        <meta property="twitter:image" content="https://verosiastudio.com/assets/images/verosia home/verosia logo.png">
+        
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Book a Free Strategy Call - Get Expert Digital Marketing Advice | Verosia Studio",
+          "description": "Book a free strategy call with Verosia Studio. Get expert digital marketing advice and actionable solutions for your business growth.",
+          "url": "https://verosiastudio.com/book-free-strategy-call-belfast.html",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "Verosia Studio",
+            "url": "https://verosiastudio.com",
+            "logo": "https://verosiastudio.com/assets/images/verosia home/verosia logo.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Belfast",
+              "addressCountry": "UK"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "availableLanguage": "English"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/company/verosia-studio",
+              "https://www.instagram.com/verosiastudio"
+            ]
+          }
+        }
+        </script>
+        
         <!-- Dark mode -->         
         <script>
 		const storedTheme = localStorage.getItem('theme')
@@ -23,7 +72,7 @@
 			if (storedTheme) {
 				return storedTheme
 			}
-			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
+			return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 		}
 
 		const setTheme = function (theme) {
@@ -106,7 +155,7 @@ Google Calendar Booking START -->
                 <div class="container">
                     <!-- Title -->
                     <div class="inner-container-small text-center mb-4 mb-sm-6">
-                        <h2 class="mb-2">Book Your Free Strategy Call</h2>
+                        <h1 class="mb-2">Book Your Free Strategy Call</h1>
                         <p class="mb-0">In 15 minutes, you'll get clarity on your three biggest digital problems and at least one actionable fix you can implement today. We'll talk about your specific situation, whether that's WordPress chaos, social media overwhelm, or websites that don't convert. If we can help further, we'll discuss how. If not, you still walk away with valuable insights.</p>
                     </div>
                     <!-- Google Calendar iframe -->
@@ -141,7 +190,6 @@ Google Calendar Booking END -->
         <script src="assets/vendor/swiper/swiper-bundle.min.js"></script> 
         <!-- Theme Functions -->
         <script src="assets/js/functions.js"></script>
-        <script src="assets/js/theme.min.js"></script> 
         <!-- Template Loading Script -->
         <script>
             async function loadTemplate(containerId, templatePath) {
@@ -152,6 +200,38 @@ Google Calendar Booking END -->
                 } catch (error) {
                     console.error(`Error loading template ${templatePath}:`, error);
                 }
+            }
+
+            // Cookie Banner Initialization
+            function initializeCookieBanner() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+
+                // Show banner unless a previous choice exists
+                var choice = localStorage.getItem('vs_consent');
+                if (!choice) {
+                    var banner = document.getElementById('vs-consent');
+                    if (banner) banner.style.display = 'block';
+                }
+
+                function setConsent(state){
+                    gtag('consent','update',{
+                        'ad_storage': state,
+                        'analytics_storage': state,
+                        'ad_user_data': state,
+                        'ad_personalization': state
+                    });
+                    localStorage.setItem('vs_consent', state);
+                    var banner = document.getElementById('vs-consent');
+                    if (banner) banner.style.display = 'none';
+                }
+
+                // Add event listeners
+                var acceptBtn = document.getElementById('vs-accept');
+                var rejectBtn = document.getElementById('vs-reject');
+                
+                if (acceptBtn) acceptBtn.onclick = function(){ setConsent('granted'); };
+                if (rejectBtn) rejectBtn.onclick = function(){ setConsent('denied'); };
             }
 
             document.addEventListener('DOMContentLoaded', function() {
@@ -171,7 +251,13 @@ Google Calendar Booking END -->
                     if (typeof e !== 'undefined' && e.stickyHeader) {
                         e.stickyHeader();
                     }
+                    initializeCookieBanner();
                 }, 500);
+                
+                // Also initialize cookie banner immediately (backup in case template loading is slow)
+                setTimeout(() => {
+                    initializeCookieBanner();
+                }, 100);
             });
         </script>
     </body>

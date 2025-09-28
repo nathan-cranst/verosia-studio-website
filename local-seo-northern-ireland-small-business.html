@@ -15,6 +15,55 @@
         <!-- End Google Tag Manager -->
     <meta name="author" content="Verosia Studio">
     <meta name="description" content="Discover how local SEO can transform your Northern Ireland small business visibility and drive more customers through your doors.">
+    <meta name="keywords" content="local SEO northern ireland, local SEO belfast, small business SEO, local search optimization, northern ireland SEO, belfast SEO services, local SEO tips">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://verosiastudio.com/local-seo-northern-ireland-small-business.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://verosiastudio.com/local-seo-northern-ireland-small-business.html">
+    <meta property="og:title" content="Local SEO: The Secret Weapon for Northern Ireland Small Businesses - Verosia Studio">
+    <meta property="og:description" content="Discover how local SEO can transform your Northern Ireland small business visibility and drive more customers through your doors.">
+    <meta property="og:image" content="https://verosiastudio.com/assets/images/verosia home/verosia logo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://verosiastudio.com/local-seo-northern-ireland-small-business.html">
+    <meta property="twitter:title" content="Local SEO: The Secret Weapon for Northern Ireland Small Businesses - Verosia Studio">
+    <meta property="twitter:description" content="Discover how local SEO can transform your Northern Ireland small business visibility and drive more customers through your doors.">
+    <meta property="twitter:image" content="https://verosiastudio.com/assets/images/verosia home/verosia logo.png">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Local SEO: The Secret Weapon for Northern Ireland Small Businesses",
+      "description": "Discover how local SEO can transform your Northern Ireland small business visibility and drive more customers through your doors.",
+      "url": "https://verosiastudio.com/local-seo-northern-ireland-small-business.html",
+      "datePublished": "2025-01-20",
+      "dateModified": "2025-01-20",
+      "author": {
+        "@type": "Organization",
+        "name": "Verosia Studio",
+        "url": "https://verosiastudio.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Verosia Studio",
+        "url": "https://verosiastudio.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://verosiastudio.com/assets/images/verosia home/verosia logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://verosiastudio.com/local-seo-northern-ireland-small-business.html"
+      }
+    }
+    </script>
+    
     <!-- Dark mode -->
     <script>
 		const storedTheme = localStorage.getItem('theme')
@@ -291,7 +340,6 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <!-- Theme Functions -->
     <script src="assets/js/functions.js"></script>
-    <script src="assets/js/theme.min.js"></script>
     <!-- Template Loading Script -->
     <script>
         async function loadTemplate(containerId, templatePath) {
@@ -306,13 +354,13 @@
 
         // Blog posts database for related posts
         const blogPostsDB = {
-            'verosia-blog-wordpress-speed.html': {
+            'wordpress-speed-optimization-belfast.html': {
                 title: 'Why Your WordPress Site is Slower Than Your Competitors',
                 category: 'web-development',
                 tags: ['web-development', 'wordpress', 'performance', 'speed-optimization', 'small-business'],
                 author: 'Nathan Cranston'
             },
-            'verosia-blog-digital-marketing-mistakes.html': {
+            'digital-marketing-mistakes-small-business-belfast.html': {
                 title: '5 Digital Marketing Mistakes Killing Your Business Growth',
                 category: 'digital-strategy',
                 tags: ['digital-strategy', 'business-growth', 'marketing', 'strategy', 'small-business'],
@@ -324,13 +372,13 @@
                 tags: ['seo', 'digital-strategy', 'small-business', 'local-seo', 'northern-ireland'],
                 author: 'Nathan Cranston'
             },
-            'verosia-blog-consistent-branding.html': {
+            'consistent-branding-customer-trust-belfast.html': {
                 title: 'How Consistent Branding Transforms Customer Trust',
                 category: 'brand-design',
                 tags: ['brand-design', 'small-business', 'design', 'branding', 'customer-trust'],
                 author: 'Nathan Cranston'
             },
-            'verosia-blog-social-media-strategy.html': {
+            'social-media-strategy-small-business-belfast.html': {
                 title: 'From Peachy Plants to Digital Solutions: A Founder\'s Journey',
                 category: 'business-growth',
                 tags: ['business-growth', 'founder-journey', 'entrepreneurship', 'digital-transformation'],
@@ -421,6 +469,38 @@
             });
         }
 
+        // Cookie Banner Initialization
+        function initializeCookieBanner() {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){ dataLayer.push(arguments); }
+
+            // Show banner unless a previous choice exists
+            var choice = localStorage.getItem('vs_consent');
+            if (!choice) {
+                var banner = document.getElementById('vs-consent');
+                if (banner) banner.style.display = 'block';
+            }
+
+            function setConsent(state){
+                gtag('consent','update',{
+                    'ad_storage': state,
+                    'analytics_storage': state,
+                    'ad_user_data': state,
+                    'ad_personalization': state
+                });
+                localStorage.setItem('vs_consent', state);
+                var banner = document.getElementById('vs-consent');
+                if (banner) banner.style.display = 'none';
+            }
+
+            // Add event listeners
+            var acceptBtn = document.getElementById('vs-accept');
+            var rejectBtn = document.getElementById('vs-reject');
+            
+            if (acceptBtn) acceptBtn.onclick = function(){ setConsent('granted'); };
+            if (rejectBtn) rejectBtn.onclick = function(){ setConsent('denied'); };
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Loading templates...');
             loadTemplate('header-container', 'templates/header.html');
@@ -434,7 +514,13 @@
                 initDropdownHover();
                 initDarkMode();
                 initStickyHeader();
+                initializeCookieBanner();
             }, 500);
+            
+            // Also initialize cookie banner immediately (backup in case template loading is slow)
+            setTimeout(() => {
+                initializeCookieBanner();
+            }, 100);
         });
 
         // Initialize functions after templates load

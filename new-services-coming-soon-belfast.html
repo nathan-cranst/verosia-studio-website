@@ -1,100 +1,108 @@
 <!DOCTYPE html> 
 <html lang="en"> 
     <head> 
-        <title>Verosia Studio - Coming Soon</title>         
+        <title>New Digital Marketing Services Coming Soon - Verosia Studio Belfast</title>         
         <!-- Meta Tags -->         
         <meta charset="utf-8"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
-        <meta name="author" content="Verosia Studio"> 
-        <meta name="description" content="Technology and Corporate Bootstrap Theme"> 
-        <!-- Dark mode -->         
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Verosia Studio">
+        <meta name="description" content="Exciting new digital marketing and web design services are coming soon to Belfast. Stay tuned for innovative solutions from Verosia Studio.">
+        <meta name="keywords" content="digital marketing belfast, web design belfast, coming soon, new services belfast, digital marketing agency belfast">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https://verosiastudio.com/new-services-coming-soon-belfast.html">
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://verosiastudio.com/new-services-coming-soon-belfast.html">
+        <meta property="og:title" content="New Digital Marketing Services Coming Soon - Verosia Studio Belfast">
+        <meta property="og:description" content="Exciting new digital marketing and web design services are coming soon to Belfast. Stay tuned for innovative solutions from Verosia Studio.">
+        <meta property="og:image" content="https://verosiastudio.com/assets/images/verosia home/verosia logo.png">
+        
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://verosiastudio.com/new-services-coming-soon-belfast.html">
+        <meta property="twitter:title" content="New Digital Marketing Services Coming Soon - Verosia Studio Belfast">
+        <meta property="twitter:description" content="Exciting new digital marketing and web design services are coming soon to Belfast. Stay tuned for innovative solutions from Verosia Studio.">
+        <meta property="twitter:image" content="https://verosiastudio.com/assets/images/verosia home/verosia logo.png">
+        
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "New Digital Marketing Services Coming Soon - Verosia Studio Belfast",
+          "description": "Exciting new digital marketing and web design services are coming soon to Belfast. Stay tuned for innovative solutions from Verosia Studio.",
+          "url": "https://verosiastudio.com/new-services-coming-soon-belfast.html",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "Verosia Studio",
+            "url": "https://verosiastudio.com",
+            "logo": "https://verosiastudio.com/assets/images/verosia home/verosia logo.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Belfast",
+              "addressCountry": "UK"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/company/verosia-studio",
+              "https://www.instagram.com/verosiastudio"
+            ]
+          }
+        }
+        </script>
+        
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-K5QRF4CR');</script>
+        <!-- End Google Tag Manager -->
+        <!-- Dark mode script -->
         <script>
-		const storedTheme = localStorage.getItem('theme')
- 
-		const getPreferredTheme = () => {
-			if (storedTheme) {
-				return storedTheme
-			}
-			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
-		}
-
-		const setTheme = function (theme) {
-			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-				document.documentElement.setAttribute('data-bs-theme', 'dark')
-			} else {
-				document.documentElement.setAttribute('data-bs-theme', theme)
-			}
-		}
-
-		setTheme(getPreferredTheme())
-
-		window.addEventListener('DOMContentLoaded', () => {
-		    var el = document.querySelector('.theme-icon-active');
-			if(el != 'undefined' && el != null) {
-				const showActiveTheme = theme => {
-				const activeThemeIcon = document.querySelector('.theme-icon-active use')
-				const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-				const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
-
-				document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-					element.classList.remove('active')
-				})
-
-				btnToActive.classList.add('active')
-				activeThemeIcon.setAttribute('href', svgOfActiveBtn)
-			}
-
-			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-				if (storedTheme !== 'light' || storedTheme !== 'dark') {
-					setTheme(getPreferredTheme())
-				}
-			})
-
-			showActiveTheme(getPreferredTheme())
-
-			document.querySelectorAll('[data-bs-theme-value]')
-				.forEach(toggle => {
-					toggle.addEventListener('click', () => {
-						const theme = toggle.getAttribute('data-bs-theme-value')
-						localStorage.setItem('theme', theme)
-						setTheme(theme)
-						showActiveTheme(theme)
-					})
-				})
-
-			}
-		})
-		
-	</script>         
+        const storedTheme = localStorage.getItem('theme')
+        const getPreferredTheme = () => {
+            if (storedTheme) {
+                return storedTheme
+            }
+            return 'auto'
+        }
+        const setTheme = function (theme) {
+            if (theme === 'auto') {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark')
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', 'light')
+                }
+            } else {
+                document.documentElement.setAttribute('data-bs-theme', theme)
+            }
+        }
+        setTheme(getPreferredTheme())
+        </script>
+        <meta name="author" content="Verosia Studio"> 
+        <meta name="description" content="Your page description here"> 
         <!-- Favicon -->         
         <link rel="shortcut icon" href="assets/images/favicon.ico"> 
-        <!-- Google Font -->         
-        <link rel="preconnect" href="https://fonts.googleapis.com"> 
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-        <link href="../css/theme.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"> 
-        <!-- Plugins CSS -->         
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico"> 
+        <!-- Bootstrap CSS -->         
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> 
+        <link href="assets/vendor/aos/aos.css" rel="stylesheet"> 
+        <link href="assets/vendor/glightbox/css/glightbox.css" rel="stylesheet"> 
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> 
         <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css"> 
-        <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css"> 
         <!-- Theme CSS -->         
         <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
     </head>     
     <body> 
-        <!-- Header START -->         
-        <header class="header-sticky"> 
-            <!-- Logo Nav START -->             
-            <nav class="navbar navbar-expand-xl"> 
-                <div class="container"> 
-                    <!-- Logo START -->                     <a class="navbar-brand" href="index.html">  <img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">  <img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">  </a> 
-                    <!-- Logo END -->                     
-                    <!-- Buttons -->                     
-                    <div class="nav align-items-center felx-row ms-2"> 
-                        <button class="btn btn-sm btn-dark mb-0">Buy now!</button>                         
-                    </div>                     
-                </div>                 
-            </nav>             
-            <!-- Logo Nav END -->             
-        </header>         
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5QRF4CR" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <!-- Header Container -->
+        <div id="header-container"></div>         
         <!-- Header END -->         
         <!-- **************** MAIN CONTENT START **************** -->         
         <main class="d-flex flex-column justify-content-center" style="min-height: calc(100vh - 160px)"> 
@@ -108,22 +116,23 @@ Main Banner START -->
                             <h1 class="h2">Sorry, we're not ready yet</h1> 
                             <p class="mb-0">Something is coming very soon</p> 
                             <!-- Input -->                             
-                            <form class="mt-5" name="coming-soon-notify" method="POST" netlify netlify-honeypot="bot-field"> <b>Notify me when the website is launched</b>
-                                <!-- Hidden honeypot field for spam protection -->
-                                <div style="display: none;">
-                                    <input name="bot-field" />
-                                </div>
+                            <form class="mt-5" name="coming-soon-notify" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks">
+                                <input type="hidden" name="form-name" value="coming-soon-notify" />
+                                <p hidden>
+                                    <label>Don't fill this out: <input name="bot-field" /></label>
+                                </p>
+                                <b>Notify me when the website is launched</b>
                                 <div class="col-md-8 mx-auto bg-light border rounded-2 p-2 mt-2">
                                     <!-- Input subscribe -->                                     
                                     <div class="input-group"> 
-                                        <input class="form-control focus-shadow-none bg-light border-0 me-1" type="email" placeholder="Enter your email"> 
-                                        <button type="button" class="btn btn-dark rounded-2 mb-0">Notify Me!</button>                                         
+                                        <input class="form-control focus-shadow-none bg-light border-0 me-1" type="email" name="email" placeholder="Enter your email" required> 
+                                        <button type="submit" class="btn btn-dark rounded-2 mb-0">Notify Me!</button>                                         
                                     </div>                                     
                                 </div>                                 
                             </form>                             
                             <!-- Image -->                             
                             <div class="position-relative mt-7 mb-5 mb-xl-0"> 
-                                <img src="assets/images/elements/comming-soon.png" class="position-relative z-index-2 h-sm-300px h-md-400px" alt=""> 
+                                <img src="assets/images/elements/comming-soon.png" class="position-relative z-index-2 h-sm-300px h-md-400px" alt="Coming soon illustration" loading="lazy"> 
                                 <!-- SVG decoration -->                                 
                                 <figure class="position-absolute top-0 start-0 mt-5 ms-lg-3"> 
                                     <svg width="96" height="99" viewBox="0 0 96 99" fill="none" xmlns="http://www.w3.org/2000/svg"> 
@@ -186,38 +195,165 @@ Main Banner END -->
         </main>         
         <!-- **************** MAIN CONTENT END **************** -->         
         <!-- =======================
-Footer START -->         
-        <footer> 
-            <div class="container mb-4 mb-md-2"> 
-                <!-- Bottom footer -->                 
-                <div class="d-md-flex justify-content-between align-items-center text-center text-lg-start"> 
-                    <!-- copyright text -->                     
-                    <div class="mb-3 mb-md-0"> Copyrights ©2024 Cranston Commerce Ltd t/a Verosia Studio. Site built by <a href="https://www.linkedin.com/in/ncranston/" class="text-body text-primary-hover">Nathan Cranston</a>. 
-                    </div>                     
-                    <!-- copyright links-->                     
-                    <!-- Language selector -->                     
-                    <ul class="list-inline mb-0"> 
-                        <li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light mb-0" href="#"><i class="fab fa-fw fa-facebook-f lh-base"></i></a> 
-                        </li>                         
-                        <li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light mb-0" href="#"><i class="fab fa-fw fa-instagram lh-base"></i></a> 
-                        </li>                         
-                        <li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light mb-0" href="#"><i class="fab fa-fw fa-twitter lh-base"></i></a> 
-                        </li>                         
-                        <li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light mb-0" href="#"><i class="fab fa-fw fa-linkedin-in lh-base"></i></a> 
-                        </li>                         
-                        <li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light mb-0" href="#"><i class="fab fa-fw fa-youtube lh-base"></i></a> 
-                        </li>                         
-                    </ul>                     
-                </div>                 
-            </div>             
-        </footer>         
-        <!-- =======================
-Footer END -->         
-        <!-- Back to top -->         
-        <div class="back-top"></div>         
-        <!-- Bootstrap JS -->         
-        <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>         
-        <!-- Theme Functions -->         
-        <script src="assets/js/functions.js"></script>         
-    </body>     
+<!-- Footer Container -->
+<div id="footer-container"></div>
+<!-- Back to top -->         
+<div class="back-top">
+    <i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i>
+</div>
+<!-- Bootstrap JS -->         
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>         
+<!-- Vendors -->         
+<script src="assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>         
+<script src="assets/vendor/aos/aos.js"></script>         
+<script src="assets/vendor/glightbox/js/glightbox.js"></script>         
+<script src="assets/vendor/typedjs/typed.min.js"></script>         
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>         
+<!-- Template Functions -->         
+<script src="assets/js/functions.js"></script>         
+<!-- Load Header and Footer Templates -->
+<script>
+    // Load header
+    fetch('templates/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            // Initialize cookie banner after header loads
+            initializeCookieBanner();
+            // Initialize dark mode after header loads
+            initializeDarkMode();
+            // Initialize dropdown hover after header loads
+            initializeDropdownHover();
+        })
+        .catch(error => console.error('Error loading header:', error));
+
+    // Load footer
+    fetch('templates/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading footer:', error));
+
+    // Cookie Banner Initialization
+    function initializeCookieBanner() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+
+        // Show banner unless a previous choice exists
+        var choice = localStorage.getItem('vs_consent');
+        if (!choice) {
+            var banner = document.getElementById('vs-consent');
+            if (banner) banner.style.display = 'block';
+        }
+
+        function setConsent(state){
+            gtag('consent','update',{
+                'ad_storage': state,
+                'analytics_storage': state,
+                'ad_user_data': state,
+                'ad_personalization': state
+            });
+            localStorage.setItem('vs_consent', state);
+            var banner = document.getElementById('vs-consent');
+            if (banner) banner.style.display = 'none';
+        }
+
+        // Add event listeners
+        var acceptBtn = document.getElementById('vs-accept');
+        var rejectBtn = document.getElementById('vs-reject');
+        
+        if (acceptBtn) acceptBtn.onclick = function(){ setConsent('granted'); };
+        if (rejectBtn) rejectBtn.onclick = function(){ setConsent('denied'); };
+
+        // Optional: provide a way to re-open banner
+        window.openConsent = function(){
+            localStorage.removeItem('vs_consent');
+            var banner = document.getElementById('vs-consent');
+            if (banner) banner.style.display = 'block';
+        };
+    }
+
+    // Dark Mode Initialization
+    function initializeDarkMode() {
+        const el = document.querySelector('.theme-icon-active');
+        if(el !== undefined && el !== null) {
+            const showActiveTheme = theme => {
+                const activeThemeIcon = document.querySelector('.theme-icon-active use')
+                const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+                const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+
+                document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                    element.classList.remove('active')
+                })
+
+                btnToActive.classList.add('active')
+                activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                const storedTheme = localStorage.getItem('theme')
+                if (storedTheme === 'auto' || !storedTheme) {
+                    setTheme(getPreferredTheme())
+                    showActiveTheme(getPreferredTheme())
+                }
+            })
+
+            showActiveTheme(getPreferredTheme())
+
+            // Use event delegation to handle theme toggle clicks
+            document.addEventListener('click', (e) => {
+                if (e.target.closest('[data-bs-theme-value]')) {
+                    const toggle = e.target.closest('[data-bs-theme-value]')
+                    const theme = toggle.getAttribute('data-bs-theme-value')
+                    localStorage.setItem('theme', theme)
+                    setTheme(theme)
+                    showActiveTheme(theme)
+                }
+            })
+        }
+    }
+
+    // Dropdown Hover Initialization
+    function initializeDropdownHover() {
+        const dropdownHoverElements = document.querySelectorAll('.dropdown-hover');
+        
+        dropdownHoverElements.forEach(element => {
+            const dropdownToggle = element.querySelector('[data-bs-toggle="dropdown"]');
+            const dropdownMenu = element.querySelector('.dropdown-menu');
+            
+            if (dropdownToggle && dropdownMenu) {
+                let hoverTimeout;
+                
+                // Show dropdown on hover
+                element.addEventListener('mouseenter', () => {
+                    clearTimeout(hoverTimeout);
+                    dropdownMenu.classList.add('show');
+                    dropdownToggle.setAttribute('aria-expanded', 'true');
+                });
+                
+                // Hide dropdown after delay when mouse leaves
+                element.addEventListener('mouseleave', () => {
+                    hoverTimeout = setTimeout(() => {
+                        dropdownMenu.classList.remove('show');
+                        dropdownToggle.setAttribute('aria-expanded', 'false');
+                    }, 150);
+                });
+                
+                // Keep dropdown open when hovering over menu
+                dropdownMenu.addEventListener('mouseenter', () => {
+                    clearTimeout(hoverTimeout);
+                });
+                
+                dropdownMenu.addEventListener('mouseleave', () => {
+                    hoverTimeout = setTimeout(() => {
+                        dropdownMenu.classList.remove('show');
+                        dropdownToggle.setAttribute('aria-expanded', 'false');
+                    }, 150);
+                });
+            }
+        });
+    }
+</script>
+</body>     
 </html>

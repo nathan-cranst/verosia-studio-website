@@ -1,7 +1,7 @@
 <!-- Form Header -->
 <div class="text-center mb-4"> 
-    <h4 class="mb-2">Ready to elevate your brand?</h4> 
-    <p class="mb-0">Get a free consultation and discover how we can transform your business presence.</p> 
+    <h4 class="mb-2">Help us deliver the best results for your project</h4> 
+    <p class="mb-0">Quality information helps us understand your needs and provide you with the most valuable consultation and solutions.</p> 
 </div>                                 
 <!-- Contact form -->                                 
 <form class="needs-validation" id="leadQualificationForm" name="service-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" novalidate>
@@ -12,44 +12,44 @@
     <div class="row g-3">
         <!-- Name field -->                                         
         <div class="col-md-6"> 
-            <label class="form-label heading-color">Your name *</label>                                             
+            <label class="form-label heading-color fw-bold">Your name *</label>                                             
             <input type="text" name="full_name" class="form-control form-control-lg" placeholder="Full name" required> 
             <div class="invalid-feedback"> Please enter your full name. </div>                                             
             <div class="valid-feedback"> Looks good! </div>                                             
         </div>                                         
         <!-- Email field -->                                         
         <div class="col-md-6"> 
-            <label class="form-label heading-color">Email address *</label>                                             
+            <label class="form-label heading-color fw-bold">Email address *</label>                                             
             <input type="email" name="email" class="form-control form-control-lg" placeholder="name@example.com" required> 
             <div class="invalid-feedback"> Please enter a valid email address. </div>                                             
             <div class="valid-feedback"> Looks good! </div>                                             
         </div>                                         
         <!-- Phone field -->                                         
         <div class="col-md-6"> 
-            <label class="form-label heading-color">Phone number *</label>                                             
+            <label class="form-label heading-color fw-bold">Phone number *</label>                                             
             <input type="tel" name="phone" class="form-control form-control-lg" placeholder="(xxx) xx xxxx" required> 
             <div class="invalid-feedback"> Please enter your phone number. </div>                                             
             <div class="valid-feedback"> Looks good! </div>                                             
         </div>                                         
         <!-- Company name field -->                                         
         <div class="col-md-6"> 
-            <label class="form-label heading-color">Company name *</label>                                             
+            <label class="form-label heading-color fw-bold">Company name *</label>                                             
             <input type="text" name="company" class="form-control form-control-lg" placeholder="Your company name" required> 
             <div class="invalid-feedback"> Please enter your company name. </div>                                             
             <div class="valid-feedback"> Looks good! </div>                                             
         </div>                                         
         <!-- Website field -->                                         
         <div class="col-md-6"> 
-            <label class="form-label heading-color">Website URL</label>                                             
-            <input type="text" name="website" class="form-control form-control-lg" placeholder="yourwebsite.com or https://yourwebsite.com"> 
+            <label class="form-label heading-color fw-bold">Website URL</label>                                             
+            <input type="text" name="website" class="form-control form-control-lg" placeholder="yourwebsite.com"> 
             <div class="invalid-feedback"> Please enter your website domain. </div>                                             
             <div class="valid-feedback"> Looks good! </div>                                             
         </div>                                         
         <!-- Service field -->                                         
         <div class="col-md-6"> 
-            <label class="form-label heading-color">Service interested in *</label>                                             
-            <select name="service" class="form-select form-select-lg" required> 
-                <option value="">Select a service</option>                                                 
+            <label class="form-label heading-color fw-bold">Service interested in</label>                                             
+            <select name="service" class="form-select form-select-lg"> 
+                <option value="">Select a service (optional)</option>                                                 
                 <option value="brand-design">Brand & Design</option>                                                 
                 <option value="web-development">Web Development</option>                                                 
                 <option value="seo-optimization">SEO Optimization</option>                                                 
@@ -63,9 +63,9 @@
         </div>                                         
         <!-- Budget field -->                                         
         <div class="col-md-6"> 
-            <label class="form-label heading-color">Budget range *</label>                                             
-            <select name="budget" class="form-select form-select-lg" required> 
-                <option value="">Select budget range</option>                                                 
+            <label class="form-label heading-color fw-bold">Budget range</label>                                             
+            <select name="budget" class="form-select form-select-lg"> 
+                <option value="">Select budget range (optional)</option>                                                 
                 <option value="under-1000">Under £1,000</option>                                                 
                 <option value="1000-2500">£1,000 - £2,500</option>                                                 
                 <option value="2500-5000">£2,500 - £5,000</option>                                                 
@@ -78,9 +78,9 @@
         </div>                                         
         <!-- Timeframe field -->                                         
         <div class="col-md-6"> 
-            <label class="form-label heading-color">Project timeframe *</label>                                             
-            <select name="timeframe" class="form-select form-select-lg" required> 
-                <option value="">Select timeframe</option>                                                 
+            <label class="form-label heading-color fw-bold">Project timeframe</label>                                             
+            <select name="timeframe" class="form-select form-select-lg"> 
+                <option value="">Select timeframe (optional)</option>                                                 
                 <option value="asap">ASAP (Rush job)</option>                                                 
                 <option value="1-2-weeks">1-2 weeks</option>                                                 
                 <option value="1-month">1 month</option>                                                 
@@ -93,15 +93,15 @@
         </div>                                         
         <!-- Main social link field -->                                         
         <div class="col-12"> 
-            <label class="form-label heading-color">Main social media link</label>                                             
-            <input type="url" name="social_link" class="form-control form-control-lg" placeholder="https://instagram.com/yourhandle"> <small class="form-text text-muted">Include your primary social platform. Add any others in the message field below.</small>
+            <label class="form-label heading-color fw-bold">Main social media link</label>                                             
+            <input type="text" name="social_link" class="form-control form-control-lg" placeholder="@yourhandle"> <small class="form-text text-muted">Include your primary social media handle. Add any others in the message field below.</small>
             <div class="invalid-feedback"> Please enter a valid social media URL. </div>                                             
             <div class="valid-feedback"> Looks good! </div>                                             
         </div>                                         
         <!-- Message field -->                                         
         <div class="col-12"> 
-            <label class="form-label heading-color">Message *</label>                                             
-            <textarea name="message" class="form-control" placeholder="Tell us about your biggest digital challenge..." style="height: 120px" required></textarea> 
+            <label class="form-label heading-color fw-bold">Message</label>                                             
+            <textarea name="message" class="form-control" placeholder="Tell us about your biggest digital challenge..." style="height: 120px"></textarea> 
             <div class="invalid-feedback"> Please tell us about your project. </div>                                             
             <div class="valid-feedback"> Looks good! </div>                                             
         </div>                                         
@@ -121,11 +121,11 @@
             </div>
             <!-- Action buttons -->
             <div id="actionButtons">
-                <h5 class="mb-3">What would you like to do next?</h5>
-                <p class="mb-4">Choose how you'd like to move forward with your project.</p>
+                <h5 class="mb-3">Are you ready to talk about your project with us?</h5>
+                <p class="mb-4">Book a call now, or would you like us to send more information first?</p>
                 <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
                     <button type="submit" class="btn btn-primary btn-lg px-5" data-action="book-call">Book a Call</button>
-                    <button type="submit" class="btn btn-outline-primary btn-lg px-5" data-action="send-info">Send me information</button>
+                    <button type="submit" class="btn btn-outline-primary btn-lg px-5" data-action="send-info">Submit your answers</button>
                 </div>
             </div>
         </div>                                         

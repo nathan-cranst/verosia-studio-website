@@ -1,10 +1,18 @@
 <!DOCTYPE html> 
 <html lang="en"> 
     <head> 
-        <title>Verosia Studio</title>         
+        <title>Web Design Belfast - Website Development Services Northern Ireland | Verosia Studio</title>         
         <!-- Meta Tags -->         
         <meta charset="utf-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- Performance Optimizations -->
+        <link rel="preload" href="assets/css/style.css" as="style">
+        <link rel="preload" href="assets/vendor/bootstrap/css/bootstrap.min.css" as="style">
+        <link rel="preload" href="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js" as="script">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://www.googletagmanager.com">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com">
         
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -12,92 +20,215 @@
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-K5QRF4CR');</script>
-        <!-- End Google Tag Manager --> 
-        <meta name="author" content="Verosia Studio"> 
-        <meta name="description" content="Technology and Corporate Bootstrap Theme"> 
-        <!-- Dark mode -->         
+        <!-- End Google Tag Manager -->
+        <!-- Dark mode script -->
         <script>
-		const storedTheme = localStorage.getItem('theme')
- 
-		const getPreferredTheme = () => {
-			if (storedTheme) {
-				return storedTheme
-			}
-			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
-		}
-
-		const setTheme = function (theme) {
-			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-				document.documentElement.setAttribute('data-bs-theme', 'dark')
-			} else {
-				document.documentElement.setAttribute('data-bs-theme', theme)
-			}
-		}
-
-		setTheme(getPreferredTheme())
-
-
-		// Fix mobile navbar collapse issues
-		document.addEventListener('DOMContentLoaded', function() {
-			const navbarToggler = document.querySelector('.navbar-toggler')
-			const navbarCollapse = document.querySelector('.navbar-collapse')
-			
-			if (navbarToggler && navbarCollapse) {
-				// Close navbar when clicking outside
-				document.addEventListener('click', function(e) {
-					if (!navbarToggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
-						if (navbarCollapse.classList.contains('show')) {
-							navbarToggler.click()
-						}
-					}
-				})
-				
-				// Close navbar when clicking on nav links
-				const navLinks = document.querySelectorAll('.navbar-nav .nav-link')
-				navLinks.forEach(link => {
-					link.addEventListener('click', function() {
-						if (navbarCollapse.classList.contains('show')) {
-							navbarToggler.click()
-						}
-					})
-				})
-			}
-		})
-		
-	</script>         
+        const storedTheme = localStorage.getItem('theme')
+        const getPreferredTheme = () => {
+            if (storedTheme) {
+                return storedTheme
+            }
+            return 'auto'
+        }
+        const setTheme = function (theme) {
+            if (theme === 'auto') {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark')
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', 'light')
+                }
+            } else {
+                document.documentElement.setAttribute('data-bs-theme', theme)
+            }
+        }
+        setTheme(getPreferredTheme())
+        </script>
+        <meta name="author" content="Verosia Studio"> 
+        <meta name="description" content="Leading web design in Belfast and Northern Ireland. Professional website development services, custom web design, and e-commerce solutions by Verosia Studio.">
+        <meta name="keywords" content="web design belfast, belfast website design, web design in belfast, website development belfast, web development northern ireland, custom web design, e-commerce development">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https://verosiastudio.com/web-design-belfast.html">
+        
+        <!-- Open Graph Tags -->
+        <meta property="og:title" content="Web Design Belfast - Website Development Services Northern Ireland | Verosia Studio">
+        <meta property="og:description" content="Leading web design in Belfast and Northern Ireland. Professional website development services, custom web design, and e-commerce solutions by Verosia Studio.">
+        <meta property="og:image" content="https://verosiastudio.com/assets/images/verosia home/verosia logo.png">
+        <meta property="og:url" content="https://verosiastudio.com/web-design-belfast.html">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Verosia Studio">
+        
+        <!-- Twitter Cards -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Web Design Belfast - Website Development Services Northern Ireland | Verosia Studio">
+        <meta name="twitter:description" content="Leading web design in Belfast and Northern Ireland. Professional website development services, custom web design, and e-commerce solutions by Verosia Studio.">
+        <meta name="twitter:image" content="https://verosiastudio.com/assets/images/verosia home/verosia logo.png"> 
         <!-- Favicon -->         
-        <link rel="shortcut icon" href="assets/images/favicon.ico?v=2"> 
-        <!-- Google Font -->         
-        <link rel="preconnect" href="https://fonts.googleapis.com"> 
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-        <link href="../css/theme.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"> 
-        <!-- Plugins CSS -->         
-        <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css"> 
-        <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css"> 
-        <link rel="stylesheet" type="text/css" href="assets/vendor/swiper/swiper-bundle.min.css"> 
+        <link rel="shortcut icon" href="assets/images/favicon.ico"> 
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico"> 
+        <!-- Bootstrap CSS -->         
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> 
+        <link href="assets/vendor/aos/aos.css" rel="stylesheet"> 
+        <link href="assets/vendor/glightbox/css/glightbox.css" rel="stylesheet"> 
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> 
+        <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css" media="print" onload="this.media='all'"> 
         <!-- Theme CSS -->         
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        
+        <!-- Font Optimization -->
+        <style>
+            @font-face {
+                font-family: 'Bootstrap Icons';
+                font-display: swap;
+            }
+            @font-face {
+                font-family: 'Font Awesome';
+                font-display: swap;
+            }
+        </style>
+        
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Verosia Studio",
+            "url": "https://verosiastudio.com",
+            "logo": "https://verosiastudio.com/assets/images/verosia home/verosia logo.png",
+            "description": "Verosia Studio helps businesses elevate their digital presence through strategic branding, web development, SEO optimization, and social media management.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "GB"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+44-7891-533282",
+                "contactType": "customer service",
+                "email": "hello@verosiastudio.com"
+            },
+            "sameAs": [
+                "https://www.instagram.com/verosiastudio/",
+                "https://www.facebook.com/profile.php?id=61577409360442",
+                "https://www.linkedin.com/in/ncranston/",
+                "https://x.com/nathancranston",
+                "https://www.youtube.com/@verosia.studio",
+                "https://www.tiktok.com/@verosiastudio"
+            ]
+        }
+        </script>
+        
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Website Development Services",
+            "description": "Custom website development services including WordPress customization, e-commerce stores, and web applications. We build responsive, SEO-optimized websites tailored to your business needs.",
+            "provider": {
+                "@type": "Organization",
+                "name": "Verosia Studio",
+                "url": "https://verosiastudio.com"
+            },
+            "areaServed": "Northern Ireland",
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Website Development Packages",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "WordPress Website",
+                            "description": "Perfect for small businesses and professionals"
+                        },
+                        "price": "2497",
+                        "priceCurrency": "GBP"
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "E-commerce Store",
+                            "description": "Complete online store with payment processing"
+                        },
+                        "price": "4997",
+                        "priceCurrency": "GBP"
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Custom Web Application",
+                            "description": "Full custom development with advanced features"
+                        },
+                        "price": "9997",
+                        "priceCurrency": "GBP"
+                    }
+                ]
+            }
+        }
+        </script>
+        
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Website Development Services - Custom Web Design & Development | Verosia Studio",
+            "description": "Custom website development services tailored to your business needs. Responsive design, e-commerce solutions, and robust web platforms by Verosia Studio.",
+            "url": "https://verosiastudio.com/web-design-belfast.html",
+            "isPartOf": {
+                "@type": "WebSite",
+                "name": "Verosia Studio",
+                "url": "https://verosiastudio.com"
+            },
+            "about": {
+                "@type": "Service",
+                "name": "Website Development Services"
+            },
+            "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://verosiastudio.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Services",
+                        "item": "https://verosiastudio.com/services.html"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Website Development",
+                        "item": "https://verosiastudio.com/web-design-belfast.html"
+                    }
+                ]
+            }
+        }
+        </script>
     </head>     
     <body> 
         <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5QRF4CR"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5QRF4CR" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
         <!-- End Google Tag Manager (noscript) -->
-        
         <!-- Header Container -->
         <div id="header-container"></div>         
         <!-- **************** MAIN CONTENT START **************** -->         
         <main> 
             <!-- =======================
 Main hero START -->             
-            <section class="pt-lg-8 pt-xl-9" style="background-color: #E8E2F3; background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.7)), url('assets/images/verosia%20home/bg-pattern-2.png'); background-position: center left; background-size: cover;" data-bs-theme="light"> 
+            <section class="pt-lg-8 pt-xl-9" style="background-color: #E8E2F3; background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.7)), url('assets/images/verosia%20home/bg-pattern-2.png'); background-position: center left; background-size: cover;" data-bs-theme="light" loading="lazy"> 
                 <div class="container position-relative pt-4 pt-lg-0"> 
                     <div class="row align-items-center"> 
                         <!-- Title -->                         
                         <div class="col-md-7 col-xl-6"> 
-                            <h1 class="mb-4 text-dark">Brand &amp; Design</h1> 
-                            <p class="mb-4 text-dark">Visual identity that tells your authentic story, from logos to complete brand systems that work across every touchpoint.</p> 
+                            <h1 class="mb-4 text-dark">Website Development</h1> 
+                            <p class="mb-4 text-dark">WordPress customization, Shopify stores, or Webflow sites. We build on your platform, train your team, and hand over something you can actually manage.</p> 
                         </div>                         
                         <div class="col-md-4 ms-auto text-md-end"> <a href="#contactFormSection" class="btn btn-lg btn-primary mb-6 mb-md-0 hero-cta-btn" data-package="hero" data-service="brand-design" data-budget="discuss">Book a quick chat</a> 
                         </div>                         
@@ -114,8 +245,8 @@ Approach and Benefits START -->
                         <!-- Our Approach -->                         
                         <div class="col-md-6"> 
                             <h4 class="mb-4">Our Approach</h4> 
-                            <p>Your brand isn&apos;t just a logo, it&apos;s how people feel when they encounter your business. We dig deep into your mission, values, and what makes you different. Then we translate that into visuals that connect with your ideal customers.
-No generic templates or trendy designs that age badly. We create timeless, authentic brand identities that grow with your business. Whether you&apos;re launching fresh or refreshing tired visuals, we ensure every design decision has a purpose.&nbsp;</p> 
+                            <p>We don&apos;t just build websites, we create digital experiences that work. Starting with your business goals and user needs, we choose the right platform and build something you can actually manage and update yourself.
+No black box solutions or developer dependency. We build on proven platforms like WordPress, Shopify, and Webflow, then train your team to take full control. Every website we create is designed to grow with your business and convert visitors into customers.&nbsp;</p> 
                         </div>                         
                         <!-- Service benefits -->                         
                         <div class="col-md-6"> 
@@ -124,16 +255,16 @@ No generic templates or trendy designs that age badly. We create timeless, authe
                                 <!-- List -->                                 
                                 <ul class="list-group list-group-borderless border-0"> 
                                     <li class="list-group-item heading-color d-flex mb-0">
-                                        <i class="bi bi-patch-check text-primary me-2"></i>Authentic visual identity that reflects your actual values
+                                        <i class="bi bi-patch-check text-primary me-2"></i>Built on proven platforms you can manage yourself
                                     </li>                                     
                                     <li class="list-group-item heading-color d-flex mb-0">
-                                        <i class="bi bi-patch-check text-primary me-2"></i>Consistent brand experience across all platforms
+                                        <i class="bi bi-patch-check text-primary me-2"></i>Complete training so you're never dependent on developers
                                     </li>                                     
                                     <li class="list-group-item heading-color d-flex mb-0">
-                                        <i class="bi bi-patch-check text-primary me-2"></i>Templates you can actually use (Canva, social media, documents)
+                                        <i class="bi bi-patch-check text-primary me-2"></i>Mobile-responsive design that converts visitors
                                     </li>                                     
                                     <li class="list-group-item heading-color d-flex mb-0">
-                                        <i class="bi bi-patch-check text-primary me-2"></i>Brand guidelines that make sense to non-designers
+                                        <i class="bi bi-patch-check text-primary me-2"></i>SEO-optimized from day one
                                     </li>                                     
                                     <li class="list-group-item heading-color d-flex mb-0">
                                         <i class="bi bi-patch-check text-primary me-2"></i>Future-proof designs that won't need updating next year
@@ -157,29 +288,29 @@ How it works START -->
                         <div class="col-sm-6 col-md-3"> 
                             <div class="d-flex justify-content-center align-items-center text-center flex-column bg-transparent"> 
                                 <div class="icon-lg bg-primary bg-opacity-10 text-primary rounded-3 fw-bold flex-shrink-0 mb-3">01</div>                                 
-                                <h6>Discovery Session</h6> 
-                                <p class="small mb-0">We explore your mission, values, and vision. Understanding who you serve and what makes you different.</p> 
+                                <h6>Discovery & Planning</h6> 
+                                <p class="small mb-0">We analyze your business goals, target audience, and technical requirements to choose the right platform and approach.</p> 
                             </div>                             
                         </div>                         
                         <div class="col-sm-6 col-md-3"> 
                             <div class="d-flex justify-content-center align-items-center text-center flex-column bg-transparent"> 
                                 <div class="icon-lg bg-primary bg-opacity-10 text-primary rounded-3 fw-bold flex-shrink-0 mb-3">02</div>                                 
-                                <h6>Concept Development</h6> 
-                                <p class="small mb-0">Three distinct directions presented with context and rationale. Real designs, not just mood boards.</p> 
+                                <h6>Design & Development</h6> 
+                                <p class="small mb-0">We create wireframes, design mockups, and build your website on the chosen platform with your content and branding.</p> 
                             </div>                             
                         </div>                         
                         <div class="col-sm-6 col-md-3"> 
                             <div class="d-flex justify-content-center align-items-center text-center flex-column bg-transparent"> 
                                 <div class="icon-lg bg-primary bg-opacity-10 text-primary rounded-3 fw-bold flex-shrink-0 mb-3">03</div>                                 
-                                <h6>Refinement</h6> 
-                                <p class="small mb-0">Your chosen concept perfected through collaborative feedback. Typically 2-3 rounds to nail it.</p> 
+                                <h6>Testing & Optimization</h6> 
+                                <p class="small mb-0">We test across devices, optimize for speed and SEO, and ensure everything works perfectly before launch.</p> 
                             </div>                             
                         </div>                         
                         <div class="col-sm-6 col-md-3"> 
                             <div class="d-flex justify-content-center align-items-center text-center flex-column bg-transparent"> 
                                 <div class="icon-lg bg-primary bg-opacity-10 text-primary rounded-3 fw-bold flex-shrink-0 mb-3">04</div>                                 
-                                <h6>Delivery &amp; Training</h6> 
-                                <p class="small mb-0">Complete brand package delivered with templates, guidelines, and training on how to use everything.</p> 
+                                <h6>Launch &amp; Training</h6> 
+                                <p class="small mb-0">We launch your site, train your team to manage it, and provide ongoing support so you're never stuck.</p> 
                             </div>                             
                         </div>                         
                     </div>                     
@@ -214,8 +345,8 @@ Pricing START -->
                                     <div class="icon-lg bg-light rounded-circle mb-3"> <i class="bi bi-lightning-charge-fill fa-lg lh-1 heading-color"></i> 
                                     </div>                                     
                                     <!-- Title and price -->                                     
-                                    <h6 class="mb-3">Essential Brand Package</h6> 
-                                    <p class="mb-0"> <span class="h2 mb-0 plan-price">£597</span></p> <small>Perfect for startups and small businesses</small> 
+                                    <h6 class="mb-3">WordPress Website</h6> 
+                                    <p class="mb-0"> <span class="h2 mb-0 plan-price">£2,497</span></p> <small>Perfect for small businesses and professionals</small> 
                                 </div>                                 
                                 <!-- Card body -->                                 
                                 <div class="card-body p-4"> 
@@ -224,20 +355,20 @@ Pricing START -->
                                         <h6>Quick look at all the features</h6> 
                                         <!-- List -->                                         
                                         <ul class="list-group list-group-borderless mb-2 mb-sm-4"> 
-                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Logo design (3 concepts, 3 revisions)
+                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Custom WordPress theme development
                                             </li>                                             
-                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Color palette & typography
+                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Mobile-responsive design
                                             </li>                                             
-                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Business card design
+                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>SEO optimization setup
                                             </li>                                             
-                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Email signature template
+                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Content management training
                                             </li>                                             
-                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Basic brand guidelines (5 pages)
+                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Contact forms & integrations
                                             </li>                                             
-                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Social media profile templates
+                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>3 months support & updates
                                             </li>                                             
                                         </ul>                                         
-                                        <!-- Button -->                                         <a href="#leadQualificationForm" class="btn btn-dark w-100 pricing-card-btn" data-package="essential" data-service="brand-design" data-budget="under-1000">Get started →</a> 
+                                        <!-- Button -->                                         <a href="#leadQualificationForm" class="btn btn-dark w-100 pricing-card-btn" data-package="wordpress" data-service="web-development" data-budget="2500-5000">Get started →</a> 
                                     </div>                                     
                                 </div>                                 
                             </div>                             
@@ -253,8 +384,8 @@ Pricing START -->
                                     <div class="icon-lg bg-primary bg-opacity-10 rounded-circle mb-3"> <i class="bi bi-rocket-takeoff-fill fa-lg lh-1 text-primary"></i> 
                                     </div>                                     
                                     <!-- Title and price -->                                     
-                                    <h6 class="mb-3">Complete Brand System</h6> 
-                                    <p class="mb-0"> <span class="h2 mb-0 plan-price">£1,497</span></p> <small>Everything in Essential PLUS:</small> 
+                                    <h6 class="mb-3">E-commerce Store</h6> 
+                                    <p class="mb-0"> <span class="h2 mb-0 plan-price">£4,997</span></p> <small>Everything in WordPress PLUS:</small> 
                                 </div>                                 
                                 <!-- Card body -->                                 
                                 <div class="card-body bg-primary bg-opacity-10 p-4"> 
@@ -262,20 +393,20 @@ Pricing START -->
                                         <h6 class="heading-color">Quick look at all the features</h6> 
                                         <!-- List -->                                         
                                         <ul class="list-group list-group-borderless mb-2 mb-sm-4"> 
-                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg heading-color me-1"></i>Extended logo variations
+                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg heading-color me-1"></i>WooCommerce or Shopify setup
                                             </li>                                             
-                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg heading-color me-1"></i>Social media template pack (20 designs)
+                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg heading-color me-1"></i>Payment gateway integration
                                             </li>                                             
-                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg heading-color me-1"></i>Document templates (letterhead, invoice)
+                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg heading-color me-1"></i>Inventory management system
                                             </li>                                             
-                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg heading-color me-1"></i>Comprehensive guidelines (15+ pages)
+                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg heading-color me-1"></i>Customer account portal
                                             </li>                                             
-                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg heading-color me-1"></i>3 months of design support
+                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg heading-color me-1"></i>6 months support & updates
                                             </li>                                             
-                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg heading-color me-1"></i>Canva template library
+                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg heading-color me-1"></i>Analytics & reporting setup
                                             </li>                                             
                                         </ul>                                         
-                                        <!-- Button -->                                         <a href="#leadQualificationForm" class="btn btn-primary mb-0 w-100 pricing-card-btn" data-package="complete" data-service="brand-design" data-budget="1000-2500">Most popular →</a> 
+                                        <!-- Button -->                                         <a href="#leadQualificationForm" class="btn btn-primary mb-0 w-100 pricing-card-btn" data-package="ecommerce" data-service="web-development" data-budget="5000-10000">Most popular →</a> 
                                     </div>                                     
                                 </div>                                 
                             </div>                             
@@ -289,8 +420,8 @@ Pricing START -->
                                     <div class="icon-lg bg-light rounded-circle mb-3"> <i class="bi bi-send-fill fa-lg lh-1 heading-color"></i> 
                                     </div>                                     
                                     <!-- Title and price -->                                     
-                                    <h6 class="mb-3">Enterprise Identity</h6> 
-                                    <p class="mb-0"> <span class="h2 mb-0 plan-price">£3,997+</span></p> <small>Full brand development including:</small> 
+                                    <h6 class="mb-3">Custom Web Application</h6> 
+                                    <p class="mb-0"> <span class="h2 mb-0 plan-price">£9,997+</span></p> <small>Full custom development including:</small> 
                                 </div>                                 
                                 <!-- Card body -->                                 
                                 <div class="card-body p-4"> 
@@ -299,20 +430,20 @@ Pricing START -->
                                         <h6>Quick look at all the features</h6> 
                                         <!-- List -->                                         
                                         <ul class="list-group list-group-borderless mb-2 mb-sm-4"> 
-                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Brand strategy workshop
+                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Custom application architecture
                                             </li>                                             
-                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Competitor analysis
+                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Database design & development
                                             </li>                                             
-                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Complete visual system
+                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>API development & integration
                                             </li>                                             
-                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Marketing collateral suite
+                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>User authentication & security
                                             </li>                                             
-                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Website design concepts
+                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Admin dashboard & reporting
                                             </li>                                             
-                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Ongoing brand management
+                                            <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>12 months support & maintenance
                                             </li>                                             
                                         </ul>                                         
-                                        <!-- Button -->                                         <a href="#leadQualificationForm" class="btn btn-dark w-100 pricing-card-btn" data-package="enterprise" data-service="brand-design" data-budget="discuss">Let's discuss →</a> 
+                                        <!-- Button -->                                         <a href="#leadQualificationForm" class="btn btn-dark w-100 pricing-card-btn" data-package="custom" data-service="web-development" data-budget="10000-plus">Let's discuss →</a> 
                                     </div>                                     
                                 </div>                                 
                             </div>                             
@@ -362,21 +493,160 @@ CTA START -->
 CTA END -->             
         </main>         
         <!-- **************** MAIN CONTENT END **************** -->         
-        <!-- =======================
-        <!-- Footer START -->         
+        
         <!-- Footer Container -->
-        <div id="footer-container"></div>         
-        <!-- =======================
-        Footer END -->         
+        <div id="footer-container"></div>
+        
         <!-- Back to top -->         
-        <div class="back-top"></div>         
+        <div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i>
+        </div>
         <!-- Bootstrap JS -->         
-        <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>         
+        <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>         
         <!-- Vendors -->         
-        <script src="assets/vendor/ityped/index.js"></script>         
-        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>         
-        <!-- Theme Functions -->         
-        <script src="assets/js/functions.js"></script>         
+        <script src="assets/vendor/purecounterjs/dist/purecounter_vanilla.js" defer></script>         
+        <script src="assets/vendor/aos/aos.js" defer></script>         
+        <script src="assets/vendor/glightbox/js/glightbox.js" defer></script>         
+        <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>         
+        <!-- Template Functions -->         
+        <script src="assets/js/functions.js" defer></script>         
+        <!-- Load Header and Footer Templates -->
+        <script>
+            // Load header
+            fetch('templates/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                    // Initialize cookie banner after header loads
+                    initializeCookieBanner();
+                    // Initialize dark mode after header loads
+                    initializeDarkMode();
+                    // Initialize dropdown hover after header loads
+                    initializeDropdownHover();
+                })
+                .catch(error => console.error('Error loading header:', error));
+
+
+            // Cookie Banner Initialization
+            function initializeCookieBanner() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+
+                // Show banner unless a previous choice exists
+                var choice = localStorage.getItem('vs_consent');
+                if (!choice) {
+                    var banner = document.getElementById('vs-consent');
+                    if (banner) banner.style.display = 'block';
+                }
+
+                function setConsent(state){
+                    gtag('consent','update',{
+                        'ad_storage': state,
+                        'analytics_storage': state,
+                        'ad_user_data': state,
+                        'ad_personalization': state
+                    });
+                    localStorage.setItem('vs_consent', state);
+                    var banner = document.getElementById('vs-consent');
+                    if (banner) banner.style.display = 'none';
+                }
+
+                // Add event listeners
+                var acceptBtn = document.getElementById('vs-accept');
+                var rejectBtn = document.getElementById('vs-reject');
+                
+                if (acceptBtn) acceptBtn.onclick = function(){ setConsent('granted'); };
+                if (rejectBtn) rejectBtn.onclick = function(){ setConsent('denied'); };
+
+                // Optional: provide a way to re-open banner
+                window.openConsent = function(){
+                    localStorage.removeItem('vs_consent');
+                    var banner = document.getElementById('vs-consent');
+                    if (banner) banner.style.display = 'block';
+                };
+            }
+
+            // Dark Mode Initialization
+            function initializeDarkMode() {
+                const el = document.querySelector('.theme-icon-active');
+                if(el !== undefined && el !== null) {
+                    const showActiveTheme = theme => {
+                        const activeThemeIcon = document.querySelector('.theme-icon-active use')
+                        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+                        const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+
+                        document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                            element.classList.remove('active')
+                        })
+
+                        btnToActive.classList.add('active')
+                        activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+                    }
+
+                    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                        const storedTheme = localStorage.getItem('theme')
+                        if (storedTheme === 'auto' || !storedTheme) {
+                            setTheme(getPreferredTheme())
+                            showActiveTheme(getPreferredTheme())
+                        }
+                    })
+
+                    showActiveTheme(getPreferredTheme())
+
+                    // Use event delegation to handle theme toggle clicks
+                    document.addEventListener('click', (e) => {
+                        if (e.target.closest('[data-bs-theme-value]')) {
+                            const toggle = e.target.closest('[data-bs-theme-value]')
+                            const theme = toggle.getAttribute('data-bs-theme-value')
+                            localStorage.setItem('theme', theme)
+                            setTheme(theme)
+                            showActiveTheme(theme)
+                        }
+                    })
+                }
+            }
+
+            // Dropdown Hover Initialization
+            function initializeDropdownHover() {
+                const dropdownHoverElements = document.querySelectorAll('.dropdown-hover');
+                
+                dropdownHoverElements.forEach(element => {
+                    const dropdownToggle = element.querySelector('[data-bs-toggle="dropdown"]');
+                    const dropdownMenu = element.querySelector('.dropdown-menu');
+                    
+                    if (dropdownToggle && dropdownMenu) {
+                        let hoverTimeout;
+                        
+                        // Show dropdown on hover
+                        element.addEventListener('mouseenter', () => {
+                            clearTimeout(hoverTimeout);
+                            dropdownMenu.classList.add('show');
+                            dropdownToggle.setAttribute('aria-expanded', 'true');
+                        });
+                        
+                        // Hide dropdown after delay when mouse leaves
+                        element.addEventListener('mouseleave', () => {
+                            hoverTimeout = setTimeout(() => {
+                                dropdownMenu.classList.remove('show');
+                                dropdownToggle.setAttribute('aria-expanded', 'false');
+                            }, 150);
+                        });
+                        
+                        // Keep dropdown open when hovering over menu
+                        dropdownMenu.addEventListener('mouseenter', () => {
+                            clearTimeout(hoverTimeout);
+                        });
+                        
+                        dropdownMenu.addEventListener('mouseleave', () => {
+                            hoverTimeout = setTimeout(() => {
+                                dropdownMenu.classList.remove('show');
+                                dropdownToggle.setAttribute('aria-expanded', 'false');
+                            }, 150);
+                        });
+                    }
+                });
+            }
+        </script>
+        
         <!-- Template Loader Script -->
         <script>
             // Simple template loader
@@ -390,6 +660,11 @@ CTA END -->
                     document.getElementById(containerId).innerHTML = html;
 
                     console.log(`✅ ${templatePath} loaded successfully`);
+                    
+                    // Initialize cookie banner after header loads
+                    if (templatePath === 'templates/header.html') {
+                        initializeCookieBanner();
+                    }
                 } catch (error) {
                     console.error(`❌ Error loading ${templatePath}:`, error);
                 }
@@ -540,27 +815,65 @@ CTA END -->
                 }
             }
 
+            // Cookie Banner Initialization
+            function initializeCookieBanner() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+
+                // Show banner unless a previous choice exists
+                var choice = localStorage.getItem('vs_consent');
+                if (!choice) {
+                    var banner = document.getElementById('vs-consent');
+                    if (banner) banner.style.display = 'block';
+                }
+
+                function setConsent(state){
+                    gtag('consent','update',{
+                        'ad_storage': state,
+                        'analytics_storage': state,
+                        'ad_user_data': state,
+                        'ad_personalization': state
+                    });
+                    localStorage.setItem('vs_consent', state);
+                    var banner = document.getElementById('vs-consent');
+                    if (banner) banner.style.display = 'none';
+                }
+
+                // Add event listeners
+                var acceptBtn = document.getElementById('vs-accept');
+                var rejectBtn = document.getElementById('vs-reject');
+                
+                if (acceptBtn) acceptBtn.onclick = function(){ setConsent('granted'); };
+                if (rejectBtn) rejectBtn.onclick = function(){ setConsent('denied'); };
+
+                // Optional: provide a way to re-open banner
+                window.openConsent = function(){
+                    localStorage.removeItem('vs_consent');
+                    var banner = document.getElementById('vs-consent');
+                    if (banner) banner.style.display = 'block';
+                };
+            }
+
             // Load templates when page loads
             document.addEventListener('DOMContentLoaded', function() {
-                console.log('   Loading templates...');
+                console.log('�� Loading templates...');
                 loadTemplate('header-container', 'templates/header.html');
-                loadTemplate('footer-container', 'templates/footer.html');
-                
-                // Load form component and initialize form functionality
-                loadTemplate('form-container', 'templates/form.html').then(() => {
-                    initializeFormFunctionality();
+                loadTemplate('footer-container', 'templates/footer.html').then(() => {
+                    initializeCookieBanner();
                 });
+                loadTemplate('form-container', 'templates/contact-form-template.html');
 
                 // Initialize dropdown hover, dark mode, and sticky header after templates load
                 setTimeout(() => {
                     initDropdownHover();
                     initDarkMode();
                     initStickyHeader();
+                    initializeFormFunctionality();
                 }, 500);
             });
-        </script>         
-        <!-- Lead Qualification Script -->
-        <script>
+        </script> 
+<!-- Lead Qualification Script -->
+<script>
         // Initialize form functionality after form component loads
         function initializeFormFunctionality() {
             console.log('Form component loaded, initializing functionality...');
@@ -599,13 +912,12 @@ CTA END -->
                 processEmailNurture(data);
                     } else if (action === 'book-call') {
                         // Redirect to calendar
-                        window.location.href = 'verosia-book-a-call-contact-v2.html';
+                        window.location.href = 'book-free-strategy-call-belfast.html';
                     }
                 });
             }
         }
         
-        // Lead qualification and routing logic
         // Simplified form processing - no complex qualification logic needed
         
         // Form submission is now handled in initializeFormEventListeners()
@@ -618,6 +930,8 @@ CTA END -->
             
             // Hide action buttons and show success message
             document.getElementById('actionButtons').classList.add('d-none');
+            
+            // Show success message
             document.getElementById('successMessage').classList.remove('d-none');
             
             // You can replace this with actual form submission to your backend
@@ -738,4 +1052,4 @@ CTA END -->
         }
         </script>
     </body>     
-</html>
+</html> 

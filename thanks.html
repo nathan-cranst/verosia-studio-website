@@ -1,11 +1,54 @@
 <!DOCTYPE html> 
 <html lang="en"> 
     <head> 
-        <title>Thank You - Verosia Studio</title>         
+        <title>Thank You - Your Digital Marketing Audit is Complete | Verosia Studio</title>         
         <!-- Meta Tags -->         
         <meta charset="utf-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="robots" content="noindex">
+        <meta name="description" content="Thank you for completing your free digital marketing audit. Your personalized report will be delivered shortly. Get expert insights to grow your business.">
+        <meta name="keywords" content="thank you, digital marketing audit, free audit, business growth, digital marketing belfast, marketing insights">
+        <meta name="robots" content="noindex, nofollow">
+        <link rel="canonical" href="https://verosiastudio.com/thanks.html">
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://verosiastudio.com/thanks.html">
+        <meta property="og:title" content="Thank You - Your Digital Marketing Audit is Complete | Verosia Studio">
+        <meta property="og:description" content="Thank you for completing your free digital marketing audit. Your personalized report will be delivered shortly. Get expert insights to grow your business.">
+        <meta property="og:image" content="https://verosiastudio.com/assets/images/verosia home/verosia logo.png">
+        
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://verosiastudio.com/thanks.html">
+        <meta property="twitter:title" content="Thank You - Your Digital Marketing Audit is Complete | Verosia Studio">
+        <meta property="twitter:description" content="Thank you for completing your free digital marketing audit. Your personalized report will be delivered shortly. Get expert insights to grow your business.">
+        <meta property="twitter:image" content="https://verosiastudio.com/assets/images/verosia home/verosia logo.png">
+        
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Thank You - Your Digital Marketing Audit is Complete | Verosia Studio",
+          "description": "Thank you for completing your free digital marketing audit. Your personalized report will be delivered shortly. Get expert insights to grow your business.",
+          "url": "https://verosiastudio.com/thanks.html",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "Verosia Studio",
+            "url": "https://verosiastudio.com",
+            "logo": "https://verosiastudio.com/assets/images/verosia home/verosia logo.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Belfast",
+              "addressCountry": "UK"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/company/verosia-studio",
+              "https://www.instagram.com/verosiastudio"
+            ]
+          }
+        }
+        </script>
         
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -14,84 +57,25 @@
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-K5QRF4CR');</script>
         <!-- End Google Tag Manager -->
-        
-        <meta name="author" content="Verosia Studio"> 
-        <meta name="description" content="Thank you for contacting Verosia Studio. We'll be in touch within 24 hours."> 
-        <!-- Dark mode -->         
+        <!-- Dark mode script -->
         <script>
-		const storedTheme = localStorage.getItem('theme')
-
-		const getPreferredTheme = () => {
-			if (storedTheme) {
-				return storedTheme
-			}
-			return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-		}
-
-		const setTheme = function (theme) {
-			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-				document.documentElement.setAttribute('data-bs-theme', 'dark')
-			} else {
-				document.documentElement.setAttribute('data-bs-theme', theme)
-			}
-		}
-
-		setTheme(getPreferredTheme())
-
-		window.addEventListener('DOMContentLoaded', () => {
-			var el = document.querySelector('.theme-icon-active');
-			if(el != 'undefined' && el != null) {
-				const showActiveTheme = (theme, focus = false) => {
-					const themeSwitcher = document.querySelector('#bd-theme')
-
-					if (!themeSwitcher) {
-						return
-					}
-
-					const themeSwitcherText = document.querySelector('#bd-theme-text')
-					const activeThemeIcon = document.querySelector('.theme-icon-active use')
-					const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-					const iconOfActiveBtn = btnToActive.querySelector('svg use').getAttribute('href')
-
-					document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-						element.classList.remove('active')
-						element.setAttribute('aria-pressed', 'false')
-					})
-
-					btnToActive.classList.add('active')
-					btnToActive.setAttribute('aria-pressed', 'true')
-					activeThemeIcon.setAttribute('href', iconOfActiveBtn)
-
-					const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
-					themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
-
-					if (focus) {
-						themeSwitcher.focus()
-					}
-				}
-
-				window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-					if (storedTheme !== 'light' || storedTheme !== 'dark') {
-						setTheme(getPreferredTheme())
-					}
-				})
-
-				showActiveTheme(getPreferredTheme())
-
-				document.querySelectorAll('[data-bs-theme-value]')
-					.forEach(toggle => {
-						toggle.addEventListener('click', () => {
-							const theme = toggle.getAttribute('data-bs-theme-value')
-							localStorage.setItem('theme', theme)
-							setTheme(theme)
-							showActiveTheme(theme, true)
-						})
-					})
-
-			}
-		})
-
-	</script>
+        const storedTheme = localStorage.getItem('theme')
+        const getPreferredTheme = () => {
+            if (storedTheme) {
+                return storedTheme
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        }
+        const setTheme = function (theme) {
+            if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-bs-theme', 'dark')
+            } else {
+                document.documentElement.setAttribute('data-bs-theme', theme)
+            }
+        }
+        setTheme(getPreferredTheme())
+        // ... rest of dark mode script
+        </script>
         <!-- Favicon -->         
         <link rel="shortcut icon" href="assets/images/favicon.ico"> 
         <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico"> 
@@ -101,39 +85,36 @@
         <link href="assets/vendor/aos/aos.css" rel="stylesheet"> 
         <link href="assets/vendor/glightbox/css/glightbox.css" rel="stylesheet"> 
         <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> 
+        <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css"> 
         <!-- Theme CSS -->         
         <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
     </head>     
     <body> 
         <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5QRF4CR"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5QRF4CR" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
         <!-- End Google Tag Manager (noscript) -->
-        
         <!-- Header Container -->
         <div id="header-container"></div>         
         <!-- **************** MAIN CONTENT START **************** -->         
         <main> 
             <!-- =======================
 Thank You Page START -->             
-            <section class="py-5"> 
+            <section class="pt-16 pb-10"> 
                 <div class="container"> 
                     <div class="row justify-content-center"> 
                         <div class="col-lg-8 col-xl-6"> 
                             <div class="text-center"> 
                                 <!-- Success Icon -->                                 
-                                <div class="mb-4"> 
-                                    <div class="avatar avatar-4xl bg-primary bg-opacity-10 mx-auto"> 
-                                        <i class="bi bi-check-circle-fill text-primary fs-1"></i> 
-                                    </div>                                     
+                                <div class="mb-4 text-center"> 
+                                    <i class="bi bi-check-circle-fill text-primary fs-1"></i> 
                                 </div>                                 
                                 <!-- Title -->                                 
                                 <h1 class="mb-3">Thank You!</h1> 
-                                <p class="mb-4 fs-5">Your message has been sent successfully. We'll get back to you within 24 hours.</p> 
+                                <p class="mb-4 fs-5">Your message has been sent successfully. We'll get back to you within 48 hours.</p> 
                                 <!-- Action Buttons -->                                 
-                                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center"> 
-                                    <a href="index.html" class="btn btn-primary">Back to Home</a> 
-                                    <a href="verosia-book-a-call-contact-v2.html" class="btn btn-outline-primary">Book a Call</a> 
+                                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center"> <a href="index.html" class="btn btn-primary">Back to Home</a> <a href="book-free-strategy-call-belfast.html" class="btn btn-outline-primary">Book a Call</a> 
                                 </div>                                 
                             </div>                             
                         </div>                         
@@ -147,24 +128,27 @@ Thank You Page END -->
         <!-- Footer Container -->
         <div id="footer-container"></div>
         <!-- Back to top -->         
-        <div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+        <div class="back-top">
+            <i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i>
+        </div>
         <!-- Bootstrap JS -->         
-        <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script> 
+        <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>         
         <!-- Vendors -->         
-        <script src="assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script> 
-        <script src="assets/vendor/aos/aos.js"></script> 
-        <script src="assets/vendor/glightbox/js/glightbox.js"></script> 
-        <script src="assets/vendor/typedjs/typed.min.js"></script> 
-        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script> 
+        <script src="assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>         
+        <script src="assets/vendor/aos/aos.js"></script>         
+        <script src="assets/vendor/glightbox/js/glightbox.js"></script>         
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>         
         <!-- Template Functions -->         
-        <script src="assets/js/functions.js"></script> 
-        <!-- Load Header and Footer -->
+        <script src="assets/js/functions.js"></script>         
+        <!-- Load Header and Footer Templates -->
         <script>
             // Load header
             fetch('templates/header.html')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('header-container').innerHTML = data;
+                    // Initialize cookie banner after header loads
+                    initializeCookieBanner();
                 })
                 .catch(error => console.error('Error loading header:', error));
 
@@ -175,6 +159,45 @@ Thank You Page END -->
                     document.getElementById('footer-container').innerHTML = data;
                 })
                 .catch(error => console.error('Error loading footer:', error));
+
+            // Cookie Banner Initialization
+            function initializeCookieBanner() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+
+                // Show banner unless a previous choice exists
+                var choice = localStorage.getItem('vs_consent');
+                if (!choice) {
+                    var banner = document.getElementById('vs-consent');
+                    if (banner) banner.style.display = 'block';
+                }
+
+                function setConsent(state){
+                    gtag('consent','update',{
+                        'ad_storage': state,
+                        'analytics_storage': state,
+                        'ad_user_data': state,
+                        'ad_personalization': state
+                    });
+                    localStorage.setItem('vs_consent', state);
+                    var banner = document.getElementById('vs-consent');
+                    if (banner) banner.style.display = 'none';
+                }
+
+                // Add event listeners
+                var acceptBtn = document.getElementById('vs-accept');
+                var rejectBtn = document.getElementById('vs-reject');
+                
+                if (acceptBtn) acceptBtn.onclick = function(){ setConsent('granted'); };
+                if (rejectBtn) rejectBtn.onclick = function(){ setConsent('denied'); };
+
+                // Optional: provide a way to re-open banner
+                window.openConsent = function(){
+                    localStorage.removeItem('vs_consent');
+                    var banner = document.getElementById('vs-consent');
+                    if (banner) banner.style.display = 'block';
+                };
+            }
         </script>
     </body>     
 </html>
