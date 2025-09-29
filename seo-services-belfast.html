@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html lang="en"> 
     <head> 
-        <title>SEO Services Belfast - Search Engine Optimisation Companies | Verosia Studio</title>         
+        <title>SEO Services Belfast - Search Engine Optimisation</title>         
         <!-- Meta Tags -->         
         <meta charset="utf-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -228,7 +228,8 @@
 		
 	</script>         
         <!-- Favicon -->         
-        <link rel="shortcut icon" href="assets/images/favicon.ico?v=2"> 
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.svg"> 
         <!-- Google Font -->         
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -563,7 +564,7 @@ CTA END -->
                 if (!cookieBanner) return;
 
                 // Check if user has already made a choice
-                const cookieChoice = localStorage.getItem('cookieChoice');
+                const cookieChoice = localStorage.getItem('vs_consent');
                 if (cookieChoice) {
                     cookieBanner.style.display = 'none';
                     return;
@@ -574,14 +575,14 @@ CTA END -->
 
                 if (acceptBtn) {
                     acceptBtn.addEventListener('click', function() {
-                        localStorage.setItem('cookieChoice', 'accepted');
+                        localStorage.setItem('vs_consent', 'accepted');
                         cookieBanner.style.display = 'none';
                     });
                 }
 
                 if (declineBtn) {
                     declineBtn.addEventListener('click', function() {
-                        localStorage.setItem('cookieChoice', 'declined');
+                        localStorage.setItem('vs_consent', 'declined');
                         cookieBanner.style.display = 'none';
                     });
                 }

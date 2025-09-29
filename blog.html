@@ -173,7 +173,8 @@
 		
 	</script>         
         <!-- Favicon -->         
-        <link rel="shortcut icon" href="assets/images/favicon.ico?v=2"> 
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.svg"> 
         <!-- Google Font -->         
         <!-- Performance Optimizations -->
         <link rel="preload" href="assets/css/style.css" as="style">
@@ -220,26 +221,23 @@
             .blog-image-loading::before {
                 content: "";
                 position: absolute;
-                top: -50%;
-                left: -50%;
-                width: 200%;
-                height: 200%;
-                background: conic-gradient(
-                    from 0deg at 50% 50%,
-                    transparent 0deg,
-                    rgba(214, 255, 63, 0.12) 60deg,
-                    transparent 120deg,
-                    rgba(142, 140, 242, 0.12) 180deg,
-                    transparent 240deg,
-                    rgba(255, 168, 87, 0.12) 300deg,
-                    transparent 360deg
-                );
-                animation: verosiaRotate 4s linear infinite;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(45deg, 
+                            rgba(214, 255, 63, 0.1) 0%, 
+                            rgba(142, 140, 242, 0.1) 25%, 
+                            rgba(255, 168, 87, 0.1) 50%, 
+                            rgba(214, 255, 63, 0.1) 75%, 
+                            rgba(142, 140, 242, 0.1) 100%);
+                background-size: 200% 200%;
+                animation: verosiaSmoothFlow 3s ease-in-out infinite;
                 z-index: 1;
             }
             
             .blog-image-loading::after {
-                content: "⚡ Loading...";
+                content: "⚡ Loading Image...";
                 position: relative;
                 z-index: 2;
                 font-family: 'Inter', sans-serif;
@@ -272,6 +270,12 @@
             
             .blog-image-container img.loaded {
                 opacity: 1;
+            }
+            
+            .blog-image-loading.hidden {
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.5s ease-out;
             }
             
             @keyframes verosiaAbstractFlow {
@@ -312,6 +316,21 @@
                 50% {
                     transform: scale(1.05);
                     opacity: 1;
+                }
+            }
+            
+            @keyframes verosiaSmoothFlow {
+                0% {
+                    background-position: 0% 50%;
+                    opacity: 0.8;
+                }
+                50% {
+                    background-position: 100% 50%;
+                    opacity: 1;
+                }
+                100% {
+                    background-position: 0% 50%;
+                    opacity: 0.8;
                 }
             }
         </style> 
@@ -857,7 +876,7 @@ Blog list and sidebar END -->
             // Blog post configuration - maps blog post URLs to their metadata
             const blogPostsConfig = {
                 'wordpress-speed-optimization-belfast.html': {
-                    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop&crop=center',
+                    image: 'https://images.unsplash.com/photo-1560472355-109703aa3edc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDZ8fHdvcmRwcmVzc3xlbnwwfHx8fDE3NTgzMjg3NjV8MA&ixlib=rb-4.1.0&q=80&w=1080',
                     title: 'Why Your WordPress Site is Slower Than Your Competitors',
                     author: 'Nathan Cranston',
                     category: 'web-development',
@@ -865,7 +884,7 @@ Blog list and sidebar END -->
                     excerpt: 'Discover the common WordPress performance issues killing your site speed and learn how to fix them to outperform your competitors.'
                 },
                 'digital-marketing-mistakes-small-business-belfast.html': {
-                    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop&crop=center',
+                    image: 'https://images.unsplash.com/photo-1533750516457-a7f992034fec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDE1fHxkaWdpdGFsJTIwbWFya2V0aW5nfGVufDB8fHx8MTc1ODQxMTU1M3ww&ixlib=rb-4.1.0&q=80&w=1080',
                     title: '5 Digital Marketing Mistakes Killing Your Business Growth',
                     author: 'Nathan Cranston',
                     category: 'digital-strategy',
@@ -873,7 +892,7 @@ Blog list and sidebar END -->
                     excerpt: 'Discover the 5 most common digital marketing mistakes that are silently killing your business growth and learn how to fix them today.'
                 },
                 'local-seo-northern-ireland-small-business.html': {
-                    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop&crop=center',
+                    image: 'https://images.unsplash.com/photo-1593437955835-fc8c51725430?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDV8fHNlb3xlbnwwfHx8fDE3NTg0MTE5OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080',
                     title: 'Local SEO: The Secret Weapon for Northern Ireland Small Businesses',
                     author: 'Nathan Cranston',
                     category: 'seo',
@@ -881,7 +900,7 @@ Blog list and sidebar END -->
                     excerpt: 'Discover how local SEO can transform your Northern Ireland small business visibility and drive more customers through your doors.'
                 },
                 'consistent-branding-customer-trust-belfast.html': {
-                    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop&crop=center',
+                    image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDg5fHxicmFuZGluZ3xlbnwwfHx8fDE3NTg0MTE4Nzd8MA&ixlib=rb-4.1.0&q=80&w=1080',
                     title: 'How Consistent Branding Transforms Customer Trust',
                     author: 'Nathan Cranston',
                     category: 'brand-design',
@@ -889,7 +908,7 @@ Blog list and sidebar END -->
                     excerpt: 'Discover how consistent branding builds customer trust and drives business growth for Northern Ireland small businesses.'
                 },
                 'social-media-strategy-small-business-belfast.html': {
-                    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop&crop=center',
+                    image: 'assets/images/verosia home/nathan-cranston-working-on-peachy-plants-website.jpg',
                     title: 'From Peachy Plants to Digital Solutions: A Founder\'s Journey',
                     author: 'Nathan Cranston',
                     category: 'business-growth',
@@ -897,34 +916,6 @@ Blog list and sidebar END -->
                     excerpt: 'Discover how Nathan transformed his plant business into a digital marketing powerhouse and learn the lessons that can help your business grow.'
                 }
             };
-
-            // Function to extract the first featured image from blog post
-            async function extractFeaturedImageFromBlogPost(url) {
-                try {
-                    const response = await fetch(url);
-                    const html = await response.text();
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(html, 'text/html');
-                    
-                    // Look for the main featured image (first image after hero section)
-                    const featuredImage = doc.querySelector('img.img-fluid.rounded');
-                    if (featuredImage && featuredImage.src && !featuredImage.src.includes('avatar')) {
-                        return featuredImage.src;
-                    }
-                    
-                    // Fallback: look for any image in the main content area
-                    const contentImages = doc.querySelectorAll('.col-lg-8 img, .blog-content img, .post-content img');
-                    for (let img of contentImages) {
-                        if (img.src && !img.src.includes('avatar') && img.src.includes('unsplash')) {
-                            return img.src;
-                        }
-                    }
-                    
-                } catch (error) {
-                    console.log(`Could not extract featured image from ${url}:`, error);
-                }
-                return null;
-            }
 
             // Function to populate blog cards with clean loading state
             async function populateBlogCards() {
@@ -968,72 +959,38 @@ Blog list and sidebar END -->
                         // Load the actual featured image from the blog post
                         const imageContainer = card.querySelector('.blog-image-container');
                         if (imageContainer) {
-                            try {
-                                // Extract the actual featured image from the blog post
-                                const featuredImageUrl = await extractFeaturedImageFromBlogPost(blogUrl);
-                                const imageToUse = featuredImageUrl || config.image;
-                                
-                                // Create new image element
-                                const img = document.createElement('img');
-                                img.alt = config.title;
-                                img.style.width = '100%';
-                                img.style.height = '200px';
-                                img.style.objectFit = 'cover';
-                                img.style.objectPosition = 'center';
-                                img.style.borderRadius = '8px';
-                                
-                                // Preload the image
-                                img.onload = function() {
-                                    // Hide loading state and show image
-                                    const loadingDiv = imageContainer.querySelector('.blog-image-loading');
-                                    if (loadingDiv) {
-                                        loadingDiv.style.display = 'none';
-                                    }
-                                    img.classList.add('loaded');
-                                    imageContainer.appendChild(img);
-                                };
-                                
-                                img.onerror = function() {
-                                    // Fallback to config image if extraction fails
-                                    img.src = config.image;
-                                    const loadingDiv = imageContainer.querySelector('.blog-image-loading');
-                                    if (loadingDiv) {
-                                        loadingDiv.style.display = 'none';
-                                    }
-                                    img.classList.add('loaded');
-                                    imageContainer.appendChild(img);
-                                };
-                                
-                                img.src = imageToUse;
-                                console.log(`Loading featured image for ${blogUrl}: ${imageToUse}`);
-                                
-                            } catch (error) {
-                                console.error(`Error loading image for ${blogUrl}:`, error);
-                                // Fallback to config image
-                                const img = document.createElement('img');
-                                img.src = config.image;
-                                img.alt = config.title;
-                                img.style.width = '100%';
-                                img.style.height = '200px';
-                                img.style.objectFit = 'cover';
-                                img.style.objectPosition = 'center';
-                                img.style.borderRadius = '8px';
-                                
-                                const loadingDiv = imageContainer.querySelector('.blog-image-loading');
-                                if (loadingDiv) {
-                                    loadingDiv.style.display = 'none';
-                                }
-                                img.classList.add('loaded');
-                                imageContainer.appendChild(img);
+                            // Hide the loading state immediately
+                            const loadingDiv = imageContainer.querySelector('.blog-image-loading');
+                            if (loadingDiv) {
+                                loadingDiv.style.display = 'none';
                             }
+                            
+                            // Create and add the image directly
+                            const img = document.createElement('img');
+                            img.alt = config.title;
+                            img.loading = 'lazy';
+                            img.style.width = '100%';
+                            img.style.height = '200px';
+                            img.style.objectFit = 'cover';
+                            img.style.objectPosition = 'center';
+                            img.style.borderRadius = '8px';
+                            img.src = config.image;
+                            
+                            // Add the loaded class to make the image visible
+                            img.classList.add('loaded');
+                            
+                            // Add the image to the container
+                            imageContainer.appendChild(img);
                         }
                     }
                 }
             }
 
             document.addEventListener('DOMContentLoaded', function() {
-                // Populate blog cards with dynamic content
-                populateBlogCards();
+                // Populate blog cards with dynamic content (with a small delay to ensure page is fully loaded)
+                setTimeout(() => {
+                    populateBlogCards();
+                }, 100);
                 
                 const filterTags = document.querySelectorAll('.filter-tag');
                 const filterCategories = document.querySelectorAll('.filter-category');

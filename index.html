@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html lang="en"> 
     <head> 
-        <title>Verosia Studio - Digital Marketing & Web Design Agency | Northern Ireland</title>         
+        <title>Verosia Studio - Digital Marketing & Web Design Belfast</title>         
         <!-- Meta Tags -->         
         <meta charset="utf-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
@@ -27,6 +27,9 @@
     <link rel="preload" href="assets/images/verosia home/peachy-plants-screen-recording.mp4" as="video">
     <link rel="dns-prefetch" href="//images.unsplash.com">
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
         
         <!-- Open Graph Meta Tags -->
         <meta property="og:title" content="Verosia Studio - Digital Marketing & Web Design Agency | Northern Ireland">
@@ -174,12 +177,13 @@
 		
 	</script>         
         <!-- Favicon -->         
-        <link rel="shortcut icon" href="assets/images/favicon.ico?v=2"> 
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.svg"> 
         <!-- Google Font -->         
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
         <link href="../css/theme.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'"> 
         <!-- Plugins CSS -->         
         <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css"> 
         <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css"> 
@@ -533,10 +537,11 @@ Founder Story START -->
                                     <!-- About video - Peachy Plants screen recording -->                                     
                                     <div class="video-loading-container" id="video-container">
                                         <div class="video-loading-state" id="video-loading"></div>
-            <video autoplay muted loop playsinline preload="metadata" 
+            <video autoplay muted loop playsinline preload="none" 
                    onloadedmetadata="handleVideoLoad(this);"
                    oncanplay="handleVideoLoad(this);"
-                   onerror="handleVideoLoad(this);">
+                   onerror="handleVideoLoad(this);"
+                   poster="assets/images/about/01.jpg">
                 <source src="assets/images/verosia home/peachy-plants-screen-recording.mp4" type="video/mp4">
                 <!-- Fallback image if video doesn't load -->
                 <img src="assets/images/about/01.jpg" alt="Peachy Plants e-commerce website homepage showcasing plant nursery products and services">
@@ -777,7 +782,7 @@ Service END -->
                                     </div>                                     
                                     <!-- Image -->                                     
                                     <div class="card card-body overflow-hidden p-0"> 
-                                        <img src="https://images.unsplash.com/photo-1483058712412-4245e9b90334?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDE0fHxjcmVhdGl2ZSUyMHN0dWRpb3xlbnwwfHx8fDE3NTgyNDAwMTd8MA&ixlib=rb-4.1.0&q=80&w=1080" class="card-img" alt="Professional creative studio workspace with modern design equipment for digital marketing and web development projects" style="height: 300px; object-fit: cover; object-position: center;"> 
+                                        <img src="https://images.unsplash.com/photo-1483058712412-4245e9b90334?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDE0fHxjcmVhdGl2ZSUyMHN0dWRpb3xlbnwwfHx8fDE3NTgyNDAwMTd8MA&ixlib=rb-4.1.0&q=80&w=1080" class="card-img" alt="Professional creative studio workspace with modern design equipment for digital marketing and web development projects" style="height: 300px; object-fit: cover; object-position: center;" loading="lazy"> 
                                         <div class="bg-overlay bg-dark opacity-2"></div>                                         
                                         <!-- Card img overlay -->                                         
                                         <div class="position-absolute end-0 bottom-0 m-3 z-index-2"> 

@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html lang="en"> 
     <head> 
-        <title>Why Your WordPress Site is Slower Than Your Competitors - Verosia Studio</title>         
+        <title>WordPress Speed Issues & Solutions - Verosia Studio</title>         
         <!-- Meta Tags -->         
         <meta charset="utf-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -115,7 +115,8 @@
 		
 	</script>         
         <!-- Favicon -->         
-        <link rel="shortcut icon" href="assets/images/favicon.ico?v=2"> 
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.svg"> 
         <!-- Google Font -->         
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -216,7 +217,7 @@ Blog detail START -->
                                     <p class="small mb-0">These issues compound each other, creating a slow-loading site that frustrates visitors and hurts your search rankings.</p> 
                                 </div>                                 
                                 <!-- Image -->                                 
-                                <div class="col-md-6 mt-5 mt-md-0"> <a href="assets/images/blog/4by4/06.jpg" data-glightbox data-gallery="image-popup"> <img src="assets/images/blog/4by4/06.jpg" class="rounded" alt="WordPress optimization tools"> </a> 
+                                <div class="col-md-6 mt-5 mt-md-0"> <img src="assets/images/verosia home/verosia dashboard notes.png" class="rounded" alt="WordPress optimization tools"> 
                                 </div>                                 
                             </div>                             
                             <h5 class="mt-5 mb-3">1. Optimize Your Images (The Low-Hanging Fruit)</h5>
@@ -271,7 +272,6 @@ Blog detail START -->
                                         <h6 class="mb-0"><a href="#">Nathan Cranston</a></h6> <small>Founder & Lead Developer</small> 
                                     </div>                                     
                                 </div>                                 
-                                <p>Written by Nathan, the design and web guy here at Verosia Studio. I'm a digital media professional with an Associate Bachelor's Degree in Graphic Design and Illustration, and I love helping brands go from idea to online with killer visuals and seamless websites.</p> 
                                 <!-- Button -->                                 <a href="about.html" class="btn btn-sm btn-outline-primary mb-0">Learn more about Nathan</a> 
                             </div>                             
                             <!-- Related post -->                             
@@ -395,6 +395,81 @@ Blog detail END -->
                         });
                     }
                 });
+            }
+
+            // Blog feedback functionality
+            function initBlogFeedback() {
+                const feedbackButtons = document.querySelectorAll('input[name="btnradio"]');
+                const feedbackContainer = document.querySelector('.bg-light.border.rounded');
+                
+                if (feedbackButtons.length === 0 || !feedbackContainer) return;
+                
+                feedbackButtons.forEach(button => {
+                    button.addEventListener('change', function() {
+                        if (this.checked) {
+                            const isHelpful = this.id === 'btnradio1';
+                            const feedback = isHelpful ? 'Yes' : 'No';
+                            
+                        // Store feedback in localStorage
+                        const pageTitle = document.title;
+                        const feedbackData = {
+                            page: pageTitle,
+                            feedback: feedback,
+                            timestamp: new Date().toISOString()
+                        };
+                        
+                        // Get existing feedback or create new array
+                        let allFeedback = JSON.parse(localStorage.getItem('blogFeedback') || '[]');
+                        allFeedback.push(feedbackData);
+                        localStorage.setItem('blogFeedback', JSON.stringify(allFeedback));
+                        
+                        // Send feedback to Netlify Forms
+                        sendFeedbackToNetlify(feedbackData);
+                            
+                            // Show thank you message
+                            showFeedbackThankYou(feedbackContainer, isHelpful);
+                            
+                            // Disable buttons after selection
+                            feedbackButtons.forEach(btn => btn.disabled = true);
+                        }
+                    });
+                });
+            }
+            
+            function sendFeedbackToNetlify(feedbackData) {
+                // Create form data for Netlify
+                const formData = new FormData();
+                formData.append('form-name', 'blog-feedback');
+                formData.append('page', feedbackData.page);
+                formData.append('feedback', feedbackData.feedback);
+                formData.append('timestamp', feedbackData.timestamp);
+                formData.append('url', window.location.href);
+                
+                // Send to Netlify Forms
+                fetch('/', {
+                    method: 'POST',
+                    body: formData
+                }).catch(error => {
+                    console.log('Feedback submission error:', error);
+                    // Don't show error to user - feedback still works locally
+                });
+            }
+            
+            function showFeedbackThankYou(container, isHelpful) {
+                const thankYouMessage = document.createElement('div');
+                thankYouMessage.className = 'alert alert-success mt-3 mb-0';
+                thankYouMessage.innerHTML = `
+                    <i class="fas fa-check-circle me-2"></i>
+                    <strong>Thank you!</strong> 
+                    ${isHelpful ? 'We\'re glad this article was helpful!' : 'Thanks for your feedback. We\'ll work to improve our content.'}
+                `;
+                
+                // Insert after the feedback container
+                container.parentNode.insertBefore(thankYouMessage, container.nextSibling);
+                
+                // Fade out the feedback container
+                container.style.opacity = '0.6';
+                container.style.pointerEvents = 'none';
             }
 
             // Initialize sticky header functionality
@@ -663,6 +738,7 @@ Blog detail END -->
                     initDropdownHover();
                     initDarkMode();
                     initStickyHeader();
+                    initBlogFeedback();
                     initializeCookieBanner();
                 }, 500);
                 
@@ -671,6 +747,15 @@ Blog detail END -->
                     initializeCookieBanner();
                 }, 100);
             });
-        </script>         
+        </script>
+        
+        <!-- Hidden form for blog feedback -->
+        <form name="blog-feedback" netlify netlify-honeypot="bot-field" hidden>
+            <input type="text" name="page" />
+            <input type="text" name="feedback" />
+            <input type="text" name="timestamp" />
+            <input type="text" name="url" />
+            <input type="text" name="bot-field" />
+        </form>
     </body>     
 </html>
