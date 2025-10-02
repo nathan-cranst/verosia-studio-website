@@ -194,7 +194,7 @@
             .blog-image-container {
                 position: relative;
                 overflow: hidden;
-                border-radius: 0.4rem;
+                border-radius: 0.125rem;
                 box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
                 background: #fafbfc;
             }
@@ -214,7 +214,7 @@
                 color: #495057;
                 font-size: 14px;
                 font-weight: 500;
-                border-radius: 0.4rem;
+                border-radius: 0.125rem;
                 overflow: hidden;
             }
             
@@ -256,20 +256,11 @@
             }
             
             .blog-image-container img {
-                position: absolute;
-                top: 0;
-                left: 0;
                 width: 100%;
-                height: 100%;
+                height: 200px;
                 object-fit: cover;
                 object-position: center;
-                opacity: 0;
-                transition: opacity 0.5s ease-out;
-                border-radius: 0.4rem;
-            }
-            
-            .blog-image-container img.loaded {
-                opacity: 1;
+                border-radius: 0.125rem;
             }
             
             .blog-image-loading.hidden {
@@ -919,7 +910,9 @@ Blog list and sidebar END -->
 
             // Function to populate blog cards with clean loading state
             async function populateBlogCards() {
+                console.log('Starting populateBlogCards function...');
                 const blogCards = document.querySelectorAll('article[data-category]');
+                console.log('Found blog cards:', blogCards.length);
                 
                 for (const card of blogCards) {
                     const readMoreLink = card.querySelector('a[href$=".html"]');
@@ -927,6 +920,7 @@ Blog list and sidebar END -->
                     
                     const blogUrl = readMoreLink.getAttribute('href');
                     const config = blogPostsConfig[blogUrl];
+                    console.log('Processing card for:', blogUrl, 'Config found:', !!config);
                     
                     if (config) {
                         // Update content first (title, author, etc.)
@@ -958,15 +952,18 @@ Blog list and sidebar END -->
                         
                         // Load the actual featured image from the blog post
                         const imageContainer = card.querySelector('.blog-image-container');
+                        console.log('Image container found:', !!imageContainer);
                         if (imageContainer) {
-                            // Hide the loading state immediately
+                            // Remove the loading state completely
                             const loadingDiv = imageContainer.querySelector('.blog-image-loading');
                             if (loadingDiv) {
-                                loadingDiv.style.display = 'none';
+                                console.log('Removing loading div');
+                                loadingDiv.remove();
                             }
                             
-                            // Create and add the image directly
+                            // Create simple image like the dropdown (no complex loading states)
                             const img = document.createElement('img');
+                            img.src = config.image;
                             img.alt = config.title;
                             img.loading = 'lazy';
                             img.style.width = '100%';
@@ -975,35 +972,20 @@ Blog list and sidebar END -->
                             img.style.objectPosition = 'center';
                             img.style.borderRadius = '8px';
                             
-                            // Add the image to the container first
+                            console.log('Adding image:', config.image);
+                            // Add the image directly to the container
                             imageContainer.appendChild(img);
-                            
-                            // Set the src and handle loading
-                            img.src = config.image;
-                            
-                            // Add the loaded class when the image actually loads
-                            img.onload = function() {
-                                img.classList.add('loaded');
-                            };
-                            
-                            // Handle error case
-                            img.onerror = function() {
-                                // Keep the loading state visible if image fails
-                                const loadingDiv = imageContainer.querySelector('.blog-image-loading');
-                                if (loadingDiv) {
-                                    loadingDiv.style.display = 'block';
-                                }
-                            };
+                        } else {
+                            console.log('No image container found for card');
                         }
                     }
                 }
             }
 
             document.addEventListener('DOMContentLoaded', function() {
-                // Populate blog cards with dynamic content (with a small delay to ensure page is fully loaded)
-                setTimeout(() => {
-                    populateBlogCards();
-                }, 100);
+                console.log('Blog page loaded, populating cards...');
+                // Populate blog cards immediately
+                populateBlogCards();
                 
                 const filterTags = document.querySelectorAll('.filter-tag');
                 const filterCategories = document.querySelectorAll('.filter-category');
