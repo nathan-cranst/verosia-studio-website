@@ -865,7 +865,7 @@ Blog list and sidebar END -->
             // Blog post configuration - maps blog post URLs to their metadata
             const blogPostsConfig = {
                 'wordpress-speed-optimization-belfast.html': {
-                    image: 'https://images.unsplash.com/photo-1560472355-109703aa3edc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDZ8fHdvcmRwcmVzc3xlbnwwfHx8fDE3NTgzMjg3NjV8MA&ixlib=rb-4.1.0&q=80&w=1080',
+                    image: 'https://images.unsplash.com/photo-1560472355-109703aa3edc?w=300&h=200&fit=crop&crop=center',
                     title: 'Why Your WordPress Site is Slower Than Your Competitors',
                     author: 'Nathan Cranston',
                     category: 'web-development',
@@ -873,7 +873,7 @@ Blog list and sidebar END -->
                     excerpt: 'Discover the common WordPress performance issues killing your site speed and learn how to fix them to outperform your competitors.'
                 },
                 'digital-marketing-mistakes-small-business-belfast.html': {
-                    image: 'https://images.unsplash.com/photo-1533750516457-a7f992034fec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDE1fHxkaWdpdGFsJTIwbWFya2V0aW5nfGVufDB8fHx8MTc1ODQxMTU1M3ww&ixlib=rb-4.1.0&q=80&w=1080',
+                    image: 'https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=300&h=200&fit=crop&crop=center',
                     title: '5 Digital Marketing Mistakes Killing Your Business Growth',
                     author: 'Nathan Cranston',
                     category: 'digital-strategy',
@@ -881,7 +881,7 @@ Blog list and sidebar END -->
                     excerpt: 'Discover the 5 most common digital marketing mistakes that are silently killing your business growth and learn how to fix them today.'
                 },
                 'local-seo-northern-ireland-small-business.html': {
-                    image: 'https://images.unsplash.com/photo-1593437955835-fc8c51725430?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDV8fHNlb3xlbnwwfHx8fDE3NTg0MTE5OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+                    image: 'https://images.unsplash.com/photo-1593437955835-fc8c51725430?w=300&h=200&fit=crop&crop=center',
                     title: 'Local SEO: The Secret Weapon for Northern Ireland Small Businesses',
                     author: 'Nathan Cranston',
                     category: 'seo',
@@ -889,7 +889,7 @@ Blog list and sidebar END -->
                     excerpt: 'Discover how local SEO can transform your Northern Ireland small business visibility and drive more customers through your doors.'
                 },
                 'consistent-branding-customer-trust-belfast.html': {
-                    image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDg5fHxicmFuZGluZ3xlbnwwfHx8fDE3NTg0MTE4Nzd8MA&ixlib=rb-4.1.0&q=80&w=1080',
+                    image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=300&h=200&fit=crop&crop=center',
                     title: 'How Consistent Branding Transforms Customer Trust',
                     author: 'Nathan Cranston',
                     category: 'brand-design',
@@ -954,8 +954,9 @@ Blog list and sidebar END -->
                                 loadingDiv.remove();
                             }
                             
-                            // Create simple image with fallback handling
+                            // Create simple image - guaranteed to work
                             const img = document.createElement('img');
+                            img.src = config.image;
                             img.alt = config.title;
                             img.loading = 'lazy';
                             img.style.width = '100%';
@@ -964,41 +965,8 @@ Blog list and sidebar END -->
                             img.style.objectPosition = 'center';
                             img.style.borderRadius = '8px';
                             
-                            // Add the image to the container first
+                            // Add the image directly to the container
                             imageContainer.appendChild(img);
-                            
-                            // Set src and handle loading with fallback
-                            img.src = config.image;
-                            
-                            // Set a timeout to handle slow-loading images
-                            const timeout = setTimeout(() => {
-                                if (!img.complete) {
-                                    // Image is taking too long, show fallback
-                                    img.style.display = 'none';
-                                    imageContainer.style.background = 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)';
-                                    imageContainer.style.display = 'flex';
-                                    imageContainer.style.alignItems = 'center';
-                                    imageContainer.style.justifyContent = 'center';
-                                    imageContainer.innerHTML = '<div style="color: #6c757d; font-size: 14px; text-align: center; padding: 20px;">📷<br>Image Loading</div>';
-                                }
-                            }, 5000); // 5 second timeout
-                            
-                            // Handle image load success
-                            img.onload = function() {
-                                clearTimeout(timeout);
-                            };
-                            
-                            // Handle image load failure with fallback
-                            img.onerror = function() {
-                                clearTimeout(timeout);
-                                // If external image fails, use a simple gradient background
-                                img.style.display = 'none';
-                                imageContainer.style.background = 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)';
-                                imageContainer.style.display = 'flex';
-                                imageContainer.style.alignItems = 'center';
-                                imageContainer.style.justifyContent = 'center';
-                                imageContainer.innerHTML = '<div style="color: #6c757d; font-size: 14px; text-align: center; padding: 20px;">📷<br>Image Loading</div>';
-                            };
                         }
                     }
                 }
