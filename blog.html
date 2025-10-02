@@ -909,11 +909,11 @@ Blog list and sidebar END -->
                 },
                 'social-media-strategy-small-business-belfast.html': {
                     image: 'assets/images/verosia home/nathan-cranston-working-on-peachy-plants-website.jpg',
-                    title: 'From Peachy Plants to Digital Solutions: A Founder\'s Journey',
+                    title: 'Social Media Strategy That Actually Works for Small Businesses',
                     author: 'Nathan Cranston',
-                    category: 'business-growth',
-                    tags: 'business-growth,founder-journey,entrepreneurship',
-                    excerpt: 'Discover how Nathan transformed his plant business into a digital marketing powerhouse and learn the lessons that can help your business grow.'
+                    category: 'social-media',
+                    tags: 'social-media,strategy,business-growth',
+                    excerpt: 'Learn the proven social media strategies that help small businesses build genuine connections and drive real results.'
                 }
             };
 
@@ -974,13 +974,26 @@ Blog list and sidebar END -->
                             img.style.objectFit = 'cover';
                             img.style.objectPosition = 'center';
                             img.style.borderRadius = '8px';
+                            
+                            // Add the image to the container first
+                            imageContainer.appendChild(img);
+                            
+                            // Set the src and handle loading
                             img.src = config.image;
                             
-                            // Add the loaded class to make the image visible
-                            img.classList.add('loaded');
+                            // Add the loaded class when the image actually loads
+                            img.onload = function() {
+                                img.classList.add('loaded');
+                            };
                             
-                            // Add the image to the container
-                            imageContainer.appendChild(img);
+                            // Handle error case
+                            img.onerror = function() {
+                                // Keep the loading state visible if image fails
+                                const loadingDiv = imageContainer.querySelector('.blog-image-loading');
+                                if (loadingDiv) {
+                                    loadingDiv.style.display = 'block';
+                                }
+                            };
                         }
                     }
                 }
@@ -1013,7 +1026,6 @@ Blog list and sidebar END -->
                     
                     // Update results count
                     const visiblePosts = document.querySelectorAll('article[data-category][style*="display: block"], article[data-category]:not([style*="display: none"])');
-                    console.log(`${visiblePosts.length} posts found`);
                 }
                 
                 // Handle sidebar tag clicks
