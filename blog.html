@@ -652,14 +652,13 @@ Blog list and sidebar END -->
                     const html = await response.text();
                     document.getElementById(containerId).innerHTML = html;
 
-                    console.log(`✅ ${templatePath} loaded successfully`);
                     
                     // Initialize cookie banner after header loads
                     if (templatePath === 'templates/header.html') {
                         initializeCookieBanner();
                     }
                 } catch (error) {
-                    console.error(`❌ Error loading ${templatePath}:`, error);
+                    // Template loading error - continue without template
                 }
             }
 
@@ -849,7 +848,6 @@ Blog list and sidebar END -->
 
             // Load templates when page loads
             document.addEventListener('DOMContentLoaded', function() {
-                console.log('   Loading templates...');
                 loadTemplate('header-container', 'templates/header.html');
                 loadTemplate('footer-container', 'templates/footer.html');
 
@@ -910,9 +908,7 @@ Blog list and sidebar END -->
 
             // Function to populate blog cards with clean loading state
             async function populateBlogCards() {
-                console.log('Starting populateBlogCards function...');
                 const blogCards = document.querySelectorAll('article[data-category]');
-                console.log('Found blog cards:', blogCards.length);
                 
                 for (const card of blogCards) {
                     const readMoreLink = card.querySelector('a[href$=".html"]');
@@ -920,7 +916,6 @@ Blog list and sidebar END -->
                     
                     const blogUrl = readMoreLink.getAttribute('href');
                     const config = blogPostsConfig[blogUrl];
-                    console.log('Processing card for:', blogUrl, 'Config found:', !!config);
                     
                     if (config) {
                         // Update content first (title, author, etc.)
@@ -952,18 +947,15 @@ Blog list and sidebar END -->
                         
                         // Load the actual featured image from the blog post
                         const imageContainer = card.querySelector('.blog-image-container');
-                        console.log('Image container found:', !!imageContainer);
                         if (imageContainer) {
                             // Remove the loading state completely
                             const loadingDiv = imageContainer.querySelector('.blog-image-loading');
                             if (loadingDiv) {
-                                console.log('Removing loading div');
                                 loadingDiv.remove();
                             }
                             
-                            // Create simple image like the dropdown (no complex loading states)
+                            // Create simple image with fallback handling
                             const img = document.createElement('img');
-                            img.src = config.image;
                             img.alt = config.title;
                             img.loading = 'lazy';
                             img.style.width = '100%';
@@ -972,18 +964,47 @@ Blog list and sidebar END -->
                             img.style.objectPosition = 'center';
                             img.style.borderRadius = '8px';
                             
-                            console.log('Adding image:', config.image);
-                            // Add the image directly to the container
+                            // Add the image to the container first
                             imageContainer.appendChild(img);
-                        } else {
-                            console.log('No image container found for card');
+                            
+                            // Set src and handle loading with fallback
+                            img.src = config.image;
+                            
+                            // Set a timeout to handle slow-loading images
+                            const timeout = setTimeout(() => {
+                                if (!img.complete) {
+                                    // Image is taking too long, show fallback
+                                    img.style.display = 'none';
+                                    imageContainer.style.background = 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)';
+                                    imageContainer.style.display = 'flex';
+                                    imageContainer.style.alignItems = 'center';
+                                    imageContainer.style.justifyContent = 'center';
+                                    imageContainer.innerHTML = '<div style="color: #6c757d; font-size: 14px; text-align: center; padding: 20px;">📷<br>Image Loading</div>';
+                                }
+                            }, 5000); // 5 second timeout
+                            
+                            // Handle image load success
+                            img.onload = function() {
+                                clearTimeout(timeout);
+                            };
+                            
+                            // Handle image load failure with fallback
+                            img.onerror = function() {
+                                clearTimeout(timeout);
+                                // If external image fails, use a simple gradient background
+                                img.style.display = 'none';
+                                imageContainer.style.background = 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)';
+                                imageContainer.style.display = 'flex';
+                                imageContainer.style.alignItems = 'center';
+                                imageContainer.style.justifyContent = 'center';
+                                imageContainer.innerHTML = '<div style="color: #6c757d; font-size: 14px; text-align: center; padding: 20px;">📷<br>Image Loading</div>';
+                            };
                         }
                     }
                 }
             }
 
             document.addEventListener('DOMContentLoaded', function() {
-                console.log('Blog page loaded, populating cards...');
                 // Populate blog cards immediately
                 populateBlogCards();
                 
@@ -1086,7 +1107,6 @@ Blog list and sidebar END -->
                     
                     // Update results count
                     const visiblePosts = document.querySelectorAll('article[data-category][style*="display: block"], article[data-category]:not([style*="display: none"])');
-                    console.log(`${visiblePosts.length} posts found for search: "${searchTerm}"`);
                 }
                 
                 // Handle search form submission
