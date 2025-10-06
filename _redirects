@@ -1,0 +1,36 @@
+# Redirect .html to clean URLs (no extensions)
+/about.html            /about           301!
+/blog.html             /blog            301!
+/contact.html          /contact         301!
+/process.html          /process         301!
+/services.html         /services        301!
+/terms-and-conditions.html  /terms-and-conditions  301!
+
+# Service pages
+/brand-design-services-belfast.html  /brand-design-services-belfast  301!
+/web-design-belfast.html  /web-design-belfast  301!
+/seo-services-belfast.html  /seo-services-belfast  301!
+/social-media-management-belfast.html  /social-media-management-belfast  301!
+
+# Blog posts
+/wordpress-speed-optimization-belfast.html  /wordpress-speed-optimization-belfast  301!
+/digital-marketing-mistakes-small-business-belfast.html  /digital-marketing-mistakes-small-business-belfast  301!
+/local-seo-northern-ireland-small-business.html  /local-seo-northern-ireland-small-business  301!
+/social-media-strategy-small-business-belfast.html  /social-media-strategy-small-business-belfast  301!
+/consistent-branding-customer-trust-belfast.html  /consistent-branding-customer-trust-belfast  301!
+
+# Additional pages
+/book-free-strategy-call-belfast.html  /book-free-strategy-call-belfast  301!
+/free-digital-marketing-audit.html  /free-digital-marketing-audit  301!
+/digital-marketing-faq-belfast.html  /digital-marketing-faq-belfast  301!
+/new-services-coming-soon-belfast.html  /new-services-coming-soon-belfast  301!
+
+# Legacy redirects (fix 404s)
+/verosia-digital-content-seo-service-single  /seo-services-belfast  301!
+/verosia-blog-digital-marketing-mistakes.html  /digital-marketing-mistakes-small-business-belfast  301!
+/social-media-management-service-single  /social-media-management-belfast  301!
+/docs/index.html  /404  404!
+/blog-single-v1.html  /blog  301!
+
+# Normalize trailing slashes (remove them)
+/*/ /:splat 301!

@@ -1,0 +1,18 @@
+# robots.txt for verosiastudio.com
+
+User-agent: *
+Allow: /
+
+# Prevent crawling of build/backups and source templates
+Disallow: /_pgbackup/
+Disallow: /_pginfo/
+Disallow: /templates/
+Disallow: /assets/scss/
+
+# Optional: reduce crawl of non-content utility pages
+Disallow: /error-404
+Disallow: /thanks
+
+Sitemap: https://verosiastudio.com/sitemap.xml
+
+
