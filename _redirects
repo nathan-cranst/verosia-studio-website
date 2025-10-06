@@ -32,5 +32,3 @@
 /docs/index.html  /404  404!
 /blog-single-v1.html  /blog  301!
 
-# Normalize trailing slashes (remove them)
-/*/ /:splat 301!
