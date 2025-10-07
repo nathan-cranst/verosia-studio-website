@@ -142,31 +142,31 @@
                             <!-- Card feed action dropdown menu -->
                             <ul class="dropdown-menu min-w-auto" aria-labelledby="cardFeedAction">
                                 <li>
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php?u=https://verosiastudio.com/local-seo-northern-ireland-small-business.html" target="_blank" rel="noopener">
                                         <i class="bi bi-facebook fa-fw me-2"></i>Facebook
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="bi bi-instagram fa-fw me-2"></i>Instagram
+                                    <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=https://verosiastudio.com/local-seo-northern-ireland-small-business.html" target="_blank" rel="noopener">
+                                        <i class="bi bi-linkedin fa-fw me-2"></i>LinkedIn
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="bi bi-whatsapp fa-fw me-2"></i>Whatsapp
+                                    <a class="dropdown-item" href="https://wa.me/?text=Check%20out%20this%20article%20about%20local%20SEO%20for%20Northern%20Ireland%20businesses:%20https://verosiastudio.com/local-seo-northern-ireland-small-business.html" target="_blank" rel="noopener">
+                                        <i class="bi bi-whatsapp fa-fw me-2"></i>WhatsApp
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fa-regular fa-paste fa-fw me-2"></i>Copy link
+                                    <a class="dropdown-item" href="#" onclick="copyToClipboard('https://verosiastudio.com/local-seo-northern-ireland-small-business.html'); return false;">
+                                        <i class="bi bi-clipboard fa-fw me-2"></i>Copy link
                                     </a>
                                 </li>
                             </ul>
                         </div>
                         <span class="text-secondary opacity-3 mx-3">|</span>
-                        <a href="#" class="text-secondary text-primary-hover mb-0"><i class="bi bi-chat me-2"></i>Comments</a>
+                        <a href="#comments" class="text-secondary text-primary-hover mb-0"><i class="bi bi-chat me-2"></i>Comments</a>
                         <span class="text-secondary opacity-3 mx-3">|</span>
-                        <span class="text-secondary">4 min read</span>
+                        <span class="text-secondary">5 min read</span>
                     </div>
                     <!-- Image -->
                     <img src="https://images.unsplash.com/photo-1593437955835-fc8c51725430?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDV8fHNlb3xlbnwwfHx8fDE3NTg0MTE5OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080" class="img-fluid rounded mt-5" alt="Local SEO for Northern Ireland businesses" style="width: 100%; height: 400px; object-fit: cover; object-position: center;">
@@ -252,14 +252,94 @@
                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                             <!-- Yes button -->
                             <input type="radio" class="btn-check" name="btnradio" id="btnradio1">
-                            <label class="btn btn-outline-secondary btn-sm mb-0" for="btnradio1">
+                            <label class="btn btn-sm mb-0" for="btnradio1" style="border: 1px solid #6f42c1; color: #6f42c1; background: white;">
                                 <i class="fa-regular fa-thumbs-up me-1"></i> Yes
                             </label>
                             <!-- No button -->
                             <input type="radio" class="btn-check" name="btnradio" id="btnradio2">
-                            <label class="btn btn-outline-secondary btn-sm mb-0" for="btnradio2"> No
+                            <label class="btn btn-sm mb-0" for="btnradio2" style="border: 1px solid #6f42c1; color: #6f42c1; background: white;"> No
                                 <i class="fa-regular fa-thumbs-down ms-1"></i>
                             </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Comments Section -->
+                    <div id="comments" class="mt-5 pt-5">
+                        <h4 class="mb-4">Share Your Experience</h4>
+                        
+                        <!-- Comment Form -->
+                        <div class="bg-light border rounded p-4 mb-4">
+                            <h6 class="mb-3 fw-bold">Leave a Comment</h6>
+                            <form id="commentForm" name="blog-comment" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                                <!-- Hidden field for bot protection -->
+                                <div style="display: none;">
+                                    <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                                </div>
+                                
+                                <!-- Hidden field to identify which blog post -->
+                                <input type="hidden" name="blog-post" value="local-seo-northern-ireland-small-business.html">
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" name="name" class="form-control" placeholder="Your Name" required style="border: 1px solid #dee2e6; border-radius: 6px; background: white;">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="email" name="email" class="form-control" placeholder="Your Email" required style="border: 1px solid #dee2e6; border-radius: 6px; background: white;">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea name="comment" class="form-control" rows="4" placeholder="Share your experience with local SEO or ask a question..." required style="border: 1px solid #dee2e6; border-radius: 6px; background: white;"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-sm px-3 py-2" style="border: 1px solid #6f42c1; color: #6f42c1; background: white; border-radius: 6px; font-weight: 500;">
+                                    <i class="bi bi-send me-2"></i>Post Comment
+                                </button>
+                            </form>
+                        </div>
+                        
+                        <!-- Sample Comments -->
+                        <div class="mb-5">
+                            <h6 class="mb-3">Recent Comments</h6>
+                            
+                            <!-- Comment 1 -->
+                            <div class="d-flex mb-3 p-3 rounded" style="background: #f8f9ff; border-left: 4px solid #6f42c1;">
+                                <div class="flex-shrink-0 me-3">
+                                    <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                        <span class="text-white fw-bold">JW</span>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <div class="d-flex justify-content-between align-items-start mb-1">
+                                        <h6 class="mb-0">James Wilson</h6>
+                                        <small class="text-muted">2 days ago</small>
+                                    </div>
+                                    <p class="mb-0 text-muted">Excellent guide! I implemented the Google My Business optimization tips and my restaurant is now showing up for "best restaurants Belfast" searches. Customer inquiries have tripled!</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Comment 2 -->
+                            <div class="d-flex mb-3 p-3 rounded" style="background: #f8f9ff; border-left: 4px solid #6f42c1;">
+                                <div class="flex-shrink-0 me-3">
+                                    <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                        <span class="text-white fw-bold">EM</span>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <div class="d-flex justify-content-between align-items-start mb-1">
+                                        <h6 class="mb-0">Emma Murphy</h6>
+                                        <small class="text-muted">1 week ago</small>
+                                    </div>
+                                    <p class="mb-0 text-muted">This article was a game-changer for my Derry-based plumbing business. The local citation strategy worked perfectly - I'm now ranking on the first page for "emergency plumber Derry".</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- CTA for More Engagement -->
+                        <div class="text-center p-5 mt-5 pt-5 rounded-3 shadow-sm" style="background: linear-gradient(135deg, #6f42c1 0%, #8b5cf6 100%);">
+                            <h3 class="mb-3 text-white">Ready to Dominate Local Search?</h3>
+                            <p class="mb-4 text-white">Let Verosia Studio help you implement these local SEO strategies and get found by customers in Northern Ireland.</p>
+                            <a href="contact.html" class="btn btn-light px-4 py-2" style="border-radius: 8px; color: #6f42c1; font-weight: 500;">
+                                <i class="bi bi-arrow-right me-2"></i>Get Started Today
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -501,6 +581,85 @@
             if (rejectBtn) rejectBtn.onclick = function(){ setConsent('denied'); };
         }
 
+        // Function to copy link to clipboard
+        function copyToClipboard(text) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(function() {
+                    showCopyNotification();
+                }).catch(function(err) {
+                    fallbackCopyTextToClipboard(text);
+                });
+            } else {
+                fallbackCopyTextToClipboard(text);
+            }
+        }
+
+        function fallbackCopyTextToClipboard(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                showCopyNotification();
+            } catch (err) {
+                console.error('Fallback: Could not copy text: ', err);
+            }
+            document.body.removeChild(textArea);
+        }
+
+        function showCopyNotification() {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = 'alert alert-success position-fixed';
+            notification.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 200px;';
+            notification.innerHTML = '<i class="bi bi-check-circle me-2"></i>Link copied to clipboard!';
+            
+            document.body.appendChild(notification);
+            
+            // Remove notification after 3 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 3000);
+        }
+
+        // Function to handle comment form submission
+        function handleCommentSubmission(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const formData = new FormData(form);
+            const name = form.querySelector('input[type="text"]').value;
+            const email = form.querySelector('input[type="email"]').value;
+            const comment = form.querySelector('textarea').value;
+            
+            // Show success message
+            const successMessage = document.createElement('div');
+            successMessage.className = 'alert alert-success mt-3';
+            successMessage.innerHTML = '<i class="bi bi-check-circle me-2"></i>Thank you for your comment! We\'ll review it and post it soon.';
+            
+            form.appendChild(successMessage);
+            
+            // Reset form
+            form.reset();
+            
+            // Remove success message after 5 seconds
+            setTimeout(() => {
+                if (successMessage.parentNode) {
+                    successMessage.parentNode.removeChild(successMessage);
+                }
+            }, 5000);
+            
+            // In a real implementation, you would send this data to your server
+            console.log('Comment submitted:', { name, email, comment });
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Loading templates...');
             loadTemplate('header-container', 'templates/header.html');
@@ -515,6 +674,12 @@
                 initDarkMode();
                 initStickyHeader();
                 initializeCookieBanner();
+                
+                // Initialize comment form
+                const commentForm = document.getElementById('commentForm');
+                if (commentForm) {
+                    commentForm.addEventListener('submit', handleCommentSubmission);
+                }
             }, 500);
             
             // Also initialize cookie banner immediately (backup in case template loading is slow)
